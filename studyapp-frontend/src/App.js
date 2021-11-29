@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import blogService from './services/blogs'
-import Togglable from './components/Togglable'
-import NewBlogForm from './components/NewBlogForm'
 import Notification from './components/Notification'
 import LoginForm from './components/LoginForm'
-import Blog from './components/Blog'
+import Blogs from './components/Blogs'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+} from 'react-router-dom'
 
 const App = () => {
   const [blogs, setBlogs] = useState([])
@@ -29,26 +34,7 @@ const App = () => {
     }
   }, [])
 
-  const handleAddBlog = (blogObject) => {
-    try {
-      blogService
-        .create(blogObject)
-        .then(returnedBlog => {
-          setBlogs(blogs.concat(returnedBlog))
-          setMessage({
-            content: `new blog ${blogObject.title} by ${blogObject.author} was added`,
-            type: 'successMessage'
-          })
-          setTimeout(() => setMessage(null), 5000)
-        })
-    } catch (error) {
-      setMessage({
-        content: 'blog was not added',
-        type: 'errorMessage'
-      })
-      setTimeout(() => setMessage(null), 5000)
-    }
-  }
+
 
   const handleLogout = async event => {
     event.preventDefault()
@@ -57,46 +43,71 @@ const App = () => {
       setUser(null)
     } catch (error) {
       setMessage('logout is not succeed')
-      setTimeout(() => {setMessage(null)}, 5000)
+      setTimeout(() => {
+        setMessage(null)
+      }, 5000)
     }
   }
 
+  const padding = {
+    padding: 5
+  }
+
   return (
-    <div>
-      <h1>Blogs</h1>
+    <Router>
+      <div>
+        <Link style={padding} to="/">home</Link>
+        <Link style={padding} to="/blogs">blogs</Link>
+        <Link style={padding} to="/users">users</Link>
+        {user === null
+          ? <Link style={padding} to="/login">login</Link>
+          : <p>{user.name} logged in</p>
+        }
+      </div>
 
-      <Notification message={message}/>
+      <div>
+        <h1>Blogs</h1>
 
-      <h2>Login</h2>
+        <Notification message={message}/>
 
-      {user === null ?
-        <LoginForm
-          username={username}
-          password={password}
-          setPassword={setPassword}
-          setUser={setUser}
-          setUsername={setUsername}
-          setMessage={setMessage}
-        /> :
-        <div>
-          <p>{user.name} logged in</p>
-          <button onClick={handleLogout}>logout</button>
-
-          <Togglable buttonLabel='create new blog'><NewBlogForm createBlog={handleAddBlog}/></Togglable>
-
-          <h2>Blogs</h2>
-
-          {blogs.sort((a, b) => b.likes - a.likes).map(blog =>
-            <Blog
-              key={blog.id}
-              blog={blog}
-              setRefreshedBlogs={setRefreshedBlogs}
-              user={user}
+        <h2>Login</h2>
+        {user === null
+          ? <LoginForm
+            username={username}
+            password={password}
+            setPassword={setPassword}
+            setUser={setUser}
+            setUsername={setUsername}
+            setMessage={setMessage}
+          /> : <div>
+            <p>{user.name} logged in</p>
+            <button onClick={handleLogout}>logout</button>
+          </div>
+        }
+      </div>
+      <div>
+        <Switch>
+          <Route path='/login'>
+            <LoginForm
+              username={username}
+              password={password}
+              setPassword={setPassword}
+              setUser={setUser}
+              setUsername={setUsername}
+              setMessage={setMessage}
             />
-          )}
-        </div>
-      }
-    </div>
+          </Route>
+          <Route path='/'>
+            {user ? <Blogs
+              user={user}
+              blogs={blogs}
+              setRefreshedBlogs={setRefreshedBlogs}
+              setBlogs={setBlogs}
+              setMessage={setMessage}/> : <Redirect to="/login" />}
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   )
 }
 

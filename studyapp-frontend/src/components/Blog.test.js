@@ -1,17 +1,17 @@
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
-import {render, fireEvent} from '@testing-library/react'
-import Blog from "./Blog";
-import SimpleBlog from "./SimpleBlog";
+import { render, fireEvent } from '@testing-library/react'
+import Blog from './Blog'
+import SimpleBlog from './SimpleBlog'
 
 describe('<Blog />', () => {
   // Blogin näyttävä komponentti renderöi blogin titlen, authorin,
   // mutta ei renderöi oletusarvoisesti urlia eikä likejen määrää.
   test('renders content of blog', () => {
     const blog = {
-      title: "Title",
-      author: "Author",
-      url: "Url",
+      title: 'Title',
+      author: 'Author',
+      url: 'Url',
       likes: 23,
       user: '6192a8e310c2f47b78690f5b'
     }
@@ -34,9 +34,9 @@ describe('<Blog />', () => {
   // Url ja likejen määrä näytetään kun blogin kaikki tiedot näyttävää nappia on painettu.
   test('view button opens details of blog', () => {
     const blog = {
-      title: "Title",
-      author: "Author",
-      url: "Url",
+      title: 'Title',
+      author: 'Author',
+      url: 'Url',
       likes: 23,
       user: '6192a8e310c2f47b78690f5b'
     }
@@ -58,12 +58,12 @@ describe('<Blog />', () => {
   })
 
   // Jos komponentin like-nappia painetaan kahdesti, komponentin propsina
-// saamaa tapahtumankäsittelijäfunktiota kutsutaan kaksi kertaa.
+  // saamaa tapahtumankäsittelijäfunktiota kutsutaan kaksi kertaa.
   test('clicks like button two times', async () => {
     const blog = {
-      title: "Blogi",
-      author: "Kirjoittaja",
-      url: "example.com",
+      title: 'Blogi',
+      author: 'Kirjoittaja',
+      url: 'example.com',
       likes: 23,
       user: '61918507e324699ea054df9c'
     }
