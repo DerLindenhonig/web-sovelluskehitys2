@@ -61,41 +61,22 @@ const App = () => {
         <Link style={padding} to="/users">users</Link>
         {user === null
           ? <Link style={padding} to="/login">login</Link>
-          : <p>{user.name} logged in</p>
+          : <em>{user.name} logged in <button onClick={handleLogout}>logout</button></em>
         }
       </div>
 
-      <div>
-        <h1>Blogs</h1>
+      <div><h1>Blogs</h1><Notification message={message}/></div>
 
-        <Notification message={message}/>
-
-        <h2>Login</h2>
-        {user === null
-          ? <LoginForm
-            username={username}
-            password={password}
-            setPassword={setPassword}
-            setUser={setUser}
-            setUsername={setUsername}
-            setMessage={setMessage}
-          /> : <div>
-            <p>{user.name} logged in</p>
-            <button onClick={handleLogout}>logout</button>
-          </div>
-        }
-      </div>
       <div>
         <Switch>
           <Route path='/login'>
-            <LoginForm
+            {!user ? <LoginForm
               username={username}
               password={password}
               setPassword={setPassword}
               setUser={setUser}
               setUsername={setUsername}
-              setMessage={setMessage}
-            />
+              setMessage={setMessage}/> : <Redirect to="/blogs" />}
           </Route>
           <Route path='/'>
             {user ? <Blogs

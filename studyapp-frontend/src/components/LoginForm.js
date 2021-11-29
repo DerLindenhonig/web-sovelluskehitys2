@@ -28,6 +28,7 @@ const LoginForm = ({ setUser, username, setUsername, password, setPassword, setM
 
   return (
     <form onSubmit={handleLogin}>
+      <h2>Login</h2>
       <div>
         username
         <input
