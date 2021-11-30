@@ -10,6 +10,7 @@ import {
   Link,
   Redirect,
 } from 'react-router-dom'
+import Users from './components/Users'
 
 const App = () => {
   const [blogs, setBlogs] = useState([])
@@ -33,6 +34,7 @@ const App = () => {
       blogService.setToken(user.token)
     }
   }, [])
+
 
 
 
@@ -69,6 +71,9 @@ const App = () => {
 
       <div>
         <Switch>
+          <Route path='/users'>
+            {user ? <Users /> : <Redirect to="/login" />}
+          </Route>
           <Route path='/login'>
             {!user ? <LoginForm
               username={username}
