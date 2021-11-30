@@ -1,10 +1,11 @@
 import React from 'react'
-import Blog from './Blog'
 import Togglable from './Togglable'
 import NewBlogForm from './NewBlogForm'
 import blogService from '../services/blogs'
+import { Table } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
-const Blogs = ({ user, blogs, setRefreshedBlogs, setBlogs, setMessage }) => {
+const Blogs = ({ blogs, setBlogs, setMessage }) => {
 
   const handleAddBlog = (blogObject) => {
     try {
@@ -27,7 +28,7 @@ const Blogs = ({ user, blogs, setRefreshedBlogs, setBlogs, setMessage }) => {
     }
   }
 
-  if(blogs === undefined) {
+  if (blogs === undefined) {
     return null
   }
 
@@ -39,14 +40,20 @@ const Blogs = ({ user, blogs, setRefreshedBlogs, setBlogs, setMessage }) => {
       </Togglable>
 
       <h2>Blogs</h2>
-      {blogs.sort((a, b) => b.likes - a.likes).map(blog =>
-        <Blog
-          key={blog.id}
-          blog={blog}
-          setRefreshedBlogs={setRefreshedBlogs}
-          user={user}
-        />
-      )}
+      <Table striped>
+        <tbody>
+          {blogs.sort((a, b) => b.likes - a.likes).map(blog =>
+            <tr key={blog.id}>
+              <td>
+                <Link to={`/blogs/${blog.id}`}>{blog.title}</Link>
+              </td>
+              <td>
+                {blog.likes}
+              </td>
+            </tr>
+          )}
+        </tbody>
+      </Table>
     </div>
   )
 }

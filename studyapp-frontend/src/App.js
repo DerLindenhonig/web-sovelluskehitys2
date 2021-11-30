@@ -11,6 +11,7 @@ import {
   Redirect,
 } from 'react-router-dom'
 import Users from './components/Users'
+import Blog from './components/Blog'
 
 const App = () => {
   const [blogs, setBlogs] = useState([])
@@ -35,9 +36,6 @@ const App = () => {
     }
   }, [])
 
-
-
-
   const handleLogout = async event => {
     event.preventDefault()
     try {
@@ -55,6 +53,8 @@ const App = () => {
     padding: 5
   }
 
+  const blogId = (id) => blogs.find(blog => blog.id === id)
+
   return (
     <Router>
       <div>
@@ -67,10 +67,13 @@ const App = () => {
         }
       </div>
 
-      <div><h1>Blogs</h1><Notification message={message}/></div>
+      <div><Notification message={message}/></div>
 
       <div>
         <Switch>
+          <Route path='/blogs/:id' render={({ match }) =>
+            <Blog blog={blogId(match.params.id)} user={user} setRefreshedBlogs={setRefreshedBlogs}/>}
+          />
           <Route path='/users'>
             {user ? <Users /> : <Redirect to="/login" />}
           </Route>
@@ -81,7 +84,7 @@ const App = () => {
               setPassword={setPassword}
               setUser={setUser}
               setUsername={setUsername}
-              setMessage={setMessage}/> : <Redirect to="/blogs" />}
+              setMessage={setMessage}/> : <Redirect to="/" />}
           </Route>
           <Route path='/'>
             {user ? <Blogs
