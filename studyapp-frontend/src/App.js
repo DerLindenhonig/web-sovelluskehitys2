@@ -12,6 +12,7 @@ import {
 } from 'react-router-dom'
 import Users from './components/Users'
 import Blog from './components/Blog'
+import RegistrationForm from './components/RegistrationForm'
 
 const App = () => {
   const [blogs, setBlogs] = useState([])
@@ -71,11 +72,21 @@ const App = () => {
 
       <div>
         <Switch>
+
           <Route path='/blogs/:id' render={({ match }) =>
             <Blog blog={blogId(match.params.id)} user={user} setRefreshedBlogs={setRefreshedBlogs}/>}
           />
           <Route path='/users'>
             {user ? <Users /> : <Redirect to="/login" />}
+          </Route>
+          <Route path='/registration'>
+            <RegistrationForm
+              username={username}
+              password={password}
+              setPassword={setPassword}
+              setUser={setUser}
+              setUsername={setUsername}
+              setMessage={setMessage}/>
           </Route>
           <Route path='/login'>
             {!user ? <LoginForm

@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import loginService from '../services/login'
 import blogService from '../services/blogs'
+import { Link } from 'react-router-dom'
 
 const LoginForm = ({ setUser, username, setUsername, password, setPassword, setMessage }) => {
 
@@ -27,30 +28,33 @@ const LoginForm = ({ setUser, username, setUsername, password, setPassword, setM
   }
 
   return (
-    <form onSubmit={handleLogin}>
-      <h2>Login</h2>
-      <div>
-        username
-        <input
-          id='username'
-          type="text"
-          value={username}
-          name="Username"
-          onChange={({ target }) => setUsername(target.value)}
-        />
-      </div>
-      <div>
-        password
-        <input
-          id='password'
-          type="password"
-          value={password}
-          name="Password"
-          onChange={({ target }) => setPassword(target.value)}
-        />
-      </div>
-      <button id="login-button" type="submit">login</button>
-    </form>
+    <div>
+      <form onSubmit={handleLogin}>
+        <h2>Login</h2>
+        <div>
+          username
+          <input
+            id='username'
+            type="text"
+            value={username}
+            name="Username"
+            onChange={({ target }) => setUsername(target.value)}
+          />
+        </div>
+        <div>
+          password
+          <input
+            id='password'
+            type="password"
+            value={password}
+            name="Password"
+            onChange={({ target }) => setPassword(target.value)}
+          />
+        </div>
+        <button id="login-button" type="submit">login</button>
+      </form>
+      <div>Do not have account? <Link to={'/registration'}>Create new account!</Link></div>
+    </div>
   )
 }
 
