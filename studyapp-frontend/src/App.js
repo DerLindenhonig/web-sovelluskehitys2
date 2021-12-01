@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import blogService from './services/blogs'
+import cardService from './services/cards'
 import Notification from './components/Notification'
 import LoginForm from './components/LoginForm'
 import Blogs from './components/Blogs'
@@ -34,6 +35,7 @@ const App = () => {
       const user = JSON.parse(loggedUserJSON)
       setUser(user)
       blogService.setToken(user.token)
+      cardService.setToken(user.token)
     }
   }, [])
 

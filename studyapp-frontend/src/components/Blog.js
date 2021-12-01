@@ -50,7 +50,7 @@ const Blog = ({ blog, user, setRefreshedBlogs }) => {
       <div>url: {blog.url}</div>
       <div>likes: {blog.likes}<button id='like' onClick={addLike}>like</button></div>
       <DeleteBlogBtn/>
-      <Cards blog={blog}/>
+      <Cards blog={blog} user={user}/>
     </div>
   )
 }
