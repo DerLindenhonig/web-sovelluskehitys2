@@ -41,13 +41,6 @@ const Blog = ({ blog, user, setRefreshedBlogs }) => {
     setRefreshedBlogs(allBlogs)
   }
 
-  const Cards = () => {
-    return (
-      <div>
-      </div>
-    )
-  }
-
   return (
     <div>
       <h1>Blog</h1>
@@ -57,7 +50,6 @@ const Blog = ({ blog, user, setRefreshedBlogs }) => {
       <div>likes: {blog.likes}<button id='like' onClick={addLike}>like</button></div>
       <DeleteBlogBtn/>
 
-      <Cards/>
     </div>
   )
 }
