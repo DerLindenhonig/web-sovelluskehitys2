@@ -23,7 +23,6 @@ cardsRouter.post('/', async (request, response, next) => {
       return response.status(400).end()
     }
 
-    //const blogId = request.params.id
     const blog = await Blog.findById(body.blogId)
     if (blog === null) {
       return response
@@ -63,13 +62,13 @@ cardsRouter.delete('/:id', async (request, response) => {
   }
 })
 
-cardsRouter.put('/', async (request, response, next) => {
+cardsRouter.put('/:id', async (request, response, next) => {
   const body = request.body
 
   const editedCard = {
-    title: body.title,
-    author: body.author,
-    url: body.url
+    word: body.word,
+    translate: body.translate,
+    examples: body.examples
   }
 
   try {

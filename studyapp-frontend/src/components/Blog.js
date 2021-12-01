@@ -1,5 +1,6 @@
 import React, {} from 'react'
 import blogService from '../services/blogs'
+import Cards from './Cards'
 
 const Blog = ({ blog, user, setRefreshedBlogs }) => {
   if(!blog) {
@@ -49,7 +50,7 @@ const Blog = ({ blog, user, setRefreshedBlogs }) => {
       <div>url: {blog.url}</div>
       <div>likes: {blog.likes}<button id='like' onClick={addLike}>like</button></div>
       <DeleteBlogBtn/>
-
+      <Cards blog={blog}/>
     </div>
   )
 }
