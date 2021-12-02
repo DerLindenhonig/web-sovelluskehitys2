@@ -3,6 +3,8 @@ import { Table } from 'react-bootstrap'
 import cardService from '../services/cards'
 import NewCardForm from './NewCardForm'
 import Card from './Card'
+import Togglable from './Togglable'
+import EditCardForm from './EditCardForm'
 
 const Cards = ({ blog, user }) => {
 
@@ -20,6 +22,19 @@ const Cards = ({ blog, user }) => {
         setAllCards(cards)
       )
   }, [])
+
+  const handleEditCard = (card, cardObject) => {
+    cardService
+      .update(card.id, cardObject)
+      .then(returnedCard => {
+        setAllCards(allCards.concat(returnedCard))
+        cards.push(returnedCard)
+      })
+    cardService.getAll()
+      .then(cards =>
+        setAllCards(cards)
+      )
+  }
 
   const handleAddCard = (cardObject) => {
     cardService.setToken(user.token)
@@ -75,6 +90,11 @@ const Cards = ({ blog, user }) => {
               </td>
               <td>
                 <Card card={card} user={user} blog={blog} setAllCards={setAllCards}/>
+              </td>
+              <td>
+                <Togglable buttonLabel='edit'>
+                  <EditCardForm editCard={handleEditCard} card={card}/>
+                </Togglable>
               </td>
             </tr>
           )}
