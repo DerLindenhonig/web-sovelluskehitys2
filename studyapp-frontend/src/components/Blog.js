@@ -1,8 +1,10 @@
 import React, {} from 'react'
 import blogService from '../services/blogs'
 import Cards from './Cards'
+import Togglable from './Togglable'
+import EditBlogForm from './EditBlogForm'
 
-const Blog = ({ blog, user, setRefreshedBlogs }) => {
+const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
   if(!blog) {
     return null
   }
@@ -25,6 +27,32 @@ const Blog = ({ blog, user, setRefreshedBlogs }) => {
       const allBlogs = await blogService.getAll()
       setRefreshedBlogs(allBlogs)
     }
+  }
+
+  /*const EditBlogBtn = () => {
+    if (blog.user.username === user.username) {
+      return <button id='edit' onClick={editBlog}>edit blog</button>
+    } else {
+      return null
+    }
+  }*/
+
+  /*const editBlog = async (event) => {
+    event.preventDefault()
+
+    await blogService.update(blog.id, blog)
+    const allBlogs = await blogService.getAll()
+    setRefreshedBlogs(allBlogs)
+  }*/
+
+  const handleEditBlog = (blogObject) => {
+    blogService
+      .update(blog.id, blogObject)
+      .then(returnedBlog => {
+        setBlogs(blogs.concat(returnedBlog))
+        const allBlogs = blogService.getAll()
+        setRefreshedBlogs(allBlogs)
+      })
   }
 
   const addLike = async event => {
@@ -50,6 +78,11 @@ const Blog = ({ blog, user, setRefreshedBlogs }) => {
       <div>url: {blog.url}</div>
       <div>likes: {blog.likes}<button id='like' onClick={addLike}>like</button></div>
       <DeleteBlogBtn/>
+
+      <Togglable buttonLabel='edit blog'>
+        <EditBlogForm editBlog={handleEditBlog}/>
+      </Togglable>
+
       <Cards blog={blog} user={user}/>
     </div>
   )

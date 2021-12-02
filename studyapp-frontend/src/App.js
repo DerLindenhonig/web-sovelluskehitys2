@@ -76,7 +76,7 @@ const App = () => {
         <Switch>
 
           <Route path='/blogs/:id' render={({ match }) =>
-            <Blog blog={blogId(match.params.id)} user={user} setRefreshedBlogs={setRefreshedBlogs}/>}
+            <Blog blog={blogId(match.params.id)} user={user} setRefreshedBlogs={setRefreshedBlogs} setBlogs={setBlogs} blogs={blogs}/>}
           />
           <Route path='/users'>
             {user ? <Users /> : <Redirect to="/login" />}
