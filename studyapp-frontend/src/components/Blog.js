@@ -17,6 +17,18 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
     }
   }
 
+  const EditBlogBtn = () => {
+    if (blog.user.username === user.username) {
+      return (
+        <Togglable buttonLabel='edit blog'>
+          <EditBlogForm editBlog={handleEditBlog} likes={blog.likes}/>
+        </Togglable>
+      )
+    } else {
+      return null
+    }
+  }
+
   const deleteBlog = async event => {
     event.preventDefault()
 
@@ -62,11 +74,7 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
       <div>url: {blog.url}</div>
       <div>likes: {blog.likes}<button id='like' onClick={addLike}>like</button></div>
       <DeleteBlogBtn/>
-
-      <Togglable buttonLabel='edit blog'>
-        <EditBlogForm editBlog={handleEditBlog} likes={blog.likes}/>
-      </Togglable>
-
+      <EditBlogBtn/>
       <Cards blog={blog} user={user}/>
     </div>
   )

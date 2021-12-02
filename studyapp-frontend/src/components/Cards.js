@@ -36,6 +36,28 @@ const Cards = ({ blog, user }) => {
       )
   }
 
+  const  CreateCardBtn = () => {
+    if (blog.user.username === user.username) {
+      return (
+        <NewCardForm createCard={handleAddCard} blogId={blog.id}/>
+      )
+    } else {
+      return null
+    }
+  }
+
+  const EditCardBtn = (card) => {
+    if (blog.user.username === user.username) {
+      return (
+        <Togglable buttonLabel='edit'>
+          <EditCardForm editCard={handleEditCard} card={card}/>
+        </Togglable>
+      )
+    } else {
+      return null
+    }
+  }
+
   const handleAddCard = (cardObject) => {
     cardService.setToken(user.token)
     try {
@@ -61,7 +83,7 @@ const Cards = ({ blog, user }) => {
 
   return (
     <div>
-      <NewCardForm createCard={handleAddCard} blogId={blog.id}/>
+      <CreateCardBtn/>
 
       <h2>Cards</h2>
       <Table striped>
@@ -89,12 +111,10 @@ const Cards = ({ blog, user }) => {
                 {card.examples}
               </td>
               <td>
-                <Card card={card} user={user} blog={blog} setAllCards={setAllCards}/>
+                <EditCardBtn card={card}/>
               </td>
               <td>
-                <Togglable buttonLabel='edit'>
-                  <EditCardForm editCard={handleEditCard} card={card}/>
-                </Togglable>
+                <Card card={card} user={user} blog={blog} setAllCards={setAllCards}/>
               </td>
             </tr>
           )}

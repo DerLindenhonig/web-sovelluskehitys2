@@ -33,7 +33,7 @@ const EditCardForm = ({ editCard, card }) => {
 
   return (
     <div>
-      <h2>Edit blog</h2>
+      <h3>edit card</h3>
       <form onSubmit={handleEditCard}>
         word: <input id='wordEdit' value={newWord} onChange={handleWordChange}/> <br></br>
         translate: <input id='translateEdit' value={newTranslate} onChange={handleTranslateChange}/> <br></br>
