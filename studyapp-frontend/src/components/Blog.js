@@ -29,22 +29,6 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
     }
   }
 
-  /*const EditBlogBtn = () => {
-    if (blog.user.username === user.username) {
-      return <button id='edit' onClick={editBlog}>edit blog</button>
-    } else {
-      return null
-    }
-  }*/
-
-  /*const editBlog = async (event) => {
-    event.preventDefault()
-
-    await blogService.update(blog.id, blog)
-    const allBlogs = await blogService.getAll()
-    setRefreshedBlogs(allBlogs)
-  }*/
-
   const handleEditBlog = (blogObject) => {
     blogService
       .update(blog.id, blogObject)
@@ -80,7 +64,7 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
       <DeleteBlogBtn/>
 
       <Togglable buttonLabel='edit blog'>
-        <EditBlogForm editBlog={handleEditBlog}/>
+        <EditBlogForm editBlog={handleEditBlog} likes={blog.likes}/>
       </Togglable>
 
       <Cards blog={blog} user={user}/>

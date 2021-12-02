@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const EditBlogForm = ({ editBlog }) => {
+const EditBlogForm = ({ editBlog, likes }) => {
   const [newTitle, setNewTitle] = useState('')
   const [newAuthor, setNewAuthor] = useState('')
   const [newUrl, setNewUrl] = useState('')
@@ -23,7 +23,8 @@ const EditBlogForm = ({ editBlog }) => {
     editBlog({
       title: newTitle,
       author: newAuthor,
-      url: newUrl
+      url: newUrl,
+      likes: likes
     })
 
     setNewTitle('')
