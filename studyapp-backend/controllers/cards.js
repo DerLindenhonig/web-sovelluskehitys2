@@ -54,12 +54,8 @@ cardsRouter.delete('/:id', async (request, response) => {
     return response.status(401).json({error: 'invalid token'})
   }
 
-  if (card.user.toString() !== decodedToken.id.toString()) {
-    response.status(401).end()
-  } else if (card.user.toString() === decodedToken.id.toString()) {
-    await card.remove()
-    response.status(204).end()
-  }
+  await card.remove()
+  response.status(204).end()
 })
 
 cardsRouter.put('/:id', async (request, response, next) => {

@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 
-const NewWordForm = ({ createCard, blogId }) => {
+const NewCardForm = ({ createCard, blogId }) => {
   const [newWord, setNewWord] = useState('')
   const [newTranslate, setNewTranslate] = useState('')
-  const [newExample, setNewExample] = useState('')
+  const [newExamples, setNewExamples] = useState('')
 
   const handleWordChange = (event) => {
     setNewWord(event.target.value)
@@ -14,7 +14,7 @@ const NewWordForm = ({ createCard, blogId }) => {
   }
 
   const handleExampleChange = (event) => {
-    setNewExample(event.target.value)
+    setNewExamples(event.target.value)
   }
 
   const handleAddWord = (event) => {
@@ -23,13 +23,13 @@ const NewWordForm = ({ createCard, blogId }) => {
     createCard({
       word: newWord,
       translate: newTranslate,
-      example: newExample,
+      examples: newExamples,
       blogId: blogId
     })
 
     setNewWord('')
     setNewTranslate('')
-    setNewExample('')
+    setNewExamples('')
   }
 
   return (
@@ -38,11 +38,11 @@ const NewWordForm = ({ createCard, blogId }) => {
       <form onSubmit={handleAddWord}>
         word: <input id='word' value={newWord} onChange={handleWordChange}/> <br></br>
         translate: <input id='translate' value={newTranslate} onChange={handleTranslateChange}/> <br></br>
-        example: <input id='example' value={newExample} onChange={handleExampleChange}/> <br></br>
+        example: <input id='example' value={newExamples} onChange={handleExampleChange}/> <br></br>
         <button type="submit">add</button>
       </form>
     </div>
   )
 }
 
-export default NewWordForm
+export default NewCardForm
