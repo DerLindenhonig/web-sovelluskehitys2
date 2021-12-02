@@ -5,7 +5,11 @@ import blogService from '../services/blogs'
 import { Table } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
-const Blogs = ({ blogs, setBlogs, setMessage }) => {
+const UserPage = ({ blogs, setBlogs, setMessage, user }) => {
+
+  if (blogs === undefined) {
+    return null
+  }
 
   const handleAddBlog = (blogObject) => {
     try {
@@ -28,8 +32,11 @@ const Blogs = ({ blogs, setBlogs, setMessage }) => {
     }
   }
 
-  if (blogs === undefined) {
-    return null
+  const myBlogs = []
+  for(let i = 0; i < blogs.length; i++) {
+    if(user.username === blogs[i].user.username) {
+      myBlogs.push(blogs[i])
+    }
   }
 
   return (
@@ -39,10 +46,10 @@ const Blogs = ({ blogs, setBlogs, setMessage }) => {
         <NewBlogForm createBlog={handleAddBlog}/>
       </Togglable>
 
-      <h2>All blogs</h2>
+      <h2>My blogs</h2>
       <Table striped>
         <tbody>
-          {blogs.sort((a, b) => b.likes - a.likes).map(blog =>
+          {myBlogs.sort((a, b) => b.likes - a.likes).map(blog =>
             <tr key={blog.id}>
               <td>
                 <Link to={`/blogs/${blog.id}`}>{blog.title}</Link>
@@ -58,4 +65,4 @@ const Blogs = ({ blogs, setBlogs, setMessage }) => {
   )
 }
 
-export default Blogs
+export default UserPage

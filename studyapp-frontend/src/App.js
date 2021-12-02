@@ -12,6 +12,7 @@ import {
   Redirect,
 } from 'react-router-dom'
 import Users from './components/Users'
+import UserPage from './components/UserPage'
 import Blog from './components/Blog'
 import RegistrationForm from './components/RegistrationForm'
 
@@ -74,7 +75,6 @@ const App = () => {
 
       <div>
         <Switch>
-
           <Route path='/blogs/:id' render={({ match }) =>
             <Blog blog={blogId(match.params.id)} user={user} setRefreshedBlogs={setRefreshedBlogs} setBlogs={setBlogs} blogs={blogs}/>}
           />
@@ -99,8 +99,16 @@ const App = () => {
               setUsername={setUsername}
               setMessage={setMessage}/> : <Redirect to="/" />}
           </Route>
-          <Route path='/'>
+          <Route path='/blogs'>
             {user ? <Blogs
+              user={user}
+              blogs={blogs}
+              setRefreshedBlogs={setRefreshedBlogs}
+              setBlogs={setBlogs}
+              setMessage={setMessage}/> : <Redirect to="/login" />}
+          </Route>
+          <Route path='/'>
+            {user ? <UserPage
               user={user}
               blogs={blogs}
               setRefreshedBlogs={setRefreshedBlogs}
