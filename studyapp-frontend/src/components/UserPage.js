@@ -61,6 +61,8 @@ const UserPage = ({ blogs, setBlogs, setMessage, user }) => {
           )}
         </tbody>
       </Table>
+
+      <h2>Liked blogs</h2>
     </div>
   )
 }

@@ -1,6 +1,7 @@
 const bcrypt = require('bcryptjs')
 const usersRouter = require('express').Router()
 const User = require('../models/user')
+const Blog = require("mongoose");
 
 usersRouter.get('/', async (request, response, next) => {
     const users = await User
@@ -37,6 +38,22 @@ usersRouter.post('/', async (request, response, next) => {
         response.json(savedUser)
 
     } catch (error) {next(error)}
+})
+
+usersRouter.put('/:id', async (request, response, next) => {
+    const body = request.body
+
+    const editedUser = {
+        username: body.username,
+        name: body.name,
+        likedBlogs: body.likedBlogs
+    }
+
+    try {
+        const user = await User.findByIdAndUpdate(request.params.id, editedUser, {new: true})
+        response.json(user)
+
+    } catch (error) { next(error) }
 })
 
 module.exports = usersRouter

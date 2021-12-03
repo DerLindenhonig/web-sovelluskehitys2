@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import blogService from './services/blogs'
+import userService from './services/users'
 import cardService from './services/cards'
 import Notification from './components/Notification'
 import LoginForm from './components/LoginForm'
@@ -15,9 +16,11 @@ import Users from './components/Users'
 import UserPage from './components/UserPage'
 import Blog from './components/Blog'
 import RegistrationForm from './components/RegistrationForm'
+import User from './components/User'
 
 const App = () => {
   const [blogs, setBlogs] = useState([])
+  const [users, setUsers] = useState([])
   const [user, setUser] = useState(null)
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -27,6 +30,9 @@ const App = () => {
   useEffect(() => {
     blogService.getAll().then(blogs =>
       setBlogs(blogs)
+    )
+    userService.getAll().then(users =>
+      setUsers(users)
     )
   }, [refreshBlogs])
 
@@ -58,6 +64,7 @@ const App = () => {
   }
 
   const blogId = (id) => blogs.find(blog => blog.id === id)
+  const userId = (id) => users.find(user => user.id === id)
 
   return (
     <Router>
@@ -77,6 +84,9 @@ const App = () => {
         <Switch>
           <Route path='/blogs/:id' render={({ match }) =>
             <Blog blog={blogId(match.params.id)} user={user} setRefreshedBlogs={setRefreshedBlogs} setBlogs={setBlogs} blogs={blogs}/>}
+          />
+          <Route path='/users/:id' render={({ match }) =>
+            <User user={userId(match.params.id)} blogs={blogs}/>}
           />
           <Route path='/users'>
             {user ? <Users /> : <Redirect to="/login" />}

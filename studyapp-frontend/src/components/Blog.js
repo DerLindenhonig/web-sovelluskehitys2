@@ -1,4 +1,4 @@
-import React, {} from 'react'
+import React, { useState } from 'react'
 import blogService from '../services/blogs'
 import Cards from './Cards'
 import Togglable from './Togglable'
@@ -8,6 +8,8 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
   if(!blog) {
     return null
   }
+
+  const [like, setLike] = useState(false)
 
   const DeleteBlogBtn = () => {
     if (blog.user.username === user.username) {
@@ -53,6 +55,7 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
 
   const addLike = async event => {
     event.preventDefault()
+    setLike(true)
 
     const newBlog = {
       likes: blog.likes + 1,
@@ -66,13 +69,37 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
     setRefreshedBlogs(allBlogs)
   }
 
+  const removeLike = async event => {
+    event.preventDefault()
+    setLike(false)
+
+    const newBlog = {
+      likes: blog.likes - 1,
+      title: blog.title,
+      author: blog.author,
+      url: blog.url,
+      user: blog.user
+    }
+    await blogService.update(blog.id, newBlog)
+    const allBlogs = await blogService.getAll()
+    setRefreshedBlogs(allBlogs)
+  }
+
+  const Liking = () => {
+    if(like === false) {
+      return <button id='like' onClick={addLike}>like</button>
+    } else {
+      return <button id='like' onClick={removeLike}>like</button>
+    }
+  }
+
   return (
     <div>
       <h1>Blog</h1>
       <div>title: {blog.title}</div>
       <div>author: {blog.author}</div>
       <div>url: {blog.url}</div>
-      <div>likes: {blog.likes}<button id='like' onClick={addLike}>like</button></div>
+      <div>likes: {blog.likes}<Liking/></div>
       <DeleteBlogBtn/>
       <EditBlogBtn/>
       <Cards blog={blog} user={user}/>
