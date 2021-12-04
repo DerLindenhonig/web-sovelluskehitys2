@@ -17,6 +17,7 @@ import UserPage from './components/UserPage'
 import Blog from './components/Blog'
 import RegistrationForm from './components/RegistrationForm'
 import User from './components/User'
+import Games from './components/Games'
 
 const App = () => {
   const [blogs, setBlogs] = useState([])
@@ -72,6 +73,7 @@ const App = () => {
         <Link style={padding} to="/">home</Link>
         <Link style={padding} to="/blogs">blogs</Link>
         <Link style={padding} to="/users">users</Link>
+        <Link style={padding} to="/games">games</Link>
         {user === null
           ? <Link style={padding} to="/login">login</Link>
           : <em>{user.name} logged in <button onClick={handleLogout}>logout</button></em>
@@ -82,6 +84,9 @@ const App = () => {
 
       <div>
         <Switch>
+          <Route path='/games'>
+            {user ? <Games blogs={blogs}/> : <Redirect to="/login" />}
+          </Route>
           <Route path='/blogs/:id' render={({ match }) =>
             <Blog blog={blogId(match.params.id)} user={user} setRefreshedBlogs={setRefreshedBlogs} setBlogs={setBlogs} blogs={blogs}/>}
           />

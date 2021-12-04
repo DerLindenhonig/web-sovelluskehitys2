@@ -1,7 +1,7 @@
 const bcrypt = require('bcryptjs')
 const usersRouter = require('express').Router()
 const User = require('../models/user')
-const Blog = require("mongoose");
+const Blog = require('../models/blog')
 
 usersRouter.get('/', async (request, response, next) => {
     const users = await User
@@ -43,10 +43,17 @@ usersRouter.post('/', async (request, response, next) => {
 usersRouter.put('/:id', async (request, response, next) => {
     const body = request.body
 
+    const blog = await Blog.findById(body.blogId)
+    if (blog === null) {
+        return response
+          .status(404)
+          .send(`blog with id ${blogId} is not exist`)
+    }
+
     const editedUser = {
         username: body.username,
         name: body.name,
-        likedBlogs: body.likedBlogs
+        likedBlogs: blog._id
     }
 
     try {

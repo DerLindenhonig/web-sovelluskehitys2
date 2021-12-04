@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import blogService from '../services/blogs'
+//import userService from '../services/users'
 import Cards from './Cards'
 import Togglable from './Togglable'
 import EditBlogForm from './EditBlogForm'
@@ -67,6 +68,14 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
     await blogService.update(blog.id, newBlog)
     const allBlogs = await blogService.getAll()
     setRefreshedBlogs(allBlogs)
+
+    /*const newUser = {
+      name: user.name,
+      username: user.username,
+      likedBlogs: newBlog.id,
+    }
+
+    await userService.update(user.id, newUser)*/
   }
 
   const removeLike = async event => {
@@ -86,10 +95,17 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
   }
 
   const Liking = () => {
+    for(let i = 0; i < user.likedBlogs; i++) {
+      if(user.likedBlogs[i] === blog.id) {
+        setLike(true)
+      } else {
+        setLike(false)
+      }
+    }
     if(like === false) {
       return <button id='like' onClick={addLike}>like</button>
     } else {
-      return <button id='like' onClick={removeLike}>like</button>
+      return <button id='like' onClick={removeLike}>remove like</button>
     }
   }
 
