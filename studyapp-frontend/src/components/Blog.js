@@ -4,6 +4,10 @@ import blogService from '../services/blogs'
 import Cards from './Cards'
 import Togglable from './Togglable'
 import EditBlogForm from './EditBlogForm'
+import { Link } from 'react-router-dom'
+//import Games from "./Games";
+//import Games from "./Games";
+//import {Link} from "react-router-dom";
 
 const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
   if(!blog) {
@@ -109,6 +113,14 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
     }
   }
 
+  const Game = () => {
+    return (
+      <div>
+        <Link to={`/games/${blog.id}`}><button>start game</button></Link>
+      </div>
+    )
+  }
+
   return (
     <div>
       <h1>Blog</h1>
@@ -119,6 +131,7 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
       <DeleteBlogBtn/>
       <EditBlogBtn/>
       <Cards blog={blog} user={user}/>
+      <Game/>
     </div>
   )
 }

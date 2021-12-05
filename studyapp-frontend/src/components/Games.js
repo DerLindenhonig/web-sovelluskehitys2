@@ -1,14 +1,9 @@
 import React from 'react'
 
-const Games = ({ blogs }) => {
+const Games = ({ blog }) => {
 
   const startQuizGame = () => {
-
-    const blogId = () => {
-      blogs.find(blog => blog.id === '61922316b432f095fc45bfb3')
-    }
-
-    console.log(blogId)
+    console.log(blog)
   }
 
   const quizGameAnswer = () => {

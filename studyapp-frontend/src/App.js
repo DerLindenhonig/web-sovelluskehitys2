@@ -84,9 +84,9 @@ const App = () => {
 
       <div>
         <Switch>
-          <Route path='/games'>
-            {user ? <Games blogs={blogs}/> : <Redirect to="/login" />}
-          </Route>
+          <Route path='/games/:id' render={({ match }) =>
+            <Games blog={blogId(match.params.id)}/>}
+          />
           <Route path='/blogs/:id' render={({ match }) =>
             <Blog blog={blogId(match.params.id)} user={user} setRefreshedBlogs={setRefreshedBlogs} setBlogs={setBlogs} blogs={blogs}/>}
           />
