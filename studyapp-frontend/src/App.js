@@ -1,17 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, {useEffect, useState} from 'react'
 import blogService from './services/blogs'
 import userService from './services/users'
 import cardService from './services/cards'
 import Notification from './components/Notification'
 import LoginForm from './components/LoginForm'
 import Blogs from './components/Blogs'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect,
-} from 'react-router-dom'
+import {BrowserRouter as Router, Link, Redirect, Route, Switch,} from 'react-router-dom'
 import Users from './components/Users'
 import UserPage from './components/UserPage'
 import Blog from './components/Blog'
@@ -73,7 +67,6 @@ const App = () => {
         <Link style={padding} to="/">home</Link>
         <Link style={padding} to="/blogs">blogs</Link>
         <Link style={padding} to="/users">users</Link>
-        <Link style={padding} to="/games">games</Link>
         {user === null
           ? <Link style={padding} to="/login">login</Link>
           : <em>{user.name} logged in <button onClick={handleLogout}>logout</button></em>

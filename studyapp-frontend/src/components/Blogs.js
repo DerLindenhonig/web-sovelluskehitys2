@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import Togglable from './Togglable'
 import NewBlogForm from './NewBlogForm'
 import blogService from '../services/blogs'
-import { Table } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import {Table} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 import Filter from './Filter'
-//import Blog from './Blog'
 
 const Blogs = ({ blogs, setBlogs, setMessage }) => {
 

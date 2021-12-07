@@ -64,7 +64,8 @@ cardsRouter.put('/:id', async (request, response, next) => {
   const editedCard = {
     word: body.word,
     translate: body.translate,
-    examples: body.examples
+    examples: body.examples,
+    progress: body.progress
   }
 
   try {

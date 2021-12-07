@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import { Table } from 'react-bootstrap'
+import React, {useEffect, useState} from 'react'
+import {Table} from 'react-bootstrap'
 import cardService from '../services/cards'
 import NewCardForm from './NewCardForm'
 import Card from './Card'
-import Togglable from './Togglable'
-import EditCardForm from './EditCardForm'
+//import Togglable from './Togglable'
+//import EditCardForm from './EditCardForm'
+import EditCard from './EditCard'
 
 const Cards = ({ blog, user }) => {
 
@@ -23,6 +24,29 @@ const Cards = ({ blog, user }) => {
       )
   }, [])
 
+  const  CreateCardBtn = () => {
+    if (blog.user.username === user.username) {
+      return (
+        <NewCardForm createCard={handleAddCard} blogId={blog.id}/>
+      )
+    } else {
+      return null
+    }
+  }
+
+  /*const EditCardBtn = (card) => {
+    console.log('card id: ' + card.id)
+    if (blog.user.username === user.username) {
+      return (
+        <Togglable buttonLabel='edit'>
+          <EditCardForm editCard={handleEditCard} card={card}/>
+        </Togglable>
+      )
+    } else {
+      return null
+    }
+  }
+
   const handleEditCard = (card, cardObject) => {
     cardService
       .update(card.id, cardObject)
@@ -34,29 +58,7 @@ const Cards = ({ blog, user }) => {
       .then(cards =>
         setAllCards(cards)
       )
-  }
-
-  const  CreateCardBtn = () => {
-    if (blog.user.username === user.username) {
-      return (
-        <NewCardForm createCard={handleAddCard} blogId={blog.id}/>
-      )
-    } else {
-      return null
-    }
-  }
-
-  const EditCardBtn = (card) => {
-    if (blog.user.username === user.username) {
-      return (
-        <Togglable buttonLabel='edit'>
-          <EditCardForm editCard={handleEditCard} card={card}/>
-        </Togglable>
-      )
-    } else {
-      return null
-    }
-  }
+  }*/
 
   const handleAddCard = (cardObject) => {
     cardService.setToken(user.token)
@@ -98,6 +100,9 @@ const Cards = ({ blog, user }) => {
             <td>
               <h3>example</h3>
             </td>
+            <td>
+              <h3>progress</h3>
+            </td>
           </tr>
           {cards.map(card =>
             <tr key={card.id}>
@@ -111,7 +116,10 @@ const Cards = ({ blog, user }) => {
                 {card.examples}
               </td>
               <td>
-                <EditCardBtn card={card}/>
+                {card.progress} %
+              </td>
+              <td>
+                <EditCard card={card} user={user} setAllCards={setAllCards} allCards={allCards} blog={blog} cards={cards}/>
               </td>
               <td>
                 <Card card={card} user={user} blog={blog} setAllCards={setAllCards}/>

@@ -4,6 +4,7 @@ const cardSchema = new mongoose.Schema({
   word: String,
   translate: String,
   examples: String,
+  progress: Number,
   blog: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Blog'
