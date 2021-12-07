@@ -34,6 +34,7 @@ cardsRouter.post('/', async (request, response, next) => {
       word: body.word,
       translate: body.translate,
       examples: body.examples,
+      progress: body.progress || 0,
       blog: blog._id
     })
 

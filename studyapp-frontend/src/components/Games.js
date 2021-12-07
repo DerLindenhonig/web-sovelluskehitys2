@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import cardService from '../services/cards'
 import Togglable from './Togglable'
 
@@ -20,6 +20,7 @@ const Games = ({ blog }) => {
   let [answer2Id, setAnswer2Id] = useState('')
   let [answer3Id, setAnswer3Id] = useState('')
   let [answer4Id, setAnswer4Id] = useState('')
+  let [questionId, setQuestionId] = useState('')
   let [card, setCard] = useState(null)
 
   useEffect(() => {
@@ -83,8 +84,17 @@ const Games = ({ blog }) => {
       }
       cardService.update(answer1Id, newObject)
 
+
     } else {
-      console.log('WRONG!' + randQ1)
+      console.log('WRONG!')
+      console.log('answer1Id ' + answer1Id)
+      const newObject = {
+        word: card.word,
+        translate: card.translate,
+        examples: card.examples,
+        progress: card.progress - 1
+      }
+      cardService.update(questionId, newObject)
     }
     changeAnswers()
   }
@@ -105,6 +115,14 @@ const Games = ({ blog }) => {
 
     } else {
       console.log('WRONG!' + randQ1)
+      console.log('answer2Id ' + answer2Id)
+      const newObject = {
+        word: card.word,
+        translate: card.translate,
+        examples: card.examples,
+        progress: card.progress - 1
+      }
+      cardService.update(questionId, newObject)
     }
     changeAnswers()
   }
@@ -125,6 +143,13 @@ const Games = ({ blog }) => {
 
     } else {
       console.log('WRONG!' + randQ1)
+      const newObject = {
+        word: card.word,
+        translate: card.translate,
+        examples: card.examples,
+        progress: card.progress - 1
+      }
+      cardService.update(questionId, newObject)
     }
     changeAnswers()
   }
@@ -145,6 +170,13 @@ const Games = ({ blog }) => {
 
     } else {
       console.log('WRONG!' + randQ1)
+      const newObject = {
+        word: card.word,
+        translate: card.translate,
+        examples: card.examples,
+        progress: card.progress - 1
+      }
+      cardService.update(questionId, newObject)
     }
     changeAnswers()
   }
@@ -197,6 +229,7 @@ const Games = ({ blog }) => {
     setAnswer2Id(arrayOfAnswers[1].id)
     setAnswer3Id(arrayOfAnswers[2].id)
     setAnswer4Id(arrayOfAnswers[3].id)
+    setQuestionId(randQuestion.id)
   }
 
   return (
