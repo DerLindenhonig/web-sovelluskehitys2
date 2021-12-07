@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 
 const EditCardForm = ({ editCard, card }) => {
   const [newWord, setNewWord] = useState('')
@@ -23,7 +23,8 @@ const EditCardForm = ({ editCard, card }) => {
     editCard(card,{
       word: newWord,
       translate: newTranslate,
-      examples: newExamples
+      examples: newExamples,
+      progress: card.progress
     })
 
     setNewWord('')
