@@ -42,18 +42,24 @@ const Games = ({ blog }) => {
 
   const Quiz = () => {
     console.log('randQ / Quiz ' + randQ1)
-    return (
-      <div>
-        <div>right answers: {record}</div>
-        <h2 id='question'>{guestionText}</h2>
-        <button id='answer1' onClick={FirstAnswerSelected}>{answer1Text}</button>
-        <button id='answer2' onClick={SecondAnswerSelected}>{answer2Text}</button>
-        <button id='answer3' onClick={ThirdAnswerSelected}>{answer3Text}</button>
-        <button id='answer4' onClick={FourthAnswerSelected}>{answer4Text}</button>
-        <br/>
-        <button id='next' onClick={changeAnswers}>next</button>
-      </div>
-    )
+    if(blog.cards.length > 3) {
+      return (
+        <div>
+          <div>right answers: {record}</div>
+          <h2 id='question'>{guestionText}</h2>
+          <button id='answer1' onClick={FirstAnswerSelected}>{answer1Text}</button>
+          <button id='answer2' onClick={SecondAnswerSelected}>{answer2Text}</button>
+          <button id='answer3' onClick={ThirdAnswerSelected}>{answer3Text}</button>
+          <button id='answer4' onClick={FourthAnswerSelected}>{answer4Text}</button>
+          <br/>
+          <button id='next' onClick={changeAnswers}>next</button>
+        </div>
+      )
+    } else {
+      return (
+        <div>Need at least 4 cards to play!</div>
+      )
+    }
   }
 
   const FirstAnswerSelected = () => {
