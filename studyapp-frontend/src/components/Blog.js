@@ -123,14 +123,17 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
 
   return (
     <div>
-      <h1>Blog</h1>
-      <div>title: {blog.title}</div>
-      <div>author: {blog.author}</div>
-      <div>url: {blog.url}</div>
+      <br/>
+      <h2>{blog.title}</h2>
+      <br/>
+      <div>creator: {blog.author}</div>
+      <div>description: {blog.url}</div>
       <div>likes: {blog.likes}<Liking/></div>
-      <DeleteBlogBtn/>
       <EditBlogBtn/>
+      <DeleteBlogBtn/>
+      <br/>
       <Cards blog={blog} user={user}/>
+      <br/>
       <Game/>
     </div>
   )

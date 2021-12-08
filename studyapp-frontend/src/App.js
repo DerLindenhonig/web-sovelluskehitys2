@@ -75,7 +75,7 @@ const App = () => {
 
       <div><Notification message={message}/></div>
 
-      <div>
+      <div className="container">
         <Switch>
           <Route path='/games/:id' render={({ match }) =>
             <Games blog={blogId(match.params.id)}/>}

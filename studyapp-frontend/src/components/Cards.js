@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react'
-import {Table} from 'react-bootstrap'
+import React, { useEffect, useState } from 'react'
+import { Table } from 'react-bootstrap'
 import cardService from '../services/cards'
 import NewCardForm from './NewCardForm'
 import Card from './Card'
@@ -85,23 +85,31 @@ const Cards = ({ blog, user }) => {
 
   return (
     <div>
+      <br/>
       <CreateCardBtn/>
-
-      <h2>Cards</h2>
+      <br/>
+      <h3>Cards</h3>
+      <br/>
       <Table striped>
         <tbody>
           <tr>
             <td>
-              <h3>word</h3>
+              <h4>word</h4>
             </td>
             <td>
-              <h3>translate</h3>
+              <h4>translate</h4>
             </td>
             <td>
-              <h3>example</h3>
+              <h4>example</h4>
             </td>
             <td>
-              <h3>progress</h3>
+              <h4>progress</h4>
+            </td>
+            <td>
+              <h4></h4>
+            </td>
+            <td>
+              <h4></h4>
             </td>
           </tr>
           {cards.map(card =>

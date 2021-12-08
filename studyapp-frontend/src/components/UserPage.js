@@ -41,12 +41,13 @@ const UserPage = ({ blogs, setBlogs, setMessage, user }) => {
 
   return (
     <div>
-      <h2>Add new</h2>
-      <Togglable buttonLabel='create new blog'>
+      <br/>
+      <h3>Add new</h3>
+      <Togglable buttonLabel='create new wordlist'>
         <NewBlogForm createBlog={handleAddBlog}/>
       </Togglable>
-
-      <h2>My blogs</h2>
+      <br/>
+      <h3>My wordlists</h3>
       <Table striped>
         <tbody>
           {myBlogs.sort((a, b) => b.likes - a.likes).map(blog =>
@@ -62,7 +63,7 @@ const UserPage = ({ blogs, setBlogs, setMessage, user }) => {
         </tbody>
       </Table>
 
-      <h2>Liked blogs</h2>
+      <h3>Liked blogs</h3>
     </div>
   )
 }

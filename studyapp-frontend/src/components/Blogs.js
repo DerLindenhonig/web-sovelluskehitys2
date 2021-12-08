@@ -1,9 +1,9 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Togglable from './Togglable'
 import NewBlogForm from './NewBlogForm'
 import blogService from '../services/blogs'
-import {Table} from 'react-bootstrap'
-import {Link} from 'react-router-dom'
+import { Table } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import Filter from './Filter'
 
 const Blogs = ({ blogs, setBlogs, setMessage }) => {
@@ -57,13 +57,18 @@ const Blogs = ({ blogs, setBlogs, setMessage }) => {
 
   return (
     <div>
-      <h2>Add new</h2>
-      <Togglable buttonLabel='create new blog'>
+      <br/>
+      <h3>Add new</h3>
+      <Togglable buttonLabel='create new wordlist'>
         <NewBlogForm createBlog={handleAddBlog}/>
       </Togglable>
-      <h2>All blogs</h2>
+      <br/>
+      <h3>All wordlists</h3>
+      <br/>
       <Filter filter={filter} onInputChange={handleInputChange}/>
+      <br/>
       <FilterBlogs/>
+      <br/>
     </div>
   )
 }

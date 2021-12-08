@@ -16,10 +16,6 @@ const Games = ({ blog }) => {
   let [answer3Text, setAnswer3Text] = useState('answer 3')
   let [answer4Text, setAnswer4Text] = useState('answer 4')
   let [randQ1, setRandQ1] = useState(null)
-  let [answer1Id, setAnswer1Id] = useState('')
-  let [answer2Id, setAnswer2Id] = useState('')
-  let [answer3Id, setAnswer3Id] = useState('')
-  let [answer4Id, setAnswer4Id] = useState('')
   let [questionId, setQuestionId] = useState('')
   let [card, setCard] = useState(null)
 
@@ -73,7 +69,6 @@ const Games = ({ blog }) => {
       console.log('RIGHT!')
       record++
       setRecord(record)
-      console.log('answer1Id ' + answer1Id)
       console.log('card ' + card)
 
       const newObject = {
@@ -82,12 +77,11 @@ const Games = ({ blog }) => {
         examples: card.examples,
         progress: card.progress + 1
       }
-      cardService.update(answer1Id, newObject)
+      cardService.update(questionId, newObject)
 
 
     } else {
       console.log('WRONG!')
-      console.log('answer1Id ' + answer1Id)
       const newObject = {
         word: card.word,
         translate: card.translate,
@@ -111,11 +105,10 @@ const Games = ({ blog }) => {
         examples: card.examples,
         progress: card.progress + 1
       }
-      cardService.update(answer2Id, newObject)
+      cardService.update(questionId, newObject)
 
     } else {
       console.log('WRONG!' + randQ1)
-      console.log('answer2Id ' + answer2Id)
       const newObject = {
         word: card.word,
         translate: card.translate,
@@ -139,7 +132,7 @@ const Games = ({ blog }) => {
         examples: card.examples,
         progress: card.progress + 1
       }
-      cardService.update(answer3Id, newObject)
+      cardService.update(questionId, newObject)
 
     } else {
       console.log('WRONG!' + randQ1)
@@ -166,7 +159,7 @@ const Games = ({ blog }) => {
         examples: card.examples,
         progress: card.progress + 1
       }
-      cardService.update(answer4Id, newObject)
+      cardService.update(questionId, newObject)
 
     } else {
       console.log('WRONG!' + randQ1)
@@ -225,10 +218,6 @@ const Games = ({ blog }) => {
     setAnswer3Text(answer3)
     setAnswer4Text(answer4)
 
-    setAnswer1Id(arrayOfAnswers[0].id)
-    setAnswer2Id(arrayOfAnswers[1].id)
-    setAnswer3Id(arrayOfAnswers[2].id)
-    setAnswer4Id(arrayOfAnswers[3].id)
     setQuestionId(randQuestion.id)
   }
 

@@ -18,15 +18,17 @@ const Users = () => {
 
   return (
     <div>
-      <h2>Users</h2>
+      <br/>
+      <h3>Users</h3>
+      <br/>
       <Table striped>
         <tbody>
           <tr>
             <td>
-              <h3>name</h3>
+              <h4>name</h4>
             </td>
             <td>
-              <h3>blogs</h3>
+              <h4>wordlists</h4>
             </td>
           </tr>
           {users.map(user =>
