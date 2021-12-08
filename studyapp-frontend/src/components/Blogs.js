@@ -43,13 +43,16 @@ const Blogs = ({ blogs, setBlogs, setMessage }) => {
     return (
       <Table striped>
         <tbody>
-          {blogs.sort((a, b) => b.likes - a.likes).filter(blog => blog.title?.toLowerCase().includes(filter.toLowerCase())).map(filteredBlogs => (
-            <tr key={filteredBlogs.title}>
-              <td>
-                <Link to={`/blogs/${filteredBlogs.id}`}>{filteredBlogs.title}</Link>
-              </td>
-            </tr>
-          ))}
+          {blogs
+            .sort((a, b) => b.likes - a.likes)
+            .filter(blog => blog.title?.toLowerCase().includes(filter.toLowerCase()))
+            .map(filteredBlogs => (
+              <tr key={filteredBlogs.title}>
+                <td>
+                  <Link to={`/blogs/${filteredBlogs.id}`}>{filteredBlogs.title}</Link>
+                </td>
+              </tr>
+            ))}
         </tbody>
       </Table>
     )

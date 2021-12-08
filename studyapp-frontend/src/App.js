@@ -12,6 +12,7 @@ import Blog from './components/Blog'
 import RegistrationForm from './components/RegistrationForm'
 import User from './components/User'
 import Games from './components/Games'
+import { Button, Navbar } from 'react-bootstrap'
 
 const App = () => {
   const [blogs, setBlogs] = useState([])
@@ -63,15 +64,15 @@ const App = () => {
 
   return (
     <Router>
-      <div>
+      <Navbar bg="light" variant="light">
         <Link style={padding} to="/">home</Link>
         <Link style={padding} to="/blogs">blogs</Link>
         <Link style={padding} to="/users">users</Link>
         {user === null
           ? <Link style={padding} to="/login">login</Link>
-          : <em>{user.name} logged in <button onClick={handleLogout}>logout</button></em>
+          : <em>{user.name} logged in <Button size="sm" variant="outline-dark" onClick={handleLogout}>logout</Button></em>
         }
-      </div>
+      </Navbar>
 
       <div><Notification message={message}/></div>
 
