@@ -10,10 +10,10 @@ const blogSchema = new mongoose.Schema({
         ref: 'User'
     },
     cards: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Card'
-        }
+      {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: 'Card'
+      }
     ],
 })
 

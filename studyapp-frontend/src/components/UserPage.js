@@ -80,8 +80,6 @@ const UserPage = ({ blogs, setBlogs, setMessage, user }) => {
       <br/>
       <h3>My wordlists</h3>
       <FilterBlogs/>
-
-      <h3>Liked blogs</h3>
     </div>
   )
 }

@@ -1,13 +1,9 @@
 import React, { useState } from 'react'
 import blogService from '../services/blogs'
-//import userService from '../services/users'
 import Cards from './Cards'
 import Togglable from './Togglable'
 import EditBlogForm from './EditBlogForm'
 import { Link } from 'react-router-dom'
-//import Games from "./Games";
-//import Games from "./Games";
-//import {Link} from "react-router-dom";
 
 const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
   if(!blog) {
@@ -56,6 +52,31 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
         const allBlogs = blogService.getAll()
         setRefreshedBlogs(allBlogs)
       })
+  }
+
+  const AddToMyListBtn = () => {
+    if (blog.user.username !== user.username) {
+      return (
+        <button onClick={AddToMyList}>add to my collection</button>
+      )
+    } else {
+      return null
+    }
+  }
+
+  const AddToMyList = async event => {
+    event.preventDefault()
+
+    const newBlog = {
+      likes: 0,
+      title: blog.title,
+      author: blog.author,
+      url: blog.url,
+      user: user
+    }
+    await blogService.create(newBlog)
+    const allBlogs = await blogService.getAll()
+    setRefreshedBlogs(allBlogs)
   }
 
   const addLike = async event => {
@@ -131,6 +152,7 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
       <div>likes: {blog.likes}<Liking/></div>
       <EditBlogBtn/>
       <DeleteBlogBtn/>
+      <AddToMyListBtn/>
       <br/>
       <Cards blog={blog} user={user}/>
       <br/>
