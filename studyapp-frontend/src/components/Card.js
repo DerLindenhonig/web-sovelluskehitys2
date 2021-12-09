@@ -1,5 +1,6 @@
 import React from 'react'
 import cardService from '../services/cards'
+//import blogService from "../services/blogs";
 
 const Card = ({ user, card, blog, setAllCards }) => {
 
@@ -20,5 +21,4 @@ const Card = ({ user, card, blog, setAllCards }) => {
     return null
   }
 }
-
 export default Card

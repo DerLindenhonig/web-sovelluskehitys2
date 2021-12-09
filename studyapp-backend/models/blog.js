@@ -9,8 +9,7 @@ const blogSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
-    cards: [
-      {
+    cards: [{
           type: mongoose.Schema.Types.ObjectId,
           ref: 'Card'
       }

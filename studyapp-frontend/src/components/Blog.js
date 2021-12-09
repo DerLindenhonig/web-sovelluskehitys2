@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import blogService from '../services/blogs'
+//import cardService from '../services/cards'
 import Cards from './Cards'
 import Togglable from './Togglable'
 import EditBlogForm from './EditBlogForm'
@@ -11,6 +12,7 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
   }
 
   const [like, setLike] = useState(false)
+  //const [copyCards, setCopyCards] = useState(false)
 
   const DeleteBlogBtn = () => {
     if (blog.user.username === user.username) {
@@ -54,30 +56,62 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
       })
   }
 
-  const AddToMyListBtn = () => {
+  /*const AddToMyListBtn = () => {
     if (blog.user.username !== user.username) {
+      //setCopyCards(true)
       return (
         <button onClick={AddToMyList}>add to my collection</button>
       )
     } else {
       return null
     }
-  }
+  }*/
 
-  const AddToMyList = async event => {
+  /*const CopyCards = async event => {
     event.preventDefault()
+
+    for(let i = 0; i < blog.cards.length; i++) {
+      const newCard = {
+        word: blog.cards[i].word,
+        translate: blog.cards[i].translate,
+        examples: blog.cards[i].examples,
+        progress: 0
+      }
+
+      await cardService.create(newCard)
+      //const allCards = await cardService.getAll()
+      //setRefreshedBlogs(allCards)
+    }
+  }*/
+
+  /*const AddToMyList = async event => {
+    event.preventDefault()
+
+    console.log('blog.cards: ' + blog.cards)
 
     const newBlog = {
       likes: 0,
       title: blog.title,
       author: blog.author,
       url: blog.url,
-      user: user
+      cards: blog.cards,
+      user: user,
     }
     await blogService.create(newBlog)
     const allBlogs = await blogService.getAll()
     setRefreshedBlogs(allBlogs)
-  }
+
+    /*
+    for(let i = 0; i < blog.cards.length; i++) {
+      console.log('blog.card: ' + blog.cards[i].word)
+      const newCard = {
+        word: blog.cards[i].word,
+        translate: blog.cards[i].translate,
+        examples: blog.cards[i].examples,
+      }
+      await cardService.create(newCard)
+    }*/
+  //}*/
 
   const addLike = async event => {
     event.preventDefault()
@@ -112,7 +146,7 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
       title: blog.title,
       author: blog.author,
       url: blog.url,
-      user: blog.user
+      user: blog.user,
     }
     await blogService.update(blog.id, newBlog)
     const allBlogs = await blogService.getAll()
@@ -152,9 +186,8 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
       <div>likes: {blog.likes}<Liking/></div>
       <EditBlogBtn/>
       <DeleteBlogBtn/>
-      <AddToMyListBtn/>
       <br/>
-      <Cards blog={blog} user={user}/>
+      <Cards blog={blog} user={user} setRefreshedBlogs={setRefreshedBlogs} blogs={blogs}/>
       <br/>
       <Game/>
     </div>

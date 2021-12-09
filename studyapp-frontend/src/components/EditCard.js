@@ -31,7 +31,6 @@ const EditCard = ({ user, card, blog, setAllCards, cards, allCards }) => {
       )
   }
 
-
   return (
     <div>
       <EditCardBtn card={card}/>
