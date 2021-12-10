@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import blogService from '../services/blogs'
 import Cards from './Cards'
 import Togglable from './Togglable'
 import EditBlogForm from './EditBlogForm'
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
   if(!blog) {
@@ -33,6 +33,14 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
       setRefreshedBlogs(allBlogs)
     }
   }*/
+
+  const GameBtn = () => {
+    if (blog.user.username === user.username) {
+      return (
+        <Game/>
+      )
+    } else return null
+  }
 
   const EditBlogBtn = () => {
     if (blog.user.username === user.username) {
@@ -130,8 +138,8 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
       <EditBlogBtn/>
       <br/>
       <Cards blog={blog} user={user} setRefreshedBlogs={setRefreshedBlogs} blogs={blogs}/>
+      <GameBtn/>
       <br/>
-      <Game/>
     </div>
   )
 }

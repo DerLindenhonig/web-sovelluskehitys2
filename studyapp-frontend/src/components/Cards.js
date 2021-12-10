@@ -134,6 +134,26 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
     }
   }
 
+  const Progress = ({ card }) => {
+    if (blog.user.username === user.username) {
+      return (
+        <td>
+          {card.progress} %
+        </td>
+      )
+    } else return null
+  }
+
+  const ProgressTitle = () => {
+    if (blog.user.username === user.username) {
+      return (
+        <td>
+          <h4>Progress</h4>
+        </td>
+      )
+    } else return null
+  }
+
   return (
     <div>
       <DeleteBlogBtn/>
@@ -155,9 +175,7 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
             <td>
               <h4>example</h4>
             </td>
-            <td>
-              <h4>progress</h4>
-            </td>
+            <ProgressTitle/>
             <td>
               <h4></h4>
             </td>
@@ -176,9 +194,7 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
               <td>
                 {card.examples}
               </td>
-              <td>
-                {card.progress} %
-              </td>
+              <Progress card={card}/>
               <td>
                 <EditCard card={card} user={user} setAllCards={setAllCards} allCards={allCards} blog={blog} cards={cards}/>
               </td>
