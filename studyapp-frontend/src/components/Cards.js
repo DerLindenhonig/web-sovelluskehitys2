@@ -3,8 +3,6 @@ import { Table } from 'react-bootstrap'
 import cardService from '../services/cards'
 import NewCardForm from './NewCardForm'
 import Card from './Card'
-//import Togglable from './Togglable'
-//import EditCardForm from './EditCardForm'
 import EditCard from './EditCard'
 import blogService from '../services/blogs'
 
@@ -25,6 +23,35 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
       )
   }, [])
 
+  const DeleteBlogBtn = () => {
+    if (blog.user.username === user.username) {
+      return <button id='delete' onClick={deleteBlog}>delete blog</button>
+    } else {
+      return null
+    }
+  }
+
+  const deleteBlog = async event => {
+    event.preventDefault()
+
+    const confirm = window.confirm(`Are you sure you want to delete "${blog.title}"?`)
+    if (confirm) {
+      cardService.setToken(user.token)
+      console.log(blog.cards[0])
+      for(let i = 0; i < blog.cards.length; i++) {
+        console.log(blog.cards[i])
+        await cardService.remove(blog.cards[i], user.token)
+        const allCards = await cardService.getAll()
+        setAllCards(allCards)
+      }
+
+      blogService.setToken(user.token)
+      await blogService.remove(blog.id, user.token)
+      const allBlogs = await blogService.getAll()
+      setRefreshedBlogs(allBlogs)
+    }
+  }
+
   const  CreateCardBtn = () => {
     if (blog.user.username === user.username) {
       return (
@@ -34,32 +61,6 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
       return null
     }
   }
-
-  /*const EditCardBtn = (card) => {
-    console.log('card id: ' + card.id)
-    if (blog.user.username === user.username) {
-      return (
-        <Togglable buttonLabel='edit'>
-          <EditCardForm editCard={handleEditCard} card={card}/>
-        </Togglable>
-      )
-    } else {
-      return null
-    }
-  }
-
-  const handleEditCard = (card, cardObject) => {
-    cardService
-      .update(card.id, cardObject)
-      .then(returnedCard => {
-        setAllCards(allCards.concat(returnedCard))
-        cards.push(returnedCard)
-      })
-    cardService.getAll()
-      .then(cards =>
-        setAllCards(cards)
-      )
-  }*/
 
   const handleAddCard = (cardObject) => {
     cardService.setToken(user.token)
@@ -79,12 +80,6 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
 
   const cards = []
   for(let i = 0; i < allCards.length; i++) {
-    console.log('blog.id ' + blog.id)
-    console.log(allCards[i].blog.id)
-    console.log('here is something ' + allCards[i].id)
-    if(allCards[i].blog.id === undefined) {
-      console.log('here is something ' + allCards[i].id)
-    }
     if(blog.id === allCards[i].blog.id) {
       cards.push(allCards[i])
     }
@@ -122,7 +117,6 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
     console.log('last blog: ' + allBlogs[allBlogsNumber].id)
     const lastBlogId = allBlogs[allBlogsNumber].id
 
-    //cardService.setToken(user.token)
     for(let i = 0; i < cards.length; i++) {
       console.log('blog.card: ' + cards[i].word)
       const newCard = {
@@ -137,41 +131,9 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
     }
   }
 
-  /*const CopyCards = async event => {
-    event.preventDefault()
-    for (let i = 0; i < blog.cards.length; i++) {
-      console.log('blog.card: ' + blog.cards[i].word)
-      const newCard = {
-        word: blog.cards[i].word,
-        translate: blog.cards[i].translate,
-        examples: blog.cards[i].examples,
-      }
-      await cardService.create(newCard)
-      setCopyCards(false)
-    }
-  }
-
-  if (copyCards === true) {
-    try {
-      CopyCards().then(returnedCard => {
-        setAllCards(allCards.concat(returnedCard))
-      })
-    } catch (error) { return error }
-    /*const CopyCards = async () => {
-      for (let i = 0; i < blog.cards.length; i++) {
-        console.log('blog.card: ' + blog.cards[i].word)
-        const newCard = {
-          word: blog.cards[i].word,
-          translate: blog.cards[i].translate,
-          examples: blog.cards[i].examples,
-        }
-        await cardService.create(newCard)
-      }
-    }*/
-  //}*/
-
   return (
     <div>
+      <DeleteBlogBtn/>
       <AddToMyListBtn/>
       <br/>
       <CreateCardBtn/>
