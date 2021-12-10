@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { Table } from 'react-bootstrap'
+import React, {useEffect, useState} from 'react'
+import {Table} from 'react-bootstrap'
 import cardService from '../services/cards'
 import NewCardForm from './NewCardForm'
 import Card from './Card'
@@ -22,35 +22,6 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
         setAllCards(cards)
       )
   }, [])
-
-  const DeleteBlogBtn = () => {
-    if (blog.user.username === user.username) {
-      return <button id='delete' onClick={deleteBlog}>delete blog</button>
-    } else {
-      return null
-    }
-  }
-
-  const deleteBlog = async event => {
-    event.preventDefault()
-
-    const confirm = window.confirm(`Are you sure you want to delete "${blog.title}"?`)
-    if (confirm) {
-      cardService.setToken(user.token)
-      console.log(blog.cards[0])
-      for(let i = 0; i < blog.cards.length; i++) {
-        console.log(blog.cards[i])
-        await cardService.remove(blog.cards[i], user.token)
-        const allCards = await cardService.getAll()
-        setAllCards(allCards)
-      }
-
-      blogService.setToken(user.token)
-      await blogService.remove(blog.id, user.token)
-      const allBlogs = await blogService.getAll()
-      setRefreshedBlogs(allBlogs)
-    }
-  }
 
   const  CreateCardBtn = () => {
     if (blog.user.username === user.username) {
@@ -84,6 +55,38 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
       cards.push(allCards[i])
     }
   }
+
+  const DeleteBlogBtn = () => {
+    if (blog.user.username === user.username) {
+      return <button id='delete' onClick={deleteBlog}>delete blog</button>
+    } else {
+      return null
+    }
+  }
+
+  const deleteBlog = async event => {
+    event.preventDefault()
+
+
+    const confirm = window.confirm(`Are you sure you want to delete "${blog.title}"?`)
+    if (confirm) {
+      cardService.setToken(user.token)
+      console.log('blog.cards[0]: ' + cards[0].id)
+      console.log('blog.cards[1]: ' + cards[1].id)
+      for(let i = 0; i < cards.length; i++) {
+        console.log('blog.cards['+ i + '] ' + cards[i].id)
+        await cardService.remove(cards[i].id, user.token)
+      }
+      const allCards = await cardService.getAll()
+      setAllCards(allCards)
+
+      blogService.setToken(user.token)
+      await blogService.remove(blog.id, user.token)
+      const allBlogs = await blogService.getAll()
+      setRefreshedBlogs(allBlogs)
+    }
+  }
+
 
   const AddToMyListBtn = () => {
     if (blog.user.username !== user.username) {
