@@ -11,28 +11,6 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
   }
 
   const [like, setLike] = useState(false)
-  //const [deletedBlogId, setDeletedBlogId] = useState(null)
-
-  /*const DeleteBlogBtn = () => {
-    if (blog.user.username === user.username) {
-      return <button id='delete' onClick={deleteBlog}>delete blog</button>
-    } else {
-      return null
-    }
-  }
-
-  const deleteBlog = async event => {
-    event.preventDefault()
-
-    const confirm = window.confirm(`Are you sure you want to delete "${blog.title}"?`)
-    if (confirm) {
-      setDeletedBlogId(blog.id)
-      blogService.setToken(user.token)
-      await blogService.remove(blog.id, user.token)
-      const allBlogs = await blogService.getAll()
-      setRefreshedBlogs(allBlogs)
-    }
-  }*/
 
   const GameBtn = () => {
     if (blog.user.username === user.username) {
@@ -132,6 +110,7 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
       <br/>
       <h2>{blog.title}</h2>
       <br/>
+      <div>status: {blog.status}</div>
       <div>creator: {blog.author}</div>
       <div>description: {blog.url}</div>
       <div>likes: {blog.likes}<Liking/></div>

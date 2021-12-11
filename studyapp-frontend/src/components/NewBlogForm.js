@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
-import { Button, Form } from 'react-bootstrap'
+import React, {useState} from 'react'
+import {Button, Form} from 'react-bootstrap'
 
 const NewBlogForm = ({ createBlog }) => {
   const [newTitle, setNewTitle] = useState('')
   const [newAuthor, setNewAuthor] = useState('')
   const [newUrl, setNewUrl] = useState('')
+  const [newStatus, setNewStatus] = useState('')
 
   const handleTitleChange = (event) => {
     setNewTitle(event.target.value)
@@ -24,7 +25,8 @@ const NewBlogForm = ({ createBlog }) => {
     createBlog({
       title: newTitle,
       author: newAuthor,
-      url: newUrl
+      url: newUrl,
+      status: newStatus
     })
 
     setNewTitle('')
@@ -32,21 +34,46 @@ const NewBlogForm = ({ createBlog }) => {
     setNewUrl('')
   }
 
+  const handleChangeToPrivate = () => {
+    setNewStatus('private')
+  }
+
+  const handleChangeToPublic = () => {
+    setNewStatus('public')
+  }
+
   return (
     <div>
       <Form onSubmit={handleAddBlog}>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
           <Form.Label>Title</Form.Label>
-          <Form.Control type="text" placeholder="Add title here" id='title' value={newTitle} onChange={handleTitleChange}/>
+          <Form.Control type="text" placeholder="Add title" id='title' value={newTitle} onChange={handleTitleChange}/>
         </Form.Group>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
           <Form.Label>Creator</Form.Label>
-          <Form.Control type="text" placeholder="Add creator here" id='author' value={newAuthor} onChange={handleAuthorChange}/>
+          <Form.Control type="text" placeholder="Add creator" id='author' value={newAuthor} onChange={handleAuthorChange}/>
         </Form.Group>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
           <Form.Label>Description</Form.Label>
-          <Form.Control as="textarea" rows={3} placeholder="Add description here" id='url' value={newUrl} onChange={handleUrlChange}/>
+          <Form.Control as="textarea" rows={3} placeholder="Add description" id='url' value={newUrl} onChange={handleUrlChange}/>
         </Form.Group>
+        <div>
+          <Form.Check
+            inline
+            onChange={handleChangeToPrivate}
+            label="Private"
+            name="group1"
+            type='radio'
+          />
+          <Form.Check
+            inline
+            onChange={handleChangeToPublic}
+            label="Public"
+            name="group1"
+            type='radio'
+          />
+        </div>
+        <br/>
         <Button variant="dark" type="submit">Add</Button>
       </Form>
     </div>

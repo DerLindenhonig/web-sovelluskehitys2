@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import Togglable from './Togglable'
 import NewBlogForm from './NewBlogForm'
 import blogService from '../services/blogs'
-import { Table } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import {Table} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 import Filter from './Filter'
 
 const Blogs = ({ blogs, setBlogs, setMessage }) => {
@@ -46,6 +46,7 @@ const Blogs = ({ blogs, setBlogs, setMessage }) => {
           {blogs
             .sort((a, b) => b.likes - a.likes)
             .filter(blog => blog.title?.toLowerCase().includes(filter.toLowerCase()))
+            .filter(blog => blog.status === 'public')
             .map(filteredBlogs => (
               <tr key={filteredBlogs.title}>
                 <td>

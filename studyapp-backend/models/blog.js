@@ -14,6 +14,7 @@ const blogSchema = new mongoose.Schema({
           ref: 'Card'
       }
     ],
+    status: String
 })
 
 blogSchema.set('toJSON', {

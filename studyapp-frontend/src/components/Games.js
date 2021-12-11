@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, {useEffect, useState} from 'react'
 import cardService from '../services/cards'
 import Togglable from './Togglable'
+import {Button} from 'react-bootstrap'
 
 const Games = ({ blog }) => {
 
@@ -40,21 +41,26 @@ const Games = ({ blog }) => {
   let answer3 = ''
   let answer4 = ''
   let randQ = null
-  //let record = null
 
   const Quiz = () => {
     console.log('randQ / Quiz ' + randQ1)
     if(blog.cards.length > 3) {
       return (
         <div>
-          <div>right answers: {record}</div>
-          <h2 id='question'>{guestionText}</h2>
-          <button id='answer1' onClick={FirstAnswerSelected}>{answer1Text}</button>
-          <button id='answer2' onClick={SecondAnswerSelected}>{answer2Text}</button>
-          <button id='answer3' onClick={ThirdAnswerSelected}>{answer3Text}</button>
-          <button id='answer4' onClick={FourthAnswerSelected}>{answer4Text}</button>
           <br/>
-          <button id='next' onClick={changeAnswers}>next</button>
+          <div>right answers: {record}</div>
+          <br/>
+          <h3 id='question'>{guestionText}</h3>
+          <br/>
+          <Button variant="outline-dark" id='answer1' onClick={FirstAnswerSelected}>{answer1Text}</Button>{' '}
+          <Button variant="outline-dark" id='answer2' onClick={SecondAnswerSelected}>{answer2Text}</Button>{' '}
+          <Button variant="outline-dark" id='answer3' onClick={ThirdAnswerSelected}>{answer3Text}</Button>{' '}
+          <Button variant="outline-dark" id='answer4' onClick={FourthAnswerSelected}>{answer4Text}</Button>
+          <br/>
+          <br/>
+          <Button id='next' onClick={changeAnswers}>next</Button>
+          <br/>
+          <br/>
         </div>
       )
     } else {
@@ -78,9 +84,7 @@ const Games = ({ blog }) => {
         progress: card.progress + 1
       }
       cardService.update(questionId, newObject)
-
-
-    } else {
+    } else if (randQ1 !== 0 && card.progress > 0) {
       console.log('WRONG!')
       const newObject = {
         word: card.word,
@@ -107,7 +111,7 @@ const Games = ({ blog }) => {
       }
       cardService.update(questionId, newObject)
 
-    } else {
+    } else if (randQ1 !== 1 && card.progress > 0) {
       console.log('WRONG!' + randQ1)
       const newObject = {
         word: card.word,
@@ -134,7 +138,7 @@ const Games = ({ blog }) => {
       }
       cardService.update(questionId, newObject)
 
-    } else {
+    } else if (randQ1 !== 2 && card.progress > 0) {
       console.log('WRONG!' + randQ1)
       const newObject = {
         word: card.word,
@@ -161,7 +165,7 @@ const Games = ({ blog }) => {
       }
       cardService.update(questionId, newObject)
 
-    } else {
+    } else if (randQ1 !== 3 && card.progress > 0) {
       console.log('WRONG!' + randQ1)
       const newObject = {
         word: card.word,

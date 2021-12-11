@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, {useEffect, useState} from 'react'
 import blogService from './services/blogs'
 import userService from './services/users'
 import cardService from './services/cards'
 import Notification from './components/Notification'
 import LoginForm from './components/LoginForm'
 import Blogs from './components/Blogs'
-import { BrowserRouter as Router, Link, Redirect, Route, Switch, } from 'react-router-dom'
+import {BrowserRouter as Router, Link, Redirect, Route, Switch,} from 'react-router-dom'
 import Users from './components/Users'
 import UserPage from './components/UserPage'
 import Blog from './components/Blog'
 import RegistrationForm from './components/RegistrationForm'
 import User from './components/User'
 import Games from './components/Games'
-import { Button, Navbar } from 'react-bootstrap'
+import {Button, Navbar} from 'react-bootstrap'
 
 const App = () => {
   const [blogs, setBlogs] = useState([])
@@ -65,9 +65,9 @@ const App = () => {
   return (
     <Router>
       <Navbar bg="light" variant="light">
-        <Link style={padding} to="/">home</Link>
-        <Link style={padding} to="/blogs">blogs</Link>
-        <Link style={padding} to="/users">users</Link>
+        <Link style={padding} to="/">Home</Link>
+        <Link style={padding} to="/blogs">Discover</Link>
+        <Link style={padding} to="/users">Users</Link>
         {user === null
           ? <Link style={padding} to="/login">login</Link>
           : <em>{user.name} logged in <Button size="sm" variant="outline-dark" onClick={handleLogout}>logout</Button></em>

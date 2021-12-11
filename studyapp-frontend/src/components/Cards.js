@@ -148,7 +148,7 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
     if (blog.user.username === user.username) {
       return (
         <td>
-          <h4>Progress</h4>
+          <h4>progress</h4>
         </td>
       )
     } else return null
