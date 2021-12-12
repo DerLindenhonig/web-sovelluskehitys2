@@ -8,9 +8,12 @@ const WritingGame = ({ blog, cards }) => {
   }
 
   const [newAnswer, setNewAnswer] = useState('')
-  const [newQuestion, setNewQuestion] = useState('Question')
+  const [newQuestion, setNewQuestion] = useState('')
+  const [start, setStart] = useState(false)
+  let [record, setRecord] = useState(null)
 
   const changeQuestion = () => {
+    setStart(true)
     const randQ = Math.floor(Math.random() * cards.length)
     setNewQuestion(cards[randQ])
     console.log(newQuestion)
@@ -23,21 +26,34 @@ const WritingGame = ({ blog, cards }) => {
   const handleAnswerBtn = () => {
     console.log(newAnswer)
     setNewAnswer('')
-    if(newAnswer === newQuestion.translate) {
+    if(newAnswer === newQuestion.word) {
       console.log('RIGHT!')
+      record++
+      setRecord(record)
     } else {
       console.log('WRONG!')
     }
     changeQuestion()
   }
 
+
+  const ButtonComponent = () => {
+    if(start === false) {
+      return (
+        <Button onClick={handleAnswerBtn}>Start</Button>
+      )
+    } else return (
+      <Button onClick={handleAnswerBtn}>Answer</Button>
+    )
+  }
+
   if(blog.cards.length > 3) {
     return (
       <div>
-        <p>Write a word:</p>
+        <div>right answers: {record}</div>
         <h3>{newQuestion.translate}</h3>
         <InputGroup className="mb-3"><FormControl onChange={handleAnswerChange} value={newAnswer}/></InputGroup>
-        <Button onClick={handleAnswerBtn}>Answer</Button>
+        <ButtonComponent/>
       </div>
     )
   } else return (
