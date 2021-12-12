@@ -12,7 +12,7 @@ import Blog from './components/Blog'
 import RegistrationForm from './components/RegistrationForm'
 import User from './components/User'
 import Games from './components/Games'
-import {Button, Navbar} from 'react-bootstrap'
+import {Button, Container, Navbar} from 'react-bootstrap'
 
 const App = () => {
   const [blogs, setBlogs] = useState([])
@@ -65,14 +65,22 @@ const App = () => {
   return (
     <Router>
       <Navbar bg="light" variant="light">
-        <Link style={padding} to="/">Home</Link>
-        <Link style={padding} to="/blogs">Discover</Link>
-        <Link style={padding} to="/users">Users</Link>
-        {user === null
-          ? <Link style={padding} to="/login">login</Link>
-          : <em>{user.name} logged in <Button size="sm" variant="outline-dark" onClick={handleLogout}>logout</Button></em>
-        }
+        <Container>
+          <Navbar >
+            <Link style={padding} to="/">Home</Link>
+            <Link style={padding} to="/blogs">Discover</Link>
+            <Link style={padding} to="/users" >Users</Link>
+          </Navbar>
+          <Navbar className="justify-content-end">
+            {user === null
+              ? <Link style={padding} to="/login">login</Link>
+              : <em>{user.name} logged in <Button size="sm" variant="outline-dark" onClick={handleLogout}>logout</Button></em>
+            }
+          </Navbar>
+        </Container>
       </Navbar>
+
+
 
       <div><Notification message={message}/></div>
 
