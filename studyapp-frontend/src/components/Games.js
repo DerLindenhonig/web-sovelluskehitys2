@@ -187,15 +187,15 @@ const Games = ({ blog }) => {
       randA = Math.floor(Math.random() * cards.length)
       if(!arrayOfAnswers.includes(cards[randA])) {
         arrayOfAnswers.push(cards[randA])
-        console.log('cards[randA] ' + cards[randA].id)
+        //console.log('cards[randA] ' + cards[randA].id)
       }
     }
-    console.log('arrayOfAnswers 0: ' + arrayOfAnswers[0].id + ' 1: ' + arrayOfAnswers[1].id + ' 2: ' + arrayOfAnswers[2].id + ' 3: ' + arrayOfAnswers[3].id )
+    //console.log('arrayOfAnswers 0: ' + arrayOfAnswers[0].id + ' 1: ' + arrayOfAnswers[1].id + ' 2: ' + arrayOfAnswers[2].id + ' 3: ' + arrayOfAnswers[3].id )
 
     randQ = Math.floor(Math.random() * arrayOfAnswers.length)
     const randQuestion = arrayOfAnswers[randQ]
 
-    console.log('randQ ' + randQ)
+    //console.log('randQ ' + randQ)
 
     setCard(arrayOfAnswers[randQ])
     setRandQ1(randQ)
@@ -234,7 +234,8 @@ const Games = ({ blog }) => {
       </Togglable>
       <br/>
       <Togglable buttonLabel='start writing game'>
-        <WritingGame blog={blog}/>
+        <WritingGame blog={blog} cards={cards}/>
+        <br/>
       </Togglable>
     </div>
   )
