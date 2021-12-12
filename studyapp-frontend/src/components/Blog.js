@@ -3,10 +3,16 @@ import blogService from '../services/blogs'
 import Cards from './Cards'
 import Togglable from './Togglable'
 import EditBlogForm from './EditBlogForm'
-import {Link} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
 import {Button} from 'react-bootstrap'
+//import Users from "./Users";
 
 const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
+
+  if(!user) {
+    return <Redirect to="/login" />
+  }
+
   if(!blog) {
     return null
   }

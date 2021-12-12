@@ -154,7 +154,7 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
     if (blog.user.username === user.username) {
       return (
         <td>
-          <h4>progress</h4>
+          <h5>progress</h5>
         </td>
       )
     } else return null
@@ -173,11 +173,11 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
       <Table striped responsive ="sm" hover size="sm">
         <tbody>
           <tr>
-            <td><h4>word</h4></td>
-            <td><h4>translate</h4></td>
-            <td><h4>example</h4></td>
-            <ProgressTitle/><td><h4></h4></td>
-            <td><h4></h4></td>
+            <td><h5>word</h5></td>
+            <td><h5>translate</h5></td>
+            <td><h5>example</h5></td>
+            <ProgressTitle/><td><h5></h5></td>
+            <td><h5></h5></td>
           </tr>
           {cards.map(card =>
             <tr key={card.id}>
