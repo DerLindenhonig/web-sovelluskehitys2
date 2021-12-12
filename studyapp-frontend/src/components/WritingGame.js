@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {Button, FormControl, InputGroup} from 'react-bootstrap'
+import cardService from '../services/cards'
 
 const WritingGame = ({ blog, cards }) => {
 
@@ -16,7 +17,6 @@ const WritingGame = ({ blog, cards }) => {
     setStart(true)
     const randQ = Math.floor(Math.random() * cards.length)
     setNewQuestion(cards[randQ])
-    console.log(newQuestion)
   }
 
   const handleAnswerChange = (event) => {
@@ -26,21 +26,40 @@ const WritingGame = ({ blog, cards }) => {
   const handleAnswerBtn = () => {
     console.log(newAnswer)
     setNewAnswer('')
+
     if(newAnswer === newQuestion.word) {
       console.log('RIGHT!')
       record++
       setRecord(record)
+
+      const newObject = {
+        word: newQuestion.word,
+        translate: newQuestion.translate,
+        examples: newQuestion.examples,
+        progress: newQuestion.progress + 2
+      }
+      cardService.update(newQuestion.id, newObject)
     } else {
       console.log('WRONG!')
+      const newObject = {
+        word: newQuestion.word,
+        translate: newQuestion.translate,
+        examples: newQuestion.examples,
+        progress: newQuestion.progress - 1
+      }
+      cardService.update(newQuestion.id, newObject)
     }
     changeQuestion()
   }
 
+  const handleStartBtn = () => {
+    changeQuestion()
+  }
 
   const ButtonComponent = () => {
     if(start === false) {
       return (
-        <Button onClick={handleAnswerBtn}>Start</Button>
+        <Button onClick={handleStartBtn}>Start</Button>
       )
     } else return (
       <Button onClick={handleAnswerBtn}>Answer</Button>
