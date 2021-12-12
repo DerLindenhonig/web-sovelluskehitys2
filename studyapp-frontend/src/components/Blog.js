@@ -4,6 +4,7 @@ import Cards from './Cards'
 import Togglable from './Togglable'
 import EditBlogForm from './EditBlogForm'
 import {Link} from 'react-router-dom'
+import {Button} from 'react-bootstrap'
 
 const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
   if(!blog) {
@@ -83,9 +84,9 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
       }
     }
     if(like === false) {
-      return <button id='like' onClick={addLike}>like</button>
+      return <Button size="sm" id='like' onClick={addLike}>like</Button>
     } else {
-      return <button id='like' onClick={removeLike}>remove like</button>
+      return <Button size="sm" id='like' onClick={removeLike}>remove like</Button>
     }
   }
 

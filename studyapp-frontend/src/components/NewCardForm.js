@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
+import {Button, Form} from 'react-bootstrap'
 
 const NewCardForm = ({ createCard, blogId }) => {
   const [newWord, setNewWord] = useState('')
@@ -35,12 +36,21 @@ const NewCardForm = ({ createCard, blogId }) => {
   return (
     <div>
       <h2>Create new card</h2>
-      <form onSubmit={handleAddWord}>
-        word: <input id='word' value={newWord} onChange={handleWordChange}/> <br></br>
-        translate: <input id='translate' value={newTranslate} onChange={handleTranslateChange}/> <br></br>
-        example: <input id='example' value={newExamples} onChange={handleExampleChange}/> <br></br>
-        <button type="submit">add</button>
-      </form>
+      <Form onSubmit={handleAddWord}>
+        <Form.Group className="mb-3" controlId="CreateInput1">
+          <Form.Label>Word</Form.Label>
+          <Form.Control type="text" placeholder="Add word" id='word' value={newWord} onChange={handleWordChange}/>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="CreateInput1">
+          <Form.Label>Translate</Form.Label>
+          <Form.Control type="text" placeholder="Add translate" id='translate' value={newTranslate} onChange={handleTranslateChange}/>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="CreateInput1">
+          <Form.Label>Example</Form.Label>
+          <Form.Control type="text" placeholder="Add example" id='example' value={newExamples} onChange={handleExampleChange}/>
+        </Form.Group>
+        <Button type="submit">Add</Button>
+      </Form>
     </div>
   )
 }

@@ -5,6 +5,7 @@ import NewCardForm from './NewCardForm'
 import Card from './Card'
 import EditCard from './EditCard'
 import blogService from '../services/blogs'
+import Togglable from './Togglable'
 
 const Cards = ({ blog, user, setRefreshedBlogs }) => {
 
@@ -26,7 +27,9 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
   const  CreateCardBtn = () => {
     if (blog.user.username === user.username) {
       return (
-        <NewCardForm createCard={handleAddCard} blogId={blog.id}/>
+        <Togglable buttonLabel='Add a new card'>
+          <NewCardForm createCard={handleAddCard} blogId={blog.id}/>
+        </Togglable>
       )
     } else {
       return null
