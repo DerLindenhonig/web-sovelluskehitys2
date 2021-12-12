@@ -16,7 +16,7 @@ const Card = ({ user, card, blog, setAllCards }) => {
   }
 
   if (blog.user.username === user.username) {
-    return <Button variant="danger" id='deleteCard' onClick={deleteCard}>delete</Button>
+    return <Button variant="danger" id='deleteCard' size="sm" onClick={deleteCard}>delete</Button>
   } else {
     return null
   }

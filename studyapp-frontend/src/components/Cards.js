@@ -58,7 +58,7 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
 
   const DeleteBlogBtn = () => {
     if (blog.user.username === user.username) {
-      return <Button variant="danger" id='delete' onClick={deleteBlog}>delete</Button>
+      return <Button size="sm" variant="danger" id='delete' onClick={deleteBlog}>delete</Button>
     } else {
       return null
     }
@@ -67,18 +67,19 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
   const deleteBlog = async event => {
     event.preventDefault()
 
-
     const confirm = window.confirm(`Are you sure you want to delete "${blog.title}"?`)
     if (confirm) {
-      cardService.setToken(user.token)
-      console.log('blog.cards[0]: ' + cards[0].id)
-      console.log('blog.cards[1]: ' + cards[1].id)
-      for(let i = 0; i < cards.length; i++) {
-        console.log('blog.cards['+ i + '] ' + cards[i].id)
-        await cardService.remove(cards[i].id, user.token)
+      if(cards !== null) {
+        cardService.setToken(user.token)
+        //console.log('blog.cards[0]: ' + cards[0].id)
+        //console.log('blog.cards[1]: ' + cards[1].id)
+        for(let i = 0; i < cards.length; i++) {
+          //console.log('blog.cards['+ i + '] ' + cards[i].id)
+          await cardService.remove(cards[i].id, user.token)
+        }
+        const allCards = await cardService.getAll()
+        setAllCards(allCards)
       }
-      const allCards = await cardService.getAll()
-      setAllCards(allCards)
 
       blogService.setToken(user.token)
       await blogService.remove(blog.id, user.token)

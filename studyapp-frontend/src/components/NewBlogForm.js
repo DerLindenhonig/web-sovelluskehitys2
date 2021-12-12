@@ -1,36 +1,41 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {Button, Form} from 'react-bootstrap'
 
 const NewBlogForm = ({ createBlog }) => {
   const [newTitle, setNewTitle] = useState('')
-  const [newAuthor, setNewAuthor] = useState('')
   const [newUrl, setNewUrl] = useState('')
   const [newStatus, setNewStatus] = useState('')
+  const [user, setUser] = useState(null)
 
   const handleTitleChange = (event) => {
     setNewTitle(event.target.value)
-  }
-
-  const handleAuthorChange = (event) => {
-    setNewAuthor(event.target.value)
   }
 
   const handleUrlChange = (event) => {
     setNewUrl(event.target.value)
   }
 
+  useEffect(() => {
+    const loggedUserJSON = window.localStorage.getItem('loggedBlogAppUser')
+    if (loggedUserJSON) {
+      const user = JSON.parse(loggedUserJSON)
+      setUser(user)
+    }
+  }, [])
+
   const handleAddBlog = (event) => {
     event.preventDefault()
 
+    console.log(user)
+
     createBlog({
       title: newTitle,
-      author: newAuthor,
+      author: user.username,
       url: newUrl,
       status: newStatus
     })
 
     setNewTitle('')
-    setNewAuthor('')
     setNewUrl('')
   }
 
@@ -48,10 +53,6 @@ const NewBlogForm = ({ createBlog }) => {
         <Form.Group className="mb-3" controlId="CreateInput1">
           <Form.Label>Title</Form.Label>
           <Form.Control type="text" placeholder="Add title" id='title' value={newTitle} onChange={handleTitleChange}/>
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="CreateInput2">
-          <Form.Label>Creator</Form.Label>
-          <Form.Control type="text" placeholder="Add creator" id='author' value={newAuthor} onChange={handleAuthorChange}/>
         </Form.Group>
         <Form.Group className="mb-3" controlId="CreateInput3">
           <Form.Label>Description</Form.Label>

@@ -6,7 +6,7 @@ import {Table} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import Filter from './Filter'
 
-const Blogs = ({ blogs, setBlogs, setMessage }) => {
+const Blogs = ({ blogs, setBlogs, setMessage, user }) => {
 
   const [filter, setFilter] = useState('')
 
@@ -64,7 +64,7 @@ const Blogs = ({ blogs, setBlogs, setMessage }) => {
       <br/>
       <h3>Add new</h3>
       <Togglable buttonLabel='create new wordlist'>
-        <NewBlogForm createBlog={handleAddBlog}/>
+        <NewBlogForm createBlog={handleAddBlog} user={user}/>
       </Togglable>
       <br/>
       <h3>All wordlists</h3>

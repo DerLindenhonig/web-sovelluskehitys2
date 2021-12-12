@@ -24,7 +24,7 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
     if (blog.user.username === user.username) {
       return (
         <Togglable buttonLabel='edit'>
-          <EditBlogForm editBlog={handleEditBlog} likes={blog.likes}/>
+          <EditBlogForm editBlog={handleEditBlog} likes={blog.likes} user={user}/>
         </Togglable>
       )
     } else {
@@ -56,14 +56,6 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
     await blogService.update(blog.id, newBlog)
     const allBlogs = await blogService.getAll()
     setRefreshedBlogs(allBlogs)
-
-    /*const newUser = {
-      name: user.name,
-      username: user.username,
-      likedBlogs: newBlog.id,
-    }
-
-    await userService.update(user.id, newUser)*/
   }
 
   const removeLike = async event => {
@@ -109,7 +101,6 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
     <div>
       <br/>
       <h2>{blog.title}</h2>
-      <br/>
       <div>status: {blog.status}</div>
       <div>creator: {blog.author}</div>
       <div>description: {blog.url}</div>

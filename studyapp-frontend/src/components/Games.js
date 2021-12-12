@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import cardService from '../services/cards'
 import Togglable from './Togglable'
+import WritingGame from './WritingGame'
 import {Button} from 'react-bootstrap'
 
 const Games = ({ blog }) => {
@@ -230,6 +231,10 @@ const Games = ({ blog }) => {
       <h1>Games</h1>
       <Togglable buttonLabel='start quiz game'>
         <Quiz/>
+      </Togglable>
+      <br/>
+      <Togglable buttonLabel='start writing game'>
+        <WritingGame blog={blog}/>
       </Togglable>
     </div>
   )
