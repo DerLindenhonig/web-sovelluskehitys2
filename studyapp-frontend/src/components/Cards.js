@@ -37,6 +37,8 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
   }
 
   const handleAddCard = (cardObject) => {
+    console.log(user)
+    console.log(user.token)
     cardService.setToken(user.token)
     try {
       cardService

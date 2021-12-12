@@ -66,7 +66,7 @@ const App = () => {
     <Router>
       <Navbar bg="light" variant="light">
         <Container>
-          <Navbar >
+          <Navbar>
             <Link style={padding} to="/">Home</Link>
             <Link style={padding} to="/blogs">Discover</Link>
             <Link style={padding} to="/users" >Users</Link>
@@ -79,8 +79,6 @@ const App = () => {
           </Navbar>
         </Container>
       </Navbar>
-
-
 
       <div><Notification message={message}/></div>
 
