@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {Table} from 'react-bootstrap'
+import {Button, Table} from 'react-bootstrap'
 import cardService from '../services/cards'
 import NewCardForm from './NewCardForm'
 import Card from './Card'
@@ -58,7 +58,7 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
 
   const DeleteBlogBtn = () => {
     if (blog.user.username === user.username) {
-      return <button id='delete' onClick={deleteBlog}>delete blog</button>
+      return <Button variant="danger" id='delete' onClick={deleteBlog}>delete</Button>
     } else {
       return null
     }
@@ -157,50 +157,30 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
   return (
     <div>
       <DeleteBlogBtn/>
+      <br/>
       <AddToMyListBtn/>
       <br/>
       <CreateCardBtn/>
       <br/>
       <h3>Cards</h3>
       <br/>
-      <Table striped>
+      <Table striped responsive ="sm" hover size="sm">
         <tbody>
           <tr>
-            <td>
-              <h4>word</h4>
-            </td>
-            <td>
-              <h4>translate</h4>
-            </td>
-            <td>
-              <h4>example</h4>
-            </td>
-            <ProgressTitle/>
-            <td>
-              <h4></h4>
-            </td>
-            <td>
-              <h4></h4>
-            </td>
+            <td><h4>word</h4></td>
+            <td><h4>translate</h4></td>
+            <td><h4>example</h4></td>
+            <ProgressTitle/><td><h4></h4></td>
+            <td><h4></h4></td>
           </tr>
           {cards.map(card =>
             <tr key={card.id}>
-              <td>
-                {card.word}
-              </td>
-              <td>
-                {card.translate}
-              </td>
-              <td>
-                {card.examples}
-              </td>
+              <td>{card.word}</td>
+              <td>{card.translate}</td>
+              <td>{card.examples}</td>
               <Progress card={card}/>
-              <td>
-                <EditCard card={card} user={user} setAllCards={setAllCards} allCards={allCards} blog={blog} cards={cards}/>
-              </td>
-              <td>
-                <Card card={card} user={user} blog={blog} setAllCards={setAllCards}/>
-              </td>
+              <td><EditCard card={card} user={user} setAllCards={setAllCards} allCards={allCards} blog={blog} cards={cards}/></td>
+              <td><Card card={card} user={user} blog={blog} setAllCards={setAllCards}/></td>
             </tr>
           )}
         </tbody>

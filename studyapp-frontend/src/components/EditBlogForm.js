@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
+import {Form} from 'react-bootstrap'
 
 const EditBlogForm = ({ editBlog, likes }) => {
   const [newTitle, setNewTitle] = useState('')
   const [newAuthor, setNewAuthor] = useState('')
   const [newUrl, setNewUrl] = useState('')
+  const [newStatus, setNewStatus] = useState('')
 
   const handleTitleChange = (event) => {
     setNewTitle(event.target.value)
@@ -24,7 +26,8 @@ const EditBlogForm = ({ editBlog, likes }) => {
       title: newTitle,
       author: newAuthor,
       url: newUrl,
-      likes: likes
+      likes: likes,
+      status: newStatus
     })
 
     setNewTitle('')
@@ -32,14 +35,49 @@ const EditBlogForm = ({ editBlog, likes }) => {
     setNewUrl('')
   }
 
+  const handleChangeToPrivate = () => {
+    setNewStatus('private')
+  }
+
+  const handleChangeToPublic = () => {
+    setNewStatus('public')
+  }
+
   return (
     <div>
       <h2>Edit blog</h2>
       <form onSubmit={handleEditBlog}>
-        title: <input id='title' value={newTitle} onChange={handleTitleChange}/> <br></br>
-        author: <input id='author' value={newAuthor} onChange={handleAuthorChange}/> <br></br>
-        url: <input id='url' value={newUrl} onChange={handleUrlChange}/> <br></br>
+
+        <Form.Group className="mb-3" controlId="EditInput1">
+          <Form.Label>Title</Form.Label>
+          <Form.Control type="text" placeholder="Edit title" id='title' value={newTitle} onChange={handleTitleChange}/>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="EditInput2">
+          <Form.Label>Creator</Form.Label>
+          <Form.Control type="text" placeholder="Edit creator" id='author' value={newAuthor} onChange={handleAuthorChange}/>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="EditInput3">
+          <Form.Label>Description</Form.Label>
+          <Form.Control as="textarea" rows={3} placeholder="Edit description" id='url' value={newUrl} onChange={handleUrlChange}/>
+        </Form.Group>
+        <div>
+          <Form.Check
+            inline
+            onChange={handleChangeToPrivate}
+            label="Private"
+            name="group1"
+            type='radio'
+          />
+          <Form.Check
+            inline
+            onChange={handleChangeToPublic}
+            label="Public"
+            name="group1"
+            type='radio'
+          />
+        </div>
         <button type="submit">save</button>
+
       </form>
     </div>
   )

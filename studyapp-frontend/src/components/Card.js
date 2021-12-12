@@ -1,6 +1,6 @@
 import React from 'react'
 import cardService from '../services/cards'
-//import blogService from "../services/blogs";
+import {Button} from 'react-bootstrap'
 
 const Card = ({ user, card, blog, setAllCards }) => {
 
@@ -16,7 +16,7 @@ const Card = ({ user, card, blog, setAllCards }) => {
   }
 
   if (blog.user.username === user.username) {
-    return <button id='deleteCard' onClick={deleteCard}>delete</button>
+    return <Button variant="danger" id='deleteCard' onClick={deleteCard}>delete</Button>
   } else {
     return null
   }

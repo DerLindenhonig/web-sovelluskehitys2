@@ -23,7 +23,7 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
   const EditBlogBtn = () => {
     if (blog.user.username === user.username) {
       return (
-        <Togglable buttonLabel='edit blog'>
+        <Togglable buttonLabel='edit'>
           <EditBlogForm editBlog={handleEditBlog} likes={blog.likes}/>
         </Togglable>
       )
@@ -114,6 +114,7 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
       <div>creator: {blog.author}</div>
       <div>description: {blog.url}</div>
       <div>likes: {blog.likes}<Liking/></div>
+      <br/>
       <EditBlogBtn/>
       <br/>
       <Cards blog={blog} user={user} setRefreshedBlogs={setRefreshedBlogs} blogs={blogs}/>

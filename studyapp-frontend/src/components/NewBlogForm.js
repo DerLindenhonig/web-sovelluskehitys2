@@ -45,15 +45,15 @@ const NewBlogForm = ({ createBlog }) => {
   return (
     <div>
       <Form onSubmit={handleAddBlog}>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+        <Form.Group className="mb-3" controlId="CreateInput1">
           <Form.Label>Title</Form.Label>
           <Form.Control type="text" placeholder="Add title" id='title' value={newTitle} onChange={handleTitleChange}/>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
+        <Form.Group className="mb-3" controlId="CreateInput2">
           <Form.Label>Creator</Form.Label>
           <Form.Control type="text" placeholder="Add creator" id='author' value={newAuthor} onChange={handleAuthorChange}/>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
+        <Form.Group className="mb-3" controlId="CreateInput3">
           <Form.Label>Description</Form.Label>
           <Form.Control as="textarea" rows={3} placeholder="Add description" id='url' value={newUrl} onChange={handleUrlChange}/>
         </Form.Group>
