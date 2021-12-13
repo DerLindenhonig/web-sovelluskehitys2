@@ -5,7 +5,6 @@ import Togglable from './Togglable'
 import EditBlogForm from './EditBlogForm'
 import {Link, Redirect} from 'react-router-dom'
 import {Button} from 'react-bootstrap'
-//import Users from "./Users";
 
 const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
 
@@ -31,7 +30,7 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
     if (blog.user.username === user.username) {
       return (
         <Togglable buttonLabel='edit'>
-          <EditBlogForm editBlog={handleEditBlog} likes={blog.likes} user={user}/>
+          <EditBlogForm editBlog={handleEditBlog} likes={blog.likes} user={user} blog={blog}/>
         </Togglable>
       )
     } else {

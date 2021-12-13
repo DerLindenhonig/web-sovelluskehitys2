@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
 import {Form} from 'react-bootstrap'
 
-const EditBlogForm = ({ editBlog, likes, user }) => {
-  const [newTitle, setNewTitle] = useState('')
-  const [newUrl, setNewUrl] = useState('')
-  const [newStatus, setNewStatus] = useState('')
+const EditBlogForm = ({ editBlog, likes, /*user,*/ blog }) => {
+  const [newTitle, setNewTitle] = useState(blog.title)
+  const [newUrl, setNewUrl] = useState(blog.url)
+  const [newStatus, setNewStatus] = useState(blog.status)
 
   const handleTitleChange = (event) => {
     setNewTitle(event.target.value)
@@ -16,11 +16,14 @@ const EditBlogForm = ({ editBlog, likes, user }) => {
 
   const handleEditBlog = (event) => {
     event.preventDefault()
+    if(newUrl === '') {
+      setNewUrl(blog.url)
+    }
 
     editBlog({
       title: newTitle,
       url: newUrl,
-      author: user.username,
+      author: blog.author,
       likes: likes,
       status: newStatus
     })
@@ -44,11 +47,11 @@ const EditBlogForm = ({ editBlog, likes, user }) => {
 
         <Form.Group className="mb-3" controlId="EditInput1">
           <Form.Label>Title</Form.Label>
-          <Form.Control type="text" placeholder="Edit title" id='title' value={newTitle} onChange={handleTitleChange}/>
+          <Form.Control type="text" placeholder="Edit title" id='title' defaultValue={newTitle} onChange={handleTitleChange}/>
         </Form.Group>
         <Form.Group className="mb-3" controlId="EditInput3">
           <Form.Label>Description</Form.Label>
-          <Form.Control as="textarea" rows={3} placeholder="Edit description" id='url' value={newUrl} onChange={handleUrlChange}/>
+          <Form.Control as="textarea" rows={3} placeholder="Edit description" id='url' defaultValue={newUrl} onChange={handleUrlChange}/>
         </Form.Group>
         <div>
           <Form.Check

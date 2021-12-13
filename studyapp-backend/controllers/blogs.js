@@ -31,6 +31,7 @@ blogsRouter.post('/', async (request, response, next) => {
             url: body.url,
             likes: body.likes || 0,
             status: body.status || 'public',
+            category: body.category || 'other',
             user: user._id
         })
 
