@@ -108,7 +108,7 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
       <br/>
       <h2>{blog.title}</h2>
       <div>status: {blog.status}</div>
-      <div>creator: {blog.author}</div>
+      <div>created by {blog.author}</div>
       <div>description: {blog.url}</div>
       <div>likes: {blog.likes}<Liking/></div>
       <br/>

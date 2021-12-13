@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
+import {Form} from 'react-bootstrap'
 
 const EditCardForm = ({ editCard, card }) => {
-  const [newWord, setNewWord] = useState('')
-  const [newTranslate, setNewTranslate] = useState('')
-  const [newExamples, setNewExamples] = useState('')
+  const [newWord, setNewWord] = useState(card.word)
+  const [newTranslate, setNewTranslate] = useState(card.translate)
+  const [newExamples, setNewExamples] = useState(card.examples)
 
   const handleWordChange = (event) => {
     setNewWord(event.target.value)
@@ -34,11 +35,20 @@ const EditCardForm = ({ editCard, card }) => {
 
   return (
     <div>
-      <h3>edit card</h3>
+      <h5>Edit card</h5>
       <form onSubmit={handleEditCard}>
-        word: <input id='wordEdit' value={newWord} onChange={handleWordChange}/> <br></br>
-        translate: <input id='translateEdit' value={newTranslate} onChange={handleTranslateChange}/> <br></br>
-        example: <input id='examplesEdit' value={newExamples} onChange={handleExampleChange}/> <br></br>
+        <Form.Group className="mb-3" controlId="EditInput1">
+          <Form.Label>Title</Form.Label>
+          <Form.Control type="text" placeholder="Edit word" id='wordEdit' defaultValue={newWord} onChange={handleWordChange}/>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="EditInput2">
+          <Form.Label>Translate</Form.Label>
+          <Form.Control type="text" placeholder="Edit translate" id='translateEdit' defaultValue={newTranslate} onChange={handleTranslateChange}/>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="EditInput3">
+          <Form.Label>Example</Form.Label>
+          <Form.Control type="text" placeholder="Edit example" id='examplesEdit' defaultValue={newExamples} onChange={handleExampleChange}/>
+        </Form.Group>
         <button type="submit">save</button>
       </form>
     </div>
