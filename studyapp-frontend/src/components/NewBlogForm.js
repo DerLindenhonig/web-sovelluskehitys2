@@ -23,6 +23,28 @@ const NewBlogForm = ({ createBlog }) => {
     }
   }, [])
 
+  const Toggle = () => {
+    const [categories] = useState(['English', 'German', 'French', 'Finnish', 'Swedish', 'Russian', 'Korean', 'Japanese', 'Chinese'])
+    const [category, setCategory] = useState('')
+
+    const handleChange = (e) => {
+      console.log(e.target.value)
+      setCategory(categories[e.target.value])
+      console.log(category)
+    }
+
+    return (
+      <Form.Select aria-label="Default select example" onChange={handleChange}>
+        <option>Select category</option>
+        {categories
+          //.filter(category => category.toLowerCase().includes(filter.toLowerCase()))
+          .map((filteredCategories, index) => (
+            <option value={index} key={filteredCategories} >{filteredCategories}</option>
+          ))}
+      </Form.Select>
+    )
+  }
+
   const handleAddBlog = (event) => {
     event.preventDefault()
 
@@ -58,6 +80,7 @@ const NewBlogForm = ({ createBlog }) => {
           <Form.Label>Description</Form.Label>
           <Form.Control as="textarea" rows={3} placeholder="Add description" id='url' value={newUrl} onChange={handleUrlChange}/>
         </Form.Group>
+        <Toggle/>
         <div>
           <Form.Check
             inline

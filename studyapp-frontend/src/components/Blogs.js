@@ -48,7 +48,7 @@ const Blogs = ({ blogs, setBlogs, setMessage, user }) => {
             .filter(blog => blog.title?.toLowerCase().includes(filter.toLowerCase()))
             .filter(blog => blog.status === 'public')
             .map(filteredBlogs => (
-              <tr key={filteredBlogs.title}>
+              <tr key={filteredBlogs.id}>
                 <td>
                   <Link to={`/blogs/${filteredBlogs.id}`}>{filteredBlogs.title}</Link>
                 </td>
