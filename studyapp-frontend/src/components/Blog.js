@@ -110,6 +110,7 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
       <div>status: {blog.status}</div>
       <div>created by {blog.author}</div>
       <div>description: {blog.url}</div>
+      <div>category: {blog.category}</div>
       <div>likes: {blog.likes}<Liking/></div>
       <br/>
       <EditBlogBtn/>

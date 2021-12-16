@@ -1,10 +1,19 @@
 import React, {useState} from 'react'
 import {Form} from 'react-bootstrap'
 
-const EditBlogForm = ({ editBlog, likes, /*user,*/ blog }) => {
+const EditBlogForm = ({ editBlog, likes, blog }) => {
   const [newTitle, setNewTitle] = useState(blog.title)
   const [newUrl, setNewUrl] = useState(blog.url)
   const [newStatus, setNewStatus] = useState(blog.status)
+  const [categories] = useState(['English', 'German', 'French', 'Finnish', 'Swedish', 'Russian', 'Korean', 'Japanese', 'Chinese'])
+  const [category, setCategory] = useState('')
+
+  let index = 0
+  const handleChange = (e) => {
+    index = e.target.value
+    setCategory(categories[index])
+    console.log(category)
+  }
 
   const handleTitleChange = (event) => {
     setNewTitle(event.target.value)
@@ -25,7 +34,8 @@ const EditBlogForm = ({ editBlog, likes, /*user,*/ blog }) => {
       url: newUrl,
       author: blog.author,
       likes: likes,
-      status: newStatus
+      status: newStatus,
+      category: category
     })
 
     setNewTitle('')
@@ -53,6 +63,16 @@ const EditBlogForm = ({ editBlog, likes, /*user,*/ blog }) => {
           <Form.Label>Description</Form.Label>
           <Form.Control as="textarea" rows={3} placeholder="Edit description" id='url' defaultValue={newUrl} onChange={handleUrlChange}/>
         </Form.Group>
+        <Form.Select aria-label="Default select example" onChange={handleChange}>
+          <option>Select category</option>
+          {categories
+            //.filter(category => category.toLowerCase().includes(filter.toLowerCase()))
+            .map((filteredCategories, index) => (
+              <option value={index} key={filteredCategories}>{filteredCategories}</option>
+            ))}
+        </Form.Select>
+        <br/>
+        <br/>
         <div>
           <Form.Check
             inline

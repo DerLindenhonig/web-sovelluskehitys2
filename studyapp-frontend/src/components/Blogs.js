@@ -34,7 +34,6 @@ const Blogs = ({ blogs, setBlogs, setMessage, user }) => {
   }
 
   const handleChange = (e) => {
-    console.log(e.target.value)
     index = e.target.value
     setCategory(categories[index])
   }
@@ -48,9 +47,7 @@ const Blogs = ({ blogs, setBlogs, setMessage, user }) => {
     setFilter(event.target.value)
   }
 
-
   const FilterBlogs = () => {
-    console.log('return: ' + category)
     return (
       <Table striped>
         <tbody>
@@ -81,8 +78,6 @@ const Blogs = ({ blogs, setBlogs, setMessage, user }) => {
       <br/>
       <h3>All wordlists</h3>
       <br/>
-      <Filter filter={filter} onInputChange={handleInputChange}/>
-      <br/>
       <Form.Select aria-label="Default select example" onChange={handleChange}>
         <option>Select category</option>
         {categories
@@ -91,6 +86,8 @@ const Blogs = ({ blogs, setBlogs, setMessage, user }) => {
           ))}
       </Form.Select>
       <br/>
+      <br/>
+      <Filter filter={filter} onInputChange={handleInputChange}/>
       <br/>
       <FilterBlogs/>
       <br/>

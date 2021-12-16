@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Togglable from './Togglable'
 import NewBlogForm from './NewBlogForm'
 import blogService from '../services/blogs'
-import {Table} from 'react-bootstrap'
+import {Form, Table} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import Filter from './Filter'
 
@@ -13,6 +13,14 @@ const UserPage = ({ blogs, setBlogs, setMessage, user }) => {
   }
 
   const [filter, setFilter] = useState('')
+  const [categories] = useState(['English', 'German', 'French', 'Finnish', 'Swedish', 'Russian', 'Korean', 'Japanese', 'Chinese', 'other'])
+  let [category, setCategory] = useState('English')
+
+  const handleChange = (e) => {
+    index = e.target.value
+    setCategory(categories[index])
+  }
+  let index = 0
 
   const handleAddBlog = (blogObject) => {
     try {
@@ -53,6 +61,7 @@ const UserPage = ({ blogs, setBlogs, setMessage, user }) => {
           {myBlogs
             .sort((a, b) => b.likes - a.likes)
             .filter(blog => blog.title?.toLowerCase().includes(filter.toLowerCase()))
+            .filter(blog => blog.category === category)
             .map(blog =>
               <tr key={blog.id}>
                 <td>
@@ -77,6 +86,15 @@ const UserPage = ({ blogs, setBlogs, setMessage, user }) => {
       </Togglable>
       <br/>
       <h3>My wordlists</h3>
+      <br/>
+      <Form.Select aria-label="Default select example" onChange={handleChange}>
+        <option>Select category</option>
+        {categories
+          .map((filteredCategories, index) => (
+            <option value={index} key={filteredCategories} >{filteredCategories}</option>
+          ))}
+      </Form.Select>
+      <br/>
       <br/>
       <Filter filter={filter} onInputChange={handleInputChange}/>
       <br/>

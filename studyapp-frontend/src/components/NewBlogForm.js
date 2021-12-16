@@ -8,7 +8,6 @@ const NewBlogForm = ({ createBlog }) => {
   const [user, setUser] = useState(null)
   const [categories] = useState(['English', 'German', 'French', 'Finnish', 'Swedish', 'Russian', 'Korean', 'Japanese', 'Chinese'])
   const [category, setCategory] = useState('')
-  //const [index, setIndex] = useState(0)
 
   const handleTitleChange = (event) => {
     setNewTitle(event.target.value)
@@ -27,26 +26,9 @@ const NewBlogForm = ({ createBlog }) => {
   }, [])
 
   let index = 0
-
-  const Toggle = () => {
-    const handleChange = (e) => {
-      console.log(e.target.value)
-      index = e.target.value
-      //console.log('handleChange, index: ' + index)
-      setCategory(categories[index])
-      //console.log(category)
-    }
-
-    return (
-      <Form.Select aria-label="Default select example" onChange={handleChange} defaultValue={index} value={index}>
-        <option>Select category</option>
-        {categories
-          //.filter(category => category.toLowerCase().includes(filter.toLowerCase()))
-          .map((filteredCategories, index) => (
-            <option value={index} key={filteredCategories}>{filteredCategories}</option>
-          ))}
-      </Form.Select>
-    )
+  const handleChange = (e) => {
+    index = e.target.value
+    setCategory(categories[index])
   }
 
   const handleAddBlog = (event) => {
@@ -54,8 +36,6 @@ const NewBlogForm = ({ createBlog }) => {
 
     console.log(user)
 
-    //console.log(index)
-    //setCategory(categories[index])
     console.log(category)
 
     createBlog({
@@ -78,6 +58,7 @@ const NewBlogForm = ({ createBlog }) => {
     setNewStatus('public')
   }
 
+
   return (
     <div>
       <Form onSubmit={handleAddBlog}>
@@ -89,7 +70,14 @@ const NewBlogForm = ({ createBlog }) => {
           <Form.Label>Description</Form.Label>
           <Form.Control as="textarea" rows={3} placeholder="Add description" id='url' value={newUrl} onChange={handleUrlChange}/>
         </Form.Group>
-        <Toggle/>
+        <Form.Select aria-label="Default select example" onChange={handleChange}>
+          <option>Select category</option>
+          {categories
+            //.filter(category => category.toLowerCase().includes(filter.toLowerCase()))
+            .map((filteredCategories, index) => (
+              <option value={index} key={filteredCategories}>{filteredCategories}</option>
+            ))}
+        </Form.Select>
         <br/>
         <br/>
         <div>
@@ -110,6 +98,8 @@ const NewBlogForm = ({ createBlog }) => {
         </div>
         <br/>
         <Button variant="dark" type="submit">Add</Button>
+        <br/>
+        <br/>
       </Form>
     </div>
   )
