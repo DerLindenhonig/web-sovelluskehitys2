@@ -10,7 +10,7 @@ const Blogs = ({ blogs, setBlogs, setMessage, user }) => {
 
   const [filter, setFilter] = useState('')
   const [categories] = useState(['English', 'German', 'French', 'Finnish', 'Swedish', 'Russian', 'Korean', 'Japanese', 'Chinese', 'other'])
-  const [category, setCategory] = useState('English')
+  let [category, setCategory] = useState('English')
 
   const handleAddBlog = (blogObject) => {
     try {
@@ -33,26 +33,12 @@ const Blogs = ({ blogs, setBlogs, setMessage, user }) => {
     }
   }
 
-  let index = 0
-  const Toggle = () => {
-    const handleChange = (e) => {
-      console.log(e.target.value)
-      index = e.target.value
-      console.log('handleChange, index: ' + index)
-      setCategory(categories[index])
-      console.log(category)
-    }
-
-    return (
-      <Form.Select aria-label="Default select example" onChange={handleChange}>
-        <option>Select category</option>
-        {categories
-          .map((filteredCategories, index) => (
-            <option value={index} key={filteredCategories} >{filteredCategories}</option>
-          ))}
-      </Form.Select>
-    )
+  const handleChange = (e) => {
+    console.log(e.target.value)
+    index = e.target.value
+    setCategory(categories[index])
   }
+  let index = 0
 
   if (blogs === undefined) {
     return null
@@ -62,7 +48,9 @@ const Blogs = ({ blogs, setBlogs, setMessage, user }) => {
     setFilter(event.target.value)
   }
 
+
   const FilterBlogs = () => {
+    console.log('return: ' + category)
     return (
       <Table striped>
         <tbody>
@@ -95,7 +83,13 @@ const Blogs = ({ blogs, setBlogs, setMessage, user }) => {
       <br/>
       <Filter filter={filter} onInputChange={handleInputChange}/>
       <br/>
-      <Toggle/>
+      <Form.Select aria-label="Default select example" onChange={handleChange}>
+        <option>Select category</option>
+        {categories
+          .map((filteredCategories, index) => (
+            <option value={index} key={filteredCategories} >{filteredCategories}</option>
+          ))}
+      </Form.Select>
       <br/>
       <br/>
       <FilterBlogs/>

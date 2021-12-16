@@ -32,18 +32,18 @@ const NewBlogForm = ({ createBlog }) => {
     const handleChange = (e) => {
       console.log(e.target.value)
       index = e.target.value
-      console.log('handleChange, index: ' + index)
+      //console.log('handleChange, index: ' + index)
       setCategory(categories[index])
       //console.log(category)
     }
 
     return (
-      <Form.Select aria-label="Default select example" onChange={handleChange}>
+      <Form.Select aria-label="Default select example" onChange={handleChange} defaultValue={index} value={index}>
         <option>Select category</option>
         {categories
           //.filter(category => category.toLowerCase().includes(filter.toLowerCase()))
           .map((filteredCategories, index) => (
-            <option value={index} key={filteredCategories} >{filteredCategories}</option>
+            <option value={index} key={filteredCategories}>{filteredCategories}</option>
           ))}
       </Form.Select>
     )
@@ -90,6 +90,8 @@ const NewBlogForm = ({ createBlog }) => {
           <Form.Control as="textarea" rows={3} placeholder="Add description" id='url' value={newUrl} onChange={handleUrlChange}/>
         </Form.Group>
         <Toggle/>
+        <br/>
+        <br/>
         <div>
           <Form.Check
             inline
