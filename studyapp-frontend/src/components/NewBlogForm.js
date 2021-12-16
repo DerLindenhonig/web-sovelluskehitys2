@@ -6,6 +6,9 @@ const NewBlogForm = ({ createBlog }) => {
   const [newUrl, setNewUrl] = useState('')
   const [newStatus, setNewStatus] = useState('')
   const [user, setUser] = useState(null)
+  const [categories] = useState(['English', 'German', 'French', 'Finnish', 'Swedish', 'Russian', 'Korean', 'Japanese', 'Chinese'])
+  const [category, setCategory] = useState('')
+  //const [index, setIndex] = useState(0)
 
   const handleTitleChange = (event) => {
     setNewTitle(event.target.value)
@@ -23,14 +26,16 @@ const NewBlogForm = ({ createBlog }) => {
     }
   }, [])
 
+  let index = 0
+
   const Toggle = () => {
-    const [categories] = useState(['English', 'German', 'French', 'Finnish', 'Swedish', 'Russian', 'Korean', 'Japanese', 'Chinese'])
-    const [category, setCategory] = useState('')
 
     const handleChange = (e) => {
       console.log(e.target.value)
-      setCategory(categories[e.target.value])
-      console.log(category)
+      index = e.target.value
+      console.log('handleChange, index: ' + index)
+      setCategory(categories[index])
+      //console.log(category)
     }
 
     return (
@@ -50,11 +55,16 @@ const NewBlogForm = ({ createBlog }) => {
 
     console.log(user)
 
+    //console.log(index)
+    //setCategory(categories[index])
+    console.log(category)
+
     createBlog({
       title: newTitle,
       author: user.username,
       url: newUrl,
-      status: newStatus
+      status: newStatus,
+      category: category
     })
 
     setNewTitle('')
