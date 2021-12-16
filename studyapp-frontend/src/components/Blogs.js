@@ -2,13 +2,15 @@ import React, {useState} from 'react'
 import Togglable from './Togglable'
 import NewBlogForm from './NewBlogForm'
 import blogService from '../services/blogs'
-import {Table} from 'react-bootstrap'
+import {Form, Table} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import Filter from './Filter'
 
 const Blogs = ({ blogs, setBlogs, setMessage, user }) => {
 
   const [filter, setFilter] = useState('')
+  const [categories] = useState(['English', 'German', 'French', 'Finnish', 'Swedish', 'Russian', 'Korean', 'Japanese', 'Chinese', 'other'])
+  const [category, setCategory] = useState('English')
 
   const handleAddBlog = (blogObject) => {
     try {
@@ -31,6 +33,27 @@ const Blogs = ({ blogs, setBlogs, setMessage, user }) => {
     }
   }
 
+  let index = 0
+  const Toggle = () => {
+    const handleChange = (e) => {
+      console.log(e.target.value)
+      index = e.target.value
+      console.log('handleChange, index: ' + index)
+      setCategory(categories[index])
+      console.log(category)
+    }
+
+    return (
+      <Form.Select aria-label="Default select example" onChange={handleChange}>
+        <option>Select category</option>
+        {categories
+          .map((filteredCategories, index) => (
+            <option value={index} key={filteredCategories} >{filteredCategories}</option>
+          ))}
+      </Form.Select>
+    )
+  }
+
   if (blogs === undefined) {
     return null
   }
@@ -47,6 +70,7 @@ const Blogs = ({ blogs, setBlogs, setMessage, user }) => {
             .sort((a, b) => b.likes - a.likes)
             .filter(blog => blog.title?.toLowerCase().includes(filter.toLowerCase()))
             .filter(blog => blog.status === 'public')
+            .filter(blog => blog.category === category)
             .map(filteredBlogs => (
               <tr key={filteredBlogs.id}>
                 <td>
@@ -70,6 +94,9 @@ const Blogs = ({ blogs, setBlogs, setMessage, user }) => {
       <h3>All wordlists</h3>
       <br/>
       <Filter filter={filter} onInputChange={handleInputChange}/>
+      <br/>
+      <Toggle/>
+      <br/>
       <br/>
       <FilterBlogs/>
       <br/>

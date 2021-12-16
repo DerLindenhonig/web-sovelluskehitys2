@@ -29,7 +29,6 @@ const NewBlogForm = ({ createBlog }) => {
   let index = 0
 
   const Toggle = () => {
-
     const handleChange = (e) => {
       console.log(e.target.value)
       index = e.target.value
