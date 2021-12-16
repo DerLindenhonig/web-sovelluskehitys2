@@ -55,11 +55,11 @@ const EditBlogForm = ({ editBlog, likes, blog }) => {
       <h4>Edit:</h4>
       <form onSubmit={handleEditBlog}>
 
-        <Form.Group className="mb-3" controlId="EditInput1">
+        <Form.Group className="mb-3">
           <Form.Label>Title</Form.Label>
           <Form.Control type="text" placeholder="Edit title" id='title' defaultValue={newTitle} onChange={handleTitleChange}/>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="EditInput3">
+        <Form.Group className="mb-3">
           <Form.Label>Description</Form.Label>
           <Form.Control as="textarea" rows={3} placeholder="Edit description" id='url' defaultValue={newUrl} onChange={handleUrlChange}/>
         </Form.Group>
