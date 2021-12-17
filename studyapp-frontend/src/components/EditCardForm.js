@@ -37,15 +37,15 @@ const EditCardForm = ({ editCard, card }) => {
     <div>
       <h5>Edit card</h5>
       <form onSubmit={handleEditCard}>
-        <Form.Group className="mb-3" controlId="EditInput1">
+        <Form.Group className="mb-3">
           <Form.Label>Title</Form.Label>
           <Form.Control type="text" placeholder="Edit word" id='wordEdit' defaultValue={newWord} onChange={handleWordChange}/>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="EditInput2">
+        <Form.Group className="mb-3">
           <Form.Label>Translate</Form.Label>
           <Form.Control type="text" placeholder="Edit translate" id='translateEdit' defaultValue={newTranslate} onChange={handleTranslateChange}/>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="EditInput3">
+        <Form.Group className="mb-3">
           <Form.Label>Example</Form.Label>
           <Form.Control type="text" placeholder="Edit example" id='examplesEdit' defaultValue={newExamples} onChange={handleExampleChange}/>
         </Form.Group>

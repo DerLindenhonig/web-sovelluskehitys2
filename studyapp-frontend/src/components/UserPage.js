@@ -58,6 +58,14 @@ const UserPage = ({ blogs, setBlogs, setMessage, user }) => {
     return (
       <Table striped>
         <tbody>
+          <tr>
+            <td>
+              <h5>Name</h5>
+            </td>
+            <td>
+              <h5>Cards</h5>
+            </td>
+          </tr>
           {myBlogs
             .sort((a, b) => b.likes - a.likes)
             .filter(blog => blog.title?.toLowerCase().includes(filter.toLowerCase()))
@@ -68,7 +76,7 @@ const UserPage = ({ blogs, setBlogs, setMessage, user }) => {
                   <Link to={`/blogs/${blog.id}`}>{blog.title}</Link>
                 </td>
                 <td>
-                  {blog.likes}
+                  {blog.cards.length}
                 </td>
               </tr>
             )}

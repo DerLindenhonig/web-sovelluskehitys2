@@ -1,4 +1,5 @@
-import React  from 'react'
+import React from 'react'
+import {Link} from 'react-router-dom'
 
 const User = ({ user, blogs }) => {
   if (user === undefined) {
@@ -19,22 +20,36 @@ const User = ({ user, blogs }) => {
   }
 
   console.log(user.blogs)
-  console.log(likedBlogs)
+  console.log(user.blogs.length)
+
+  const Wordlists = () => {
+    if(user.blogs.length === 0) {
+      return (
+        <p>There is no single wordlist created yet!</p>
+      )
+    } else if (user.blogs.length !== 0){
+      return (
+        <td>
+          {user.blogs
+            .slice(0, 10)
+            .sort((a, b) => b.likes - a.likes)
+            .map(blog =>
+              <tr key={blog.title}>
+                <Link to={`/blogs/${blog.id}`}>{blog.title}</Link>
+              </tr>)}
+        </td>
+      )
+    }
+  }
 
   return (
     <div>
-      <h2>{user.name}</h2>
+      <br/>
+      <br/>
+      <h3>{user.name}</h3>
       <p>{user.username}</p>
-      <h3>blogs</h3>
-      <ul>
-        {user.blogs.map(blog =>
-          <li key={blog.title}>{blog.title}</li>)}
-      </ul>
-      <h3>liked blogs</h3>
-      <ul>
-        {likedBlogs.map(blog =>
-          <li key={blog.title}>{blog.title}</li>)}
-      </ul>
+      <h4>Top 10 word lists:</h4>
+      <Wordlists/>
     </div>
   )
 }

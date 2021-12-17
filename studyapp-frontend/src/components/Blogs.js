@@ -51,6 +51,14 @@ const Blogs = ({ blogs, setBlogs, setMessage, user }) => {
     return (
       <Table striped>
         <tbody>
+          <tr>
+            <td>
+              <h5>Name</h5>
+            </td>
+            <td>
+              <h5>Cards</h5>
+            </td>
+          </tr>
           {blogs
             .sort((a, b) => b.likes - a.likes)
             .filter(blog => blog.title?.toLowerCase().includes(filter.toLowerCase()))
@@ -60,6 +68,9 @@ const Blogs = ({ blogs, setBlogs, setMessage, user }) => {
               <tr key={filteredBlogs.id}>
                 <td>
                   <Link to={`/blogs/${filteredBlogs.id}`}>{filteredBlogs.title}</Link>
+                </td>
+                <td>
+                  {filteredBlogs.cards.length}
                 </td>
               </tr>
             ))}
