@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Togglable from './Togglable'
 import NewBlogForm from './NewBlogForm'
 import blogService from '../services/blogs'
-import {Form, Table} from 'react-bootstrap'
+import {Card, Col, Form, Row} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import Filter from './Filter'
 
@@ -56,32 +56,25 @@ const UserPage = ({ blogs, setBlogs, setMessage, user }) => {
 
   const FilterBlogs = () => {
     return (
-      <Table striped>
-        <tbody>
-          <tr>
-            <td>
-              <h5>Name</h5>
-            </td>
-            <td>
-              <h5>Cards</h5>
-            </td>
-          </tr>
-          {myBlogs
-            .sort((a, b) => b.likes - a.likes)
-            .filter(blog => blog.title?.toLowerCase().includes(filter.toLowerCase()))
-            .filter(blog => blog.category === category)
-            .map(blog =>
-              <tr key={blog.id}>
-                <td>
-                  <Link to={`/blogs/${blog.id}`}>{blog.title}</Link>
-                </td>
-                <td>
-                  {blog.cards.length}
-                </td>
-              </tr>
-            )}
-        </tbody>
-      </Table>
+      <Row xs={3} md={4} className="g-4" >
+        {myBlogs
+          .sort((a, b) => b.likes - a.likes)
+          .filter(blog => blog.title?.toLowerCase().includes(filter.toLowerCase()))
+          .filter(blog => blog.category === category)
+          .map(blog =>
+            <Col key={blog.id}>
+              <Card className="mb-4">
+                <Card.Header>{blog.category}</Card.Header>
+                <Card.Body>
+                  <Card.Title><Link to={`/blogs/${blog.id}`}>{blog.title}</Link></Card.Title>
+                </Card.Body>
+                <Card.Text style={{ padding: '18px' }}>
+                  Cards: {blog.cards.length}
+                </Card.Text>
+              </Card>
+            </Col>
+          )}
+      </Row>
     )
   }
 
@@ -93,13 +86,12 @@ const UserPage = ({ blogs, setBlogs, setMessage, user }) => {
         <NewBlogForm createBlog={handleAddBlog}/>
       </Togglable>
       <br/>
-      <h3>My wordlists</h3>
+      <h3>My word lists</h3>
       <br/>
       <Form.Select aria-label="Default select example" onChange={handleChange}>
-        <option>Select category</option>
         {categories
           .map((filteredCategories, index) => (
-            <option value={index} key={filteredCategories} >{filteredCategories}</option>
+            <option value={index} key={filteredCategories}>{filteredCategories}</option>
           ))}
       </Form.Select>
       <br/>

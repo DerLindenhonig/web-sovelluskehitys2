@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Togglable from './Togglable'
 import NewBlogForm from './NewBlogForm'
 import blogService from '../services/blogs'
-import {Form, Table} from 'react-bootstrap'
+import {Card, Col, Form, Row} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import Filter from './Filter'
 
@@ -49,33 +49,27 @@ const Blogs = ({ blogs, setBlogs, setMessage, user }) => {
 
   const FilterBlogs = () => {
     return (
-      <Table striped>
-        <tbody>
-          <tr>
-            <td>
-              <h5>Name</h5>
-            </td>
-            <td>
-              <h5>Cards</h5>
-            </td>
-          </tr>
-          {blogs
-            .sort((a, b) => b.likes - a.likes)
-            .filter(blog => blog.title?.toLowerCase().includes(filter.toLowerCase()))
-            .filter(blog => blog.status === 'public')
-            .filter(blog => blog.category === category)
-            .map(filteredBlogs => (
-              <tr key={filteredBlogs.id}>
-                <td>
-                  <Link to={`/blogs/${filteredBlogs.id}`}>{filteredBlogs.title}</Link>
-                </td>
-                <td>
-                  {filteredBlogs.cards.length}
-                </td>
-              </tr>
-            ))}
-        </tbody>
-      </Table>
+      <Row xs={3} md={4} className="g-4" >
+
+        {blogs
+          .sort((a, b) => b.likes - a.likes)
+          .filter(blog => blog.title?.toLowerCase().includes(filter.toLowerCase()))
+          .filter(blog => blog.status === 'public')
+          .filter(blog => blog.category === category)
+          .map(filteredBlogs => (
+            <Col key={filteredBlogs.id}>
+              <Card>
+                <Card.Header>{filteredBlogs.category}</Card.Header>
+                <Card.Body>
+                  <Card.Title><Link to={`/blogs/${filteredBlogs.id}`}>{filteredBlogs.title}</Link></Card.Title>
+                </Card.Body>
+                <Card.Text style={{ padding: '18px' }}>
+                  Cards: {filteredBlogs.cards.length}
+                </Card.Text>
+              </Card>
+            </Col>
+          ))}
+      </Row>
     )
   }
 
@@ -90,7 +84,6 @@ const Blogs = ({ blogs, setBlogs, setMessage, user }) => {
       <h3>All wordlists</h3>
       <br/>
       <Form.Select aria-label="Default select example" onChange={handleChange}>
-        <option>Select category</option>
         {categories
           .map((filteredCategories, index) => (
             <option value={index} key={filteredCategories} >{filteredCategories}</option>

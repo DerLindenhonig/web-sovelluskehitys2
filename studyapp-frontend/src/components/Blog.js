@@ -1,10 +1,10 @@
-import React, {useState} from 'react'
+import React from 'react'
 import blogService from '../services/blogs'
 import Cards from './Cards'
 import Togglable from './Togglable'
 import EditBlogForm from './EditBlogForm'
 import {Link, Redirect} from 'react-router-dom'
-import {Button} from 'react-bootstrap'
+//import { Button } from 'react-bootstrap'
 
 const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
 
@@ -16,7 +16,7 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
     return null
   }
 
-  const [like, setLike] = useState(false)
+  //const [like, setLike] = useState(false)
 
   const GameBtn = () => {
     if (blog.user.username === user.username) {
@@ -48,7 +48,7 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
       })
   }
 
-  const addLike = async event => {
+  /*const addLike = async event => {
     event.preventDefault()
     setLike(true)
 
@@ -62,9 +62,9 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
     await blogService.update(blog.id, newBlog)
     const allBlogs = await blogService.getAll()
     setRefreshedBlogs(allBlogs)
-  }
+  }*/
 
-  const removeLike = async event => {
+  /*const removeLike = async event => {
     event.preventDefault()
     setLike(false)
 
@@ -78,9 +78,9 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
     await blogService.update(blog.id, newBlog)
     const allBlogs = await blogService.getAll()
     setRefreshedBlogs(allBlogs)
-  }
+  }*/
 
-  const Liking = () => {
+  /*const Liking = () => {
     for(let i = 0; i < user.likedBlogs; i++) {
       if(user.likedBlogs[i] === blog.id) {
         setLike(true)
@@ -93,7 +93,7 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
     } else {
       return <Button size="sm" id='like' onClick={removeLike}>remove like</Button>
     }
-  }
+  }*/
 
   const Game = () => {
     return (
@@ -111,7 +111,6 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
       <div>created by {blog.author}</div>
       <div>description: {blog.url}</div>
       <div>category: {blog.category}</div>
-      <div>likes: {blog.likes}<Liking/></div>
       <br/>
       <EditBlogBtn/>
       <br/>
