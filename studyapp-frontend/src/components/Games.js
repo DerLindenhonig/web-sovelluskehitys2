@@ -1,8 +1,7 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
-import {Image} from 'react-bootstrap'
-import imageToRender from '../assets/image-quiz.png'
-import imageToRender1 from '../assets/image-writing.png'
+import {Card} from 'react-bootstrap'
+import imageToRender from '../assets/image0 (1).jpeg'
+import imageToRender1 from '../assets/image1 (2).jpeg'
 
 const Games = ({ blog }) => {
 
@@ -15,14 +14,21 @@ const Games = ({ blog }) => {
       <br/>
       <h1>Games</h1>
       <br/>
-      <Link to={`/quiz/${blog.id}`}>
-        <Image src={imageToRender} style={{ width: '10rem' }}/>
-      </Link>
+      <Card style={{ width: '10rem' }}>
+        <Card.Img variant="top" src={imageToRender1} />
+        <Card.Body>
+          <Card.Title>Translate-Word</Card.Title>
+          <Card.Link href={`/quiz/${blog.id}`}>Play game</Card.Link>
+        </Card.Body>
+      </Card>
       <br/>
-      <br/>
-      <Link to={`/writing/${blog.id}`}>
-        <Image src={imageToRender1} style={{ width: '10rem' }}/>
-      </Link>
+      <Card style={{ width: '10rem' }}>
+        <Card.Img variant="top" src={imageToRender} />
+        <Card.Body>
+          <Card.Title>Writing</Card.Title>
+          <Card.Link href={`/writing/${blog.id}`}>Play game</Card.Link>
+        </Card.Body>
+      </Card>
     </div>
   )
 }
