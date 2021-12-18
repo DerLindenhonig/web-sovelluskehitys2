@@ -1,17 +1,33 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {Button, FormControl, InputGroup} from 'react-bootstrap'
 import cardService from '../services/cards'
 
-const WritingGame = ({ blog, cards }) => {
+const WritingGame = ({ blog }) => {
 
   if(!blog) {
+    console.log(blog)
     return null
   }
 
+  const [allCards, setAllCards] = useState([])
   const [newAnswer, setNewAnswer] = useState('')
   const [newQuestion, setNewQuestion] = useState('')
   const [start, setStart] = useState(false)
   let [record, setRecord] = useState(null)
+
+  useEffect(() => {
+    cardService.getAll()
+      .then(cards =>
+        setAllCards(cards)
+      )
+  }, [])
+
+  const cards = []
+  for(let i = 0; i < allCards.length; i++) {
+    if(blog.id === allCards[i].blog.id) {
+      cards.push(allCards[i])
+    }
+  }
 
   const changeQuestion = () => {
     setStart(true)
@@ -69,8 +85,13 @@ const WritingGame = ({ blog, cards }) => {
   if(blog.cards.length > 3) {
     return (
       <div>
+        <br/>
+        <h3>Writing</h3>
+        <br/>
+        <br/>
         <div>right answers: {record}</div>
-        <h3>{newQuestion.translate}</h3>
+        <br/>
+        <h4>{newQuestion.translate}</h4>
         <InputGroup className="mb-3"><FormControl onChange={handleAnswerChange} value={newAnswer}/></InputGroup>
         <ButtonComponent/>
       </div>

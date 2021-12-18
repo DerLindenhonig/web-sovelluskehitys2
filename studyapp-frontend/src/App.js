@@ -13,6 +13,8 @@ import RegistrationForm from './components/RegistrationForm'
 import User from './components/User'
 import Games from './components/Games'
 import {Button, Container, Navbar} from 'react-bootstrap'
+import WritingGame from './components/WritingGame'
+import QuizGame from './components/QuizGame'
 
 const App = () => {
   const [blogs, setBlogs] = useState([])
@@ -84,6 +86,12 @@ const App = () => {
 
       <div className="container">
         <Switch>
+          <Route path='/writing/:id' render={({ match }) =>
+            <WritingGame blog={blogId(match.params.id)}/>}
+          />
+          <Route path='/quiz/:id' render={({ match }) =>
+            <QuizGame blog={blogId(match.params.id)} setMessage={setMessage}/>}
+          />
           <Route path='/games/:id' render={({ match }) =>
             <Games blog={blogId(match.params.id)}/>}
           />
