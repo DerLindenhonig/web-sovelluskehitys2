@@ -6,6 +6,7 @@ import Card from './Card'
 import EditCard from './EditCard'
 import blogService from '../services/blogs'
 import Togglable from './Togglable'
+import imageToRender from '../assets/Del.png'
 
 const Cards = ({ blog, user, setRefreshedBlogs }) => {
 
@@ -24,7 +25,7 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
       )
   }, [])
 
-  const  CreateCardBtn = () => {
+  const CreateCardBtn = () => {
     if (blog.user.username === user.username) {
       return (
         <Togglable buttonLabel='Add a new card'>
@@ -63,7 +64,7 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
 
   const DeleteBlogBtn = () => {
     if (blog.user.username === user.username) {
-      return <Button size="sm" variant="danger" id='delete' onClick={deleteBlog}>delete</Button>
+      return <Button size="sm" variant="danger" id='delete' onClick={deleteBlog}><img src={imageToRender} style={{ width: '1rem' }}/> delete</Button>
     } else {
       return null
     }

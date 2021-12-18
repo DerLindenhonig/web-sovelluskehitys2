@@ -1,6 +1,7 @@
 import React, {useImperativeHandle, useState} from 'react'
 import PropTypes from 'prop-types'
 import {Button} from 'react-bootstrap'
+import imageToRender from '../assets/Red.png'
 
 const Togglable = React.forwardRef((props, ref) => {
   const [visible, setVisible] = useState(false)
@@ -21,7 +22,7 @@ const Togglable = React.forwardRef((props, ref) => {
   return (
     <div>
       <div style={hideWhenVisible}>
-        <Button size="sm" variant="dark" onClick={toggleVisibility}>{props.buttonLabel}</Button>
+        <Button size="sm" variant="dark" onClick={toggleVisibility}><img src={imageToRender} style={{ width: '1rem' }}/> {props.buttonLabel}</Button>
       </div>
       <div style={showWhenVisible}>
         {props.children}
