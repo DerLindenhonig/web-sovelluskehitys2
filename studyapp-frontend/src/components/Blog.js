@@ -4,6 +4,7 @@ import Cards from './Cards'
 import Togglable from './Togglable'
 import EditBlogForm from './EditBlogForm'
 import {Link, Redirect} from 'react-router-dom'
+import styled from 'styled-components'
 //import { Button } from 'react-bootstrap'
 
 const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
@@ -95,10 +96,21 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
     }
   }*/
 
+  const Button = styled.button`
+  background: lightseagreen;
+  font-size: 1.3em;
+  padding: 0.15em 0.5em;
+  border: 0px solid Black;
+  border-radius: 3px;
+  font-weight: bold;
+  background: ${props => props.primary ? 'white' : 'lightseagreen'};
+  color: ${props => props.primary ? 'lightseagreen' : 'white'};
+`
+
   const Game = () => {
     return (
       <div>
-        <Link to={`/games/${blog.id}`}><button>start game</button></Link>
+        <Link to={`/games/${blog.id}`}><Button>Play games</Button></Link>
       </div>
     )
   }

@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react'
-import {Button, Table} from 'react-bootstrap'
+import {Table} from 'react-bootstrap'
 import cardService from '../services/cards'
 import NewCardForm from './NewCardForm'
 import Card from './Card'
 import EditCard from './EditCard'
 import blogService from '../services/blogs'
 import Togglable from './Togglable'
-import imageToRender from '../assets/Del.png'
+import styled from 'styled-components'
 
 const Cards = ({ blog, user, setRefreshedBlogs }) => {
 
@@ -62,9 +62,18 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
     }
   }
 
+  const Button = styled.button`
+  background: lightcoral;
+  font-size: 1em;
+  padding: 0.15em 0.5em;
+  border: 1px solid Black;
+  border-radius: 3px;
+  display: inline;
+`
+
   const DeleteBlogBtn = () => {
     if (blog.user.username === user.username) {
-      return <Button size="sm" variant="danger" id='delete' onClick={deleteBlog}><img src={imageToRender} style={{ width: '1rem' }}/> delete</Button>
+      return <Button size="sm" variant="danger" id='delete' onClick={deleteBlog}>delete wordlist</Button>
     } else {
       return null
     }
