@@ -1,9 +1,13 @@
 import React, {useImperativeHandle, useState} from 'react'
 import PropTypes from 'prop-types'
-import {Button} from 'react-bootstrap'
-import imageToRender from '../assets/Red.png'
+import imageToRender from '../assets/edit.png'
+import imageToRenderAdd from '../assets/add.png'
+import styled from 'styled-components'
+import {Image} from 'react-bootstrap'
 
 const Togglable = React.forwardRef((props, ref) => {
+  //const [image, setImage] = useState(false)
+
   const [visible, setVisible] = useState(false)
 
   const hideWhenVisible = { display: visible ? 'none' : '' }
@@ -19,10 +23,28 @@ const Togglable = React.forwardRef((props, ref) => {
     }
   })
 
+  const Button = styled.button`
+  background: Bisque;
+  font-size: 1em;
+  //margin: 1em;
+  padding: 0.15em 0.5em;
+  border: 1px solid Black;
+  border-radius: 3px;
+`
+
+  const ImageComponent = ({ image }) => {
+    if(image === false) {
+      return <Image src={imageToRender}/>
+    } else {
+      return <Image src={imageToRenderAdd}/>
+    }
+  }
+
+
   return (
     <div>
       <div style={hideWhenVisible}>
-        <Button size="sm" variant="dark" onClick={toggleVisibility}><img src={imageToRender} style={{ width: '1rem' }}/> {props.buttonLabel}</Button>
+        <Button size="sm" variant="light" onClick={toggleVisibility}><ImageComponent image={props.image}/> {props.buttonLabel}</Button>
       </div>
       <div style={showWhenVisible}>
         {props.children}

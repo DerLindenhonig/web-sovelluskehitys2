@@ -9,7 +9,7 @@ const EditCard = ({ user, card, blog, setAllCards, cards, allCards }) => {
     console.log('card id: ' + card.id)
     if (blog.user.username === user.username) {
       return (
-        <Togglable buttonLabel='edit'>
+        <Togglable buttonLabel='edit' image={false}>
           <EditCardForm editCard={handleEditCard} card={card}/>
         </Togglable>
       )

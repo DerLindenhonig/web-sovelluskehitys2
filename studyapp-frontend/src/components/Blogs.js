@@ -77,7 +77,7 @@ const Blogs = ({ blogs, setBlogs, setMessage, user }) => {
     <div>
       <br/>
       <h3>Add new</h3>
-      <Togglable buttonLabel='create new wordlist'>
+      <Togglable buttonLabel='create new wordlist' image={true}>
         <NewBlogForm createBlog={handleAddBlog} user={user}/>
       </Togglable>
       <br/>
