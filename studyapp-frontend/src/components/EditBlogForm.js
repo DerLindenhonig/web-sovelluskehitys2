@@ -5,8 +5,8 @@ const EditBlogForm = ({ editBlog, likes, blog }) => {
   const [newTitle, setNewTitle] = useState(blog.title)
   const [newUrl, setNewUrl] = useState(blog.url)
   const [newStatus, setNewStatus] = useState(blog.status)
-  const [categories] = useState(['English', 'German', 'French', 'Finnish', 'Swedish', 'Russian', 'Korean', 'Japanese', 'Chinese'])
-  const [category, setCategory] = useState('')
+  const [categories] = useState(['English', 'German', 'French', 'Finnish', 'Swedish', 'Russian', 'Korean', 'Japanese', 'Chinese', 'other'])
+  const [category, setCategory] = useState(blog.category)
 
   let index = 0
   const handleChange = (e) => {
@@ -27,6 +27,9 @@ const EditBlogForm = ({ editBlog, likes, blog }) => {
     event.preventDefault()
     if(newUrl === '') {
       setNewUrl(blog.url)
+    }
+    if(newStatus === '') {
+      setNewStatus(blog.status)
     }
 
     editBlog({
