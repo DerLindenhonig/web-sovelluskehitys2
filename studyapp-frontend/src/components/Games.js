@@ -1,7 +1,7 @@
 import React from 'react'
 import {Card} from 'react-bootstrap'
 import imageToRender from '../assets/image0 (1).jpeg'
-import imageToRender1 from '../assets/image1 (2).jpeg'
+import imageToRender1 from '../assets/cards.png'
 
 const Games = ({ blog }) => {
 

@@ -15,6 +15,7 @@ import Games from './components/Games'
 import {Button, Container, Navbar} from 'react-bootstrap'
 import WritingGame from './components/WritingGame'
 import QuizGame from './components/QuizGame'
+import styled from 'styled-components'
 
 const App = () => {
   const [blogs, setBlogs] = useState([])
@@ -64,23 +65,43 @@ const App = () => {
   const blogId = (id) => blogs.find(blog => blog.id === id)
   const userId = (id) => users.find(user => user.id === id)
 
+  const Navigation = styled.div`
+  background: lightseagreen;
+  //font-size: 1em;
+  //margin: 1em;
+  padding: 0.15em 0.5em;
+  //border: 0px solid Black;
+  //border-radius: 3px;
+`
+
+  const StyledLink = styled(Link)`
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: bold;
+    padding: 0.15em 0.5em;
+    background: ${props => props.primary ? 'white' : 'lightseagreen'};
+    color: ${props => props.primary ? 'lightseagreen' : 'white'};
+`
+
   return (
     <Router>
-      <Navbar bg="light" variant="light">
-        <Container>
-          <Navbar>
-            <Link style={padding} to="/">Home</Link>
-            <Link style={padding} to="/blogs">Discover</Link>
-            <Link style={padding} to="/users" >Users</Link>
-          </Navbar>
-          <Navbar className="justify-content-end">
-            {user === null
-              ? <Link style={padding} to="/login">login</Link>
-              : <em>{user.name} logged in <Button size="sm" variant="outline-dark" onClick={handleLogout}>logout</Button></em>
-            }
-          </Navbar>
-        </Container>
-      </Navbar>
+      <Navigation>
+        <Navbar variant="light">
+          <Container>
+            <Navbar>
+              <StyledLink to="/">Home</StyledLink>
+              <StyledLink to="/blogs">Discover</StyledLink>
+              <StyledLink to="/users" >Users</StyledLink>
+            </Navbar>
+            <Navbar className="justify-content-end">
+              {user === null
+                ? <Link style={padding} to="/login">login</Link>
+                : <em>{user.name} logged in <Button size="sm" variant="outline-dark" onClick={handleLogout}>logout</Button></em>
+              }
+            </Navbar>
+          </Container>
+        </Navbar>
+      </Navigation>
 
       <div><Notification message={message}/></div>
 
