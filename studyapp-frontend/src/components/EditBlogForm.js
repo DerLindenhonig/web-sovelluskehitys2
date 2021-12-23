@@ -7,12 +7,21 @@ const EditBlogForm = ({ editBlog, likes, blog }) => {
   const [newStatus, setNewStatus] = useState(blog.status)
   const [categories] = useState(['English', 'German', 'French', 'Finnish', 'Swedish', 'Russian', 'Korean', 'Japanese', 'Chinese', 'other'])
   const [category, setCategory] = useState(blog.category)
+  const [categories2] = useState(['English', 'German', 'French', 'Finnish', 'Swedish', 'Russian', 'Korean', 'Japanese', 'Chinese', 'other'])
+  const [category2, setCategory2] = useState(blog.category2)
 
   let index = 0
   const handleChange = (e) => {
     index = e.target.value
     setCategory(categories[index])
     console.log(category)
+  }
+
+  let index2 = 0
+  const handleChange2 = (e) => {
+    index2 = e.target.value
+    setCategory2(categories2[index2])
+    console.log(category2)
   }
 
   const handleTitleChange = (event) => {
@@ -38,7 +47,8 @@ const EditBlogForm = ({ editBlog, likes, blog }) => {
       author: blog.author,
       likes: likes,
       status: newStatus,
-      category: category
+      category: category,
+      category2: category2
     })
 
     setNewTitle('')
@@ -67,13 +77,20 @@ const EditBlogForm = ({ editBlog, likes, blog }) => {
           <Form.Control as="textarea" rows={3} placeholder="Edit description" id='url' defaultValue={newUrl} onChange={handleUrlChange}/>
         </Form.Group>
         <Form.Select aria-label="Default select example" onChange={handleChange}>
-          <option>Select category</option>
+          <option>Select language</option>
           {categories
             //.filter(category => category.toLowerCase().includes(filter.toLowerCase()))
             .map((filteredCategories, index) => (
               <option value={index} key={filteredCategories}>{filteredCategories}</option>
             ))}
-        </Form.Select>
+        </Form.Select> for <Form.Select aria-label="Default select example" onChange={handleChange2}>
+          <option>Select language</option>
+          {categories2
+            //.filter(category => category.toLowerCase().includes(filter.toLowerCase()))
+            .map((filteredCategories, index) => (
+              <option value={index} key={filteredCategories}>{filteredCategories}</option>
+            ))}
+        </Form.Select> speakers
         <br/>
         <br/>
         <div>
@@ -92,8 +109,10 @@ const EditBlogForm = ({ editBlog, likes, blog }) => {
             type='radio'
           />
         </div>
+        <br/>
         <button type="submit">save</button>
-
+        <br/>
+        <br/>
       </form>
     </div>
   )

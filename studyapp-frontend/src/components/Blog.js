@@ -119,10 +119,10 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
     <div>
       <br/>
       <h2>{blog.title}</h2>
-      <div>status: {blog.status}</div>
-      <div>created by {blog.author}</div>
-      <div>description: {blog.url}</div>
-      <div>category: {blog.category}</div>
+      <div><strong>Status:</strong> {blog.status}</div>
+      <div><strong>Created by</strong> {blog.author}</div>
+      <div><strong>Description:</strong> {blog.url}</div>
+      <div><strong>Category:</strong> {blog.category} for {blog.category2} speakers</div>
       <br/>
       <EditBlogBtn/>
       <br/>

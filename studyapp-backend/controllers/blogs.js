@@ -18,7 +18,7 @@ blogsRouter.post('/', async (request, response, next) => {
             return response.status(401).json({error: 'invalid token'})
         }
 
-        if (!body.title || !body.url) {
+        if (!body.title) {
             return response.status(400).end()
         }
 
@@ -32,6 +32,7 @@ blogsRouter.post('/', async (request, response, next) => {
             likes: body.likes || 0,
             status: body.status || 'public',
             category: body.category || 'other',
+            category2: body.category2 || 'other',
             user: user._id
         })
 
@@ -69,7 +70,8 @@ blogsRouter.put('/:id', async (request, response, next) => {
         url: body.url,
         likes: body.likes,
         status: body.status,
-        category: body.category
+        category: body.category,
+        category2: body.category2
     }
 
     try {

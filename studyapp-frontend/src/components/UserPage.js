@@ -63,7 +63,7 @@ const UserPage = ({ blogs, setBlogs, setMessage, user }) => {
           .filter(blog => blog.category === category)
           .map(blog =>
             <Col key={blog.id}>
-              <Card className="mb-4">
+              <Card className="mb-4" border="secondary">
                 <Card.Header>{blog.category}</Card.Header>
                 <Card.Body>
                   <Card.Title><Link to={`/blogs/${blog.id}`}>{blog.title}</Link></Card.Title>

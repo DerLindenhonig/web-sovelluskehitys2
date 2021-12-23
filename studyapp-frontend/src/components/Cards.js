@@ -186,7 +186,8 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
             <td><h5>word</h5></td>
             <td><h5>translate</h5></td>
             <td><h5>example</h5></td>
-            <ProgressTitle/><td><h5></h5></td>
+            <ProgressTitle/>
+            <td><h5></h5></td>
             <td><h5></h5></td>
           </tr>
           {cards.map(card =>

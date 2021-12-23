@@ -8,6 +8,8 @@ const NewBlogForm = ({ createBlog }) => {
   const [user, setUser] = useState(null)
   const [categories] = useState(['English', 'German', 'French', 'Finnish', 'Swedish', 'Russian', 'Korean', 'Japanese', 'Chinese'])
   const [category, setCategory] = useState('')
+  const [categories2] = useState(['English', 'German', 'French', 'Finnish', 'Swedish', 'Russian', 'Korean', 'Japanese', 'Chinese', 'other'])
+  const [category2, setCategory2] = useState('')
 
   const handleTitleChange = (event) => {
     setNewTitle(event.target.value)
@@ -31,19 +33,29 @@ const NewBlogForm = ({ createBlog }) => {
     setCategory(categories[index])
   }
 
+  let index2 = 0
+  const handleChange2 = (e) => {
+    index2 = e.target.value
+    setCategory2(categories2[index2])
+  }
+
   const handleAddBlog = (event) => {
     event.preventDefault()
 
-    console.log(user)
-
-    console.log(category)
+    if(category === 'Select language'){
+      setCategory('other')
+    }
+    if(category2 === 'Select language'){
+      setCategory2('other')
+    }
 
     createBlog({
       title: newTitle,
       author: user.username,
       url: newUrl,
       status: newStatus,
-      category: category
+      category: category,
+      category2: category2
     })
 
     setNewTitle('')
@@ -58,7 +70,6 @@ const NewBlogForm = ({ createBlog }) => {
     setNewStatus('public')
   }
 
-
   return (
     <div>
       <Form onSubmit={handleAddBlog}>
@@ -71,13 +82,18 @@ const NewBlogForm = ({ createBlog }) => {
           <Form.Control as="textarea" rows={3} placeholder="Add description" id='url' value={newUrl} onChange={handleUrlChange}/>
         </Form.Group>
         <Form.Select aria-label="Default select example" onChange={handleChange}>
-          <option>Select category</option>
+          <option>Select language</option>
           {categories
-            //.filter(category => category.toLowerCase().includes(filter.toLowerCase()))
             .map((filteredCategories, index) => (
               <option value={index} key={filteredCategories}>{filteredCategories}</option>
             ))}
-        </Form.Select>
+        </Form.Select> for <Form.Select aria-label="Default select example" onChange={handleChange2}>
+          <option>Select language</option>
+          {categories2
+            .map((filteredCategories, index) => (
+              <option value={index} key={filteredCategories}>{filteredCategories}</option>
+            ))}
+        </Form.Select> speakers
         <br/>
         <br/>
         <div>

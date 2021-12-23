@@ -58,7 +58,7 @@ const Blogs = ({ blogs, setBlogs, setMessage, user }) => {
           .filter(blog => blog.category === category)
           .map(filteredBlogs => (
             <Col key={filteredBlogs.id}>
-              <Card>
+              <Card border="secondary">
                 <Card.Header>{filteredBlogs.category}</Card.Header>
                 <Card.Body>
                   <Card.Title><Link to={`/blogs/${filteredBlogs.id}`}>{filteredBlogs.title}</Link></Card.Title>
