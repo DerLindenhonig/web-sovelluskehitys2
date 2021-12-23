@@ -17,6 +17,24 @@ import WritingGame from './components/WritingGame'
 import QuizGame from './components/QuizGame'
 import styled from 'styled-components'
 
+const Navigation = styled.div`
+  background: lightseagreen;
+  //font-size: 1em;
+  //margin: 1em;
+  padding: 0.15em 0.5em;
+  //border: 0px solid Black;
+  //border-radius: 3px;
+`
+
+const StyledLink = styled(Link)`
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: bold;
+    padding: 0.15em 0.5em;
+    background: ${props => props.primary ? 'white' : 'lightseagreen'};
+    color: ${props => props.primary ? 'lightseagreen' : 'white'};
+`
+
 const App = () => {
   const [blogs, setBlogs] = useState([])
   const [users, setUsers] = useState([])
@@ -42,6 +60,7 @@ const App = () => {
       setUser(user)
       blogService.setToken(user.token)
       cardService.setToken(user.token)
+      console.log(user)
     }
   }, [])
 
@@ -64,24 +83,6 @@ const App = () => {
 
   const blogId = (id) => blogs.find(blog => blog.id === id)
   const userId = (id) => users.find(user => user.id === id)
-
-  const Navigation = styled.div`
-  background: lightseagreen;
-  //font-size: 1em;
-  //margin: 1em;
-  padding: 0.15em 0.5em;
-  //border: 0px solid Black;
-  //border-radius: 3px;
-`
-
-  const StyledLink = styled(Link)`
-    font-size: 1.2em;
-    text-align: center;
-    font-weight: bold;
-    padding: 0.15em 0.5em;
-    background: ${props => props.primary ? 'white' : 'lightseagreen'};
-    color: ${props => props.primary ? 'lightseagreen' : 'white'};
-`
 
   return (
     <Router>
@@ -120,7 +121,7 @@ const App = () => {
             <Blog blog={blogId(match.params.id)} user={user} setRefreshedBlogs={setRefreshedBlogs} setBlogs={setBlogs} blogs={blogs}/>}
           />
           <Route path='/users/:id' render={({ match }) =>
-            <User user={userId(match.params.id)} blogs={blogs}/>}
+            <User user={userId(match.params.id)} blogs={blogs} users={users} setUsers={setUsers}/>}
           />
           <Route path='/users'>
             {user ? <Users /> : <Redirect to="/login" />}
@@ -153,6 +154,8 @@ const App = () => {
           </Route>
           <Route path='/'>
             {user ? <UserPage
+              setUsers={setUsers}
+              users={users}
               user={user}
               blogs={blogs}
               setRefreshedBlogs={setRefreshedBlogs}

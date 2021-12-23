@@ -6,8 +6,7 @@ import EditCardForm from './EditCardForm'
 const EditCard = ({ user, card, blog, setAllCards, cards, allCards }) => {
 
   const EditCardBtn = ({ card }) => {
-    console.log('card id: ' + card.id)
-    if (blog.user.username === user.username) {
+    if (blog.user.name === user.name) {
       return (
         <Togglable buttonLabel='edit' image={false}>
           <EditCardForm editCard={handleEditCard} card={card}/>

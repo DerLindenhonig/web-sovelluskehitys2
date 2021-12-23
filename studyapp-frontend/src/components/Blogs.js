@@ -62,10 +62,10 @@ const Blogs = ({ blogs, setBlogs, setMessage, user }) => {
                 <Card.Header>{filteredBlogs.category}</Card.Header>
                 <Card.Body>
                   <Card.Title><Link to={`/blogs/${filteredBlogs.id}`}>{filteredBlogs.title}</Link></Card.Title>
-                </Card.Body>
-                <Card.Text style={{ padding: '18px' }}>
+                  <em>by {filteredBlogs.author}</em>
+                  <br/>
                   Cards: {filteredBlogs.cards.length}
-                </Card.Text>
+                </Card.Body>
               </Card>
             </Col>
           ))}

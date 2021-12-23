@@ -5,8 +5,16 @@ import imageToRenderAdd from '../assets/add.png'
 import styled from 'styled-components'
 import {Image} from 'react-bootstrap'
 
+const Button = styled.button`
+  background: Bisque;
+  font-size: 1em;
+  //margin: 1em;
+  padding: 0.15em 0.5em;
+  border: 1px solid Black;
+  border-radius: 3px;
+`
+
 const Togglable = React.forwardRef((props, ref) => {
-  //const [image, setImage] = useState(false)
 
   const [visible, setVisible] = useState(false)
 
@@ -22,15 +30,6 @@ const Togglable = React.forwardRef((props, ref) => {
       toggleVisibility
     }
   })
-
-  const Button = styled.button`
-  background: Bisque;
-  font-size: 1em;
-  //margin: 1em;
-  padding: 0.15em 0.5em;
-  border: 1px solid Black;
-  border-radius: 3px;
-`
 
   const ImageComponent = ({ image }) => {
     if(image === false) {

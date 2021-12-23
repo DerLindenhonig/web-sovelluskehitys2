@@ -6,7 +6,7 @@ import {Card, Col, Form, Row} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import Filter from './Filter'
 
-const UserPage = ({ blogs, setBlogs, setMessage, user }) => {
+const UserPage = ({ blogs, setBlogs, setMessage, user, users }) => {
 
   if (blogs === undefined) {
     return null
@@ -43,34 +43,45 @@ const UserPage = ({ blogs, setBlogs, setMessage, user }) => {
     }
   }
 
-  const myBlogs = []
+  /*const myBlogs = []
   for(let i = 0; i < blogs.length; i++) {
     if(user.username === blogs[i].user.username) {
       myBlogs.push(blogs[i])
     }
-  }
+  }*/
 
   const handleInputChange = (event) => {
     setFilter(event.target.value)
   }
 
+  const CardsLenght = ({ blog }) => {
+    console.log(blog.user.name)
+    console.log(user.name)
+    if(blog.user.username === blog.author) {
+      return <div>Cards: {blog.cards.length}</div>
+    } else if (blog.user.username !== blog.author){
+      return <div>Cards: {blog.cards.length/2}</div>
+    }
+  }
+
   const FilterBlogs = () => {
     return (
       <Row xs={3} md={4} className="g-4" >
-        {myBlogs
+        {blogs
           .sort((a, b) => b.likes - a.likes)
           .filter(blog => blog.title?.toLowerCase().includes(filter.toLowerCase()))
           .filter(blog => blog.category === category)
+          .filter(blog => blog.user.name === user.name)
           .map(blog =>
             <Col key={blog.id}>
               <Card className="mb-4" border="secondary">
                 <Card.Header>{blog.category}</Card.Header>
                 <Card.Body>
                   <Card.Title><Link to={`/blogs/${blog.id}`}>{blog.title}</Link></Card.Title>
+                  <em>by {blog.author}</em>
+                  <br/>
+                  <CardsLenght blog={blog}/>
                 </Card.Body>
-                <Card.Text style={{ padding: '18px' }}>
-                  Cards: {blog.cards.length}
-                </Card.Text>
               </Card>
             </Col>
           )}
@@ -78,8 +89,21 @@ const UserPage = ({ blogs, setBlogs, setMessage, user }) => {
     )
   }
 
+  const thisUser = user
+  console.log('user' + user.username)
+
   return (
     <div>
+      <br/>
+      <div>
+        {users
+          .filter(user => user.username === thisUser.username)
+          .map(user =>
+            <h3 key={user.id}>
+              Hi, <Link to={`/users/${user.id}`}>{user.name}</Link>!
+            </h3>
+          )}
+      </div>
       <br/>
       <h3>Add new</h3>
       <Togglable buttonLabel='create new wordlist'>

@@ -8,6 +8,15 @@ import blogService from '../services/blogs'
 import Togglable from './Togglable'
 import styled from 'styled-components'
 
+const Button = styled.button`
+  background: lightcoral;
+  font-size: 1em;
+  padding: 0.15em 0.5em;
+  border: 1px solid Black;
+  border-radius: 3px;
+  display: inline;
+`
+
 const Cards = ({ blog, user, setRefreshedBlogs }) => {
 
   const [allCards, setAllCards] = useState([])
@@ -26,7 +35,7 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
   }, [])
 
   const CreateCardBtn = () => {
-    if (blog.user.username === user.username) {
+    if (blog.user.name === user.name) {
       return (
         <Togglable buttonLabel='Add a new card'>
           <NewCardForm createCard={handleAddCard} blogId={blog.id}/>
@@ -38,8 +47,6 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
   }
 
   const handleAddCard = (cardObject) => {
-    console.log(user)
-    console.log(user.token)
     cardService.setToken(user.token)
     try {
       cardService
@@ -62,17 +69,8 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
     }
   }
 
-  const Button = styled.button`
-  background: lightcoral;
-  font-size: 1em;
-  padding: 0.15em 0.5em;
-  border: 1px solid Black;
-  border-radius: 3px;
-  display: inline;
-`
-
   const DeleteBlogBtn = () => {
-    if (blog.user.username === user.username) {
+    if (blog.user.name === user.name) {
       return <Button size="sm" variant="danger" id='delete' onClick={deleteBlog}>delete wordlist</Button>
     } else {
       return null
@@ -86,10 +84,7 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
     if (confirm) {
       if(cards !== null) {
         cardService.setToken(user.token)
-        //console.log('blog.cards[0]: ' + cards[0].id)
-        //console.log('blog.cards[1]: ' + cards[1].id)
         for(let i = 0; i < cards.length; i++) {
-          //console.log('blog.cards['+ i + '] ' + cards[i].id)
           await cardService.remove(cards[i].id, user.token)
         }
         const allCards = await cardService.getAll()
@@ -103,9 +98,8 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
     }
   }
 
-
   const AddToMyListBtn = () => {
-    if (blog.user.username !== user.username) {
+    if (blog.user.name !== user.name) {
       return (
         <button onClick={AddToMyList}>add to my collection</button>
       )
@@ -117,8 +111,6 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
   const AddToMyList = async event => {
     event.preventDefault()
 
-    console.log('blog.cards: ' + blog.cards)
-
     const newBlog = {
       likes: 0,
       title: blog.title,
@@ -126,32 +118,30 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
       url: blog.url,
       cards: blog.cards,
       user: user,
+      status: 'private',
+      category: blog.category,
+      category2: blog.category2
     }
     await blogService.create(newBlog)
     const allBlogs = await blogService.getAll()
     setRefreshedBlogs(allBlogs)
 
-    console.log('allBlogs: ' + allBlogs.length)
     const allBlogsNumber = allBlogs.length-1
-    console.log('last blog: ' + allBlogs[allBlogsNumber].id)
     const lastBlogId = allBlogs[allBlogsNumber].id
 
     for(let i = 0; i < cards.length; i++) {
-      console.log('blog.card: ' + cards[i].word)
       const newCard = {
         word: cards[i].word,
         translate: cards[i].translate,
         examples: cards[i].examples,
         blogId: lastBlogId
       }
-
       await cardService.create(newCard)
-      console.log('kortti on lisätty: ' + newCard)
     }
   }
 
   const Progress = ({ card }) => {
-    if (blog.user.username === user.username) {
+    if (blog.user.name === user.name) {
       return (
         <td>
           {card.progress} %
@@ -161,7 +151,7 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
   }
 
   const ProgressTitle = () => {
-    if (blog.user.username === user.username) {
+    if (blog.user.name === user.name) {
       return (
         <td>
           <h5>progress</h5>
