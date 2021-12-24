@@ -62,6 +62,14 @@ cardsRouter.delete('/:id', async (request, response) => {
 cardsRouter.put('/:id', async (request, response, next) => {
   const body = request.body
 
+  if(body.progress < 0) {
+    body.progress = 0
+  }
+
+  if(body.progress > 100) {
+    body.progress = 100
+  }
+
   const editedCard = {
     word: body.word,
     translate: body.translate,

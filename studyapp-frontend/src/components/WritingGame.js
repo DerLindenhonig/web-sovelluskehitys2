@@ -1,19 +1,34 @@
 import React, {useEffect, useState} from 'react'
-import {Button, FormControl, InputGroup} from 'react-bootstrap'
+import {Button} from 'react-bootstrap'
 import cardService from '../services/cards'
+import styled from 'styled-components'
+
+const Input = styled.input.attrs(props => ({
+  type: 'text',
+  size: props.size || '1em',
+}))`
+  color: ${props => props.backgroundColor};
+  //color: black;
+  font-size: 1em;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 10px;
+  width: 500px;
+  height: 40px;
+`
 
 const WritingGame = ({ blog }) => {
 
   if(!blog) {
-    console.log(blog)
     return null
   }
 
   const [allCards, setAllCards] = useState([])
   const [newAnswer, setNewAnswer] = useState('')
   const [newQuestion, setNewQuestion] = useState('')
-  const [start, setStart] = useState(false)
+  const [start, setStart] = useState('null')
   let [record, setRecord] = useState(null)
+  const [inputColor, setInputColor] = useState('black')
 
   useEffect(() => {
     cardService.getAll()
@@ -30,7 +45,9 @@ const WritingGame = ({ blog }) => {
   }
 
   const changeQuestion = () => {
-    setStart(true)
+    setStart('start')
+    setInputColor('black')
+    setNewAnswer('')
     const randQ = Math.floor(Math.random() * cards.length)
     setNewQuestion(cards[randQ])
   }
@@ -40,11 +57,12 @@ const WritingGame = ({ blog }) => {
   }
 
   const handleAnswerBtn = () => {
-    console.log(newAnswer)
-    setNewAnswer('')
+    //console.log(newAnswer)
+    //setNewAnswer('')
 
     if(newAnswer === newQuestion.word) {
       console.log('RIGHT!')
+      setInputColor('forestgreen')
       record++
       setRecord(record)
 
@@ -57,6 +75,7 @@ const WritingGame = ({ blog }) => {
       cardService.update(newQuestion.id, newObject)
     } else {
       console.log('WRONG!')
+      setInputColor('lightcoral')
       const newObject = {
         word: newQuestion.word,
         translate: newQuestion.translate,
@@ -65,7 +84,8 @@ const WritingGame = ({ blog }) => {
       }
       cardService.update(newQuestion.id, newObject)
     }
-    changeQuestion()
+    setStart('next')
+    //changeQuestion()
   }
 
   const handleStartBtn = () => {
@@ -73,13 +93,14 @@ const WritingGame = ({ blog }) => {
   }
 
   const ButtonComponent = () => {
-    if(start === false) {
-      return (
-        <Button onClick={handleStartBtn}>Start</Button>
-      )
-    } else return (
-      <Button onClick={handleAnswerBtn}>Answer</Button>
-    )
+    if(start === 'null') {
+      return <Button onClick={handleStartBtn}>Start</Button>
+    } else if (start === 'start') {
+      return <Button onClick={handleAnswerBtn}>Answer</Button>
+    }
+    else if (start === 'next') {
+      return <Button onClick={changeQuestion}>Next</Button>
+    }
   }
 
   if(blog.cards.length > 3) {
@@ -92,7 +113,10 @@ const WritingGame = ({ blog }) => {
         <div>right answers: {record}</div>
         <br/>
         <h4>{newQuestion.translate}</h4>
-        <InputGroup className="mb-3"><FormControl onChange={handleAnswerChange} value={newAnswer}/></InputGroup>
+        <br/>
+        <Input onChange={handleAnswerChange} value={newAnswer} backgroundColor={inputColor}/>
+        <br/>
+        <br/>
         <ButtonComponent/>
       </div>
     )

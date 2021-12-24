@@ -9,12 +9,12 @@ import Filter from './Filter'
 const UserPage = ({ blogs, setBlogs, setMessage, user, users }) => {
 
   if (blogs === undefined) {
-    return null
+    return <div>No word lists found</div>
   }
 
   const [filter, setFilter] = useState('')
-  const [categories] = useState(['English', 'German', 'French', 'Finnish', 'Swedish', 'Russian', 'Korean', 'Japanese', 'Chinese', 'other'])
-  let [category, setCategory] = useState('English')
+  const [categories] = useState(['All', 'English', 'German', 'French', 'Finnish', 'Swedish', 'Russian', 'Korean', 'Japanese', 'Chinese', 'other'])
+  let [category, setCategory] = useState('All')
 
   const handleChange = (e) => {
     index = e.target.value
@@ -63,28 +63,50 @@ const UserPage = ({ blogs, setBlogs, setMessage, user, users }) => {
   }
 
   const FilterBlogs = () => {
-    return (
-      <Row xs={3} md={4} className="g-4" >
-        {blogs
-          .sort((a, b) => b.likes - a.likes)
-          .filter(blog => blog.title?.toLowerCase().includes(filter.toLowerCase()))
-          .filter(blog => blog.category === category)
-          .filter(blog => blog.user.name === user.name)
-          .map(blog =>
-            <Col key={blog.id}>
-              <Card className="mb-4" border="secondary">
-                <Card.Header>{blog.category}</Card.Header>
-                <Card.Body>
-                  <Card.Title><Link to={`/blogs/${blog.id}`}>{blog.title}</Link></Card.Title>
-                  <em>by {blog.author}</em>
-                  <br/>
-                  <CardsLenght blog={blog}/>
-                </Card.Body>
-              </Card>
-            </Col>
-          )}
-      </Row>
-    )
+    if (category !== 'All') {
+      return (
+        <Row xs={3} md={4} className="g-4" >
+          {blogs
+            .filter(blog => blog.title?.toLowerCase().includes(filter.toLowerCase()))
+            .filter(blog => blog.category === category)
+            .filter(blog => blog.user.name === user.name)
+            .map(blog =>
+              <Col key={blog.id}>
+                <Card className="mb-4" border="secondary">
+                  <Card.Header>{blog.category}</Card.Header>
+                  <Card.Body>
+                    <Card.Title><Link to={`/blogs/${blog.id}`}>{blog.title}</Link></Card.Title>
+                    <em>by {blog.author}</em>
+                    <br/>
+                    <CardsLenght blog={blog}/>
+                  </Card.Body>
+                </Card>
+              </Col>
+            )}
+        </Row>
+      )
+    } else {
+      return (
+        <Row xs={3} md={4} className="g-4" >
+          {blogs
+            .filter(blog => blog.title?.toLowerCase().includes(filter.toLowerCase()))
+            .filter(blog => blog.user.name === user.name)
+            .map(blog =>
+              <Col key={blog.id}>
+                <Card className="mb-4" border="secondary">
+                  <Card.Header>{blog.category}</Card.Header>
+                  <Card.Body>
+                    <Card.Title><Link to={`/blogs/${blog.id}`}>{blog.title}</Link></Card.Title>
+                    <em>by {blog.author}</em>
+                    <br/>
+                    <CardsLenght blog={blog}/>
+                  </Card.Body>
+                </Card>
+              </Col>
+            )}
+        </Row>
+      )
+    }
   }
 
   const thisUser = user
