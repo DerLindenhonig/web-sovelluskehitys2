@@ -4,26 +4,10 @@ import Togglable from './Togglable'
 import EditAccount from './EditAccount'
 import userService from '../services/users'
 
-const User = ({ user, blogs, setUsers, users }) => {
+const User = ({ user, setUsers, users, thisUserUsername }) => {
   if (user === undefined) {
     return null
   }
-
-  //console.log(user.blogs)
-  //console.log(user.likedBlogs)
-
-  const likedBlogs = []
-
-  for(let i = 0; i < user.likedBlogs.length; i++) {
-    for(let a = 0; a < blogs.length; a++) {
-      if(user.likedBlogs[i] === blogs[a].id) {
-        likedBlogs.push(blogs[a])
-      }
-    }
-  }
-
-  //console.log(user.blogs)
-  //console.log(user.blogs.length)
 
   const Wordlists = () => {
     if(user.blogs.length === 0) {
@@ -40,7 +24,8 @@ const User = ({ user, blogs, setUsers, users }) => {
                   <tbody>
                     {user.blogs
                       .slice(0, 10)
-                      .sort((a, b) => b.likes - a.likes)
+                      .filter(blog => blog.status === 'public')
+                      .filter(blog => blog.author === user.username)
                       .map(blog =>
                         <tr key={blog.title}>
                           <Link to={`/blogs/${blog.id}`}>{blog.title}</Link>
@@ -65,15 +50,23 @@ const User = ({ user, blogs, setUsers, users }) => {
       })
   }
 
+  const EditUserBtn = () => {
+    if(user.username === thisUserUsername) {
+      return (
+        <Togglable buttonLabel='Edit my account' image={false}>
+          <EditAccount user={user} editUser={handleEditUser}/>
+        </Togglable>
+      )
+    } else return null
+  }
+
   return (
     <div>
       <br/>
       <br/>
       <h3>{user.name}</h3>
       <p>{user.username}</p>
-      <Togglable buttonLabel='Edit my account' image={false}>
-        <EditAccount user={user} editUser={handleEditUser}/>
-      </Togglable>
+      <EditUserBtn/>
       <br/>
       <br/>
       <h4>Top 10 word lists:</h4>

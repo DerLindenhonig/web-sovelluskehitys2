@@ -44,6 +44,7 @@ const App = () => {
   const [password, setPassword] = useState('')
   const [message, setMessage] = useState(null)
   const [refreshBlogs, setRefreshedBlogs] = useState(null)
+  const [thisUserUsername, setThisUsername] = useState('')
 
   useEffect(() => {
     blogService.getAll().then(blogs =>
@@ -62,6 +63,7 @@ const App = () => {
       blogService.setToken(user.token)
       cardService.setToken(user.token)
       //console.log(user)
+      setThisUsername(user.username)
     }
   }, [])
 
@@ -124,7 +126,7 @@ const App = () => {
             <Blog blog={blogId(match.params.id)} user={user} setRefreshedBlogs={setRefreshedBlogs} setBlogs={setBlogs} blogs={blogs}/>}
           />
           <Route path='/users/:id' render={({ match }) =>
-            <User user={userId(match.params.id)} blogs={blogs} users={users} setUsers={setUsers}/>}
+            <User user={userId(match.params.id)} blogs={blogs} users={users} setUsers={setUsers} thisUserUsername={thisUserUsername}/>}
           />
           <Route path='/users'>
             {user ? <Users /> : <Redirect to="/login" />}

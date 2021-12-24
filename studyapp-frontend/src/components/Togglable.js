@@ -8,10 +8,19 @@ import {Image} from 'react-bootstrap'
 const Button = styled.button`
   background: Bisque;
   font-size: 1em;
-  //margin: 1em;
   padding: 0.15em 0.5em;
-  border: 1px solid Black;
-  border-radius: 3px;
+  border: 1px solid black;
+  border-radius: 5px;
+`
+
+const AddButton = styled.button`
+  background: slateblue;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: white;
+  padding: 0.25em 0.6em;
+  border: 0px solid Black;
+  border-radius: 5px;
 `
 
 const Togglable = React.forwardRef((props, ref) => {
@@ -39,10 +48,18 @@ const Togglable = React.forwardRef((props, ref) => {
     }
   }
 
+  const Buttons = ({ image }) => {
+    if(image === false) {
+      return <Button size="sm" variant="light" onClick={toggleVisibility}><ImageComponent image={props.image}/> {props.buttonLabel}</Button>
+    } else {
+      return <AddButton size="sm" variant="light" onClick={toggleVisibility}><ImageComponent image={props.image}/> {props.buttonLabel}</AddButton>
+    }
+  }
+
   return (
     <div>
       <div style={hideWhenVisible}>
-        <Button size="sm" variant="light" onClick={toggleVisibility}><ImageComponent image={props.image}/> {props.buttonLabel}</Button>
+        <Buttons image={props.image}/>
       </div>
       <div style={showWhenVisible}>
         <Button size="sm" variant="outline-dark" onClick={toggleVisibility}>cancel</Button>
