@@ -55,8 +55,6 @@ const UserPage = ({ blogs, setBlogs, setMessage, user, users }) => {
   }
 
   const CardsLenght = ({ blog }) => {
-    console.log(blog.user.name)
-    console.log(user.name)
     if(blog.user.username === blog.author) {
       return <div>Cards: {blog.cards.length}</div>
     } else if (blog.user.username !== blog.author){
@@ -90,7 +88,6 @@ const UserPage = ({ blogs, setBlogs, setMessage, user, users }) => {
   }
 
   const thisUser = user
-  console.log('user' + user.username)
 
   return (
     <div>

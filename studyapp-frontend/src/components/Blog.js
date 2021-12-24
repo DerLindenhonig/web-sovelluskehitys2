@@ -30,7 +30,7 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
   //const [like, setLike] = useState(false)
 
   const GameBtn = () => {
-    if (blog.user.name === user.name) {
+    if (blog.user.username === user.username) {
       return (
         <Game/>
       )
@@ -38,7 +38,7 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
   }
 
   const EditBlogBtn = () => {
-    if (blog.user.name === user.name) {
+    if (blog.user.username === user.username) {
       return (
         <Togglable buttonLabel='edit' image={false}>
           <EditBlogForm editBlog={handleEditBlog} likes={blog.likes} user={user} blog={blog}/>

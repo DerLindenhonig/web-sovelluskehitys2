@@ -50,7 +50,6 @@ const Blogs = ({ blogs, setBlogs, setMessage, user }) => {
   const FilterBlogs = () => {
     return (
       <Row xs={3} md={4} className="g-4" >
-
         {blogs
           .sort((a, b) => b.likes - a.likes)
           .filter(blog => blog.title?.toLowerCase().includes(filter.toLowerCase()))
@@ -62,8 +61,7 @@ const Blogs = ({ blogs, setBlogs, setMessage, user }) => {
                 <Card.Header>{filteredBlogs.category}</Card.Header>
                 <Card.Body>
                   <Card.Title><Link to={`/blogs/${filteredBlogs.id}`}>{filteredBlogs.title}</Link></Card.Title>
-                  <em>by {filteredBlogs.author}</em>
-                  <br/>
+                  <em>by {filteredBlogs.author}</em><br/>
                   Cards: {filteredBlogs.cards.length}
                 </Card.Body>
               </Card>

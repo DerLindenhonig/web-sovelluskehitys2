@@ -71,7 +71,7 @@ const User = ({ user, blogs, setUsers, users }) => {
       <br/>
       <h3>{user.name}</h3>
       <p>{user.username}</p>
-      <Togglable buttonLabel='Edit my account'>
+      <Togglable buttonLabel='Edit my account' image={false}>
         <EditAccount user={user} editUser={handleEditUser}/>
       </Togglable>
       <br/>

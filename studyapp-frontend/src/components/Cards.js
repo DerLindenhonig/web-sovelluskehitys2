@@ -70,7 +70,7 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
   }
 
   const DeleteBlogBtn = () => {
-    if (blog.user.name === user.name) {
+    if (blog.user.username === user.username) {
       return <Button size="sm" variant="danger" id='delete' onClick={deleteBlog}>delete wordlist</Button>
     } else {
       return null
@@ -99,7 +99,7 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
   }
 
   const AddToMyListBtn = () => {
-    if (blog.user.name !== user.name) {
+    if (blog.user.username !== user.username) {
       return (
         <button onClick={AddToMyList}>add to my collection</button>
       )
@@ -141,7 +141,7 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
   }
 
   const Progress = ({ card }) => {
-    if (blog.user.name === user.name) {
+    if (blog.user.username === user.username) {
       return (
         <td>
           {card.progress} %
@@ -151,7 +151,7 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
   }
 
   const ProgressTitle = () => {
-    if (blog.user.name === user.name) {
+    if (blog.user.username === user.username) {
       return (
         <td>
           <h5>progress</h5>

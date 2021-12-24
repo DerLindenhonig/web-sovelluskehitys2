@@ -16,6 +16,7 @@ import {Button, Container, Navbar} from 'react-bootstrap'
 import WritingGame from './components/WritingGame'
 import QuizGame from './components/QuizGame'
 import styled from 'styled-components'
+import Help from './components/Help'
 
 const Navigation = styled.div`
   background: lightseagreen;
@@ -60,7 +61,7 @@ const App = () => {
       setUser(user)
       blogService.setToken(user.token)
       cardService.setToken(user.token)
-      console.log(user)
+      //console.log(user)
     }
   }, [])
 
@@ -92,7 +93,8 @@ const App = () => {
             <Navbar>
               <StyledLink to="/">Home</StyledLink>
               <StyledLink to="/blogs">Discover</StyledLink>
-              <StyledLink to="/users" >Users</StyledLink>
+              <StyledLink to="/users">Users</StyledLink>
+              <StyledLink to="/help">Help</StyledLink>
             </Navbar>
             <Navbar className="justify-content-end">
               {user === null
@@ -108,6 +110,7 @@ const App = () => {
 
       <div className="container">
         <Switch>
+          <Route path='/help'><Help/></Route>
           <Route path='/writing/:id' render={({ match }) =>
             <WritingGame blog={blogId(match.params.id)}/>}
           />

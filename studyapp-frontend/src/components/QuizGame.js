@@ -21,7 +21,11 @@ const QuizGame = ({ blog }) => {
   let [questionId, setQuestionId] = useState('')
   let [card, setCard] = useState(null)
   const [message, setMessage] = useState(null)
-  const [start, setStart] = useState(false)
+  const [start, setStart] = useState('null')
+  let [answer1Variant, setAnswer1Variant] = useState('outline-dark')
+  let [answer2Variant, setAnswer2Variant] = useState('outline-dark')
+  let [answer3Variant, setAnswer3Variant] = useState('outline-dark')
+  let [answer4Variant, setAnswer4Variant] = useState('outline-dark')
 
   useEffect(() => {
     cardService.getAll()
@@ -64,9 +68,9 @@ const QuizGame = ({ blog }) => {
   const FirstAnswerSelected = () => {
     if(randQ1 === 0) {
       console.log('RIGHT!')
+      setAnswer1Variant('success')
       record++
       setRecord(record)
-      console.log('card ' + card)
 
       const newObject = {
         word: card.word,
@@ -78,6 +82,7 @@ const QuizGame = ({ blog }) => {
       correctMessage()
     } else if (randQ1 !== 0 && card.progress > 0) {
       console.log('WRONG!')
+      setAnswer1Variant('danger')
       const newObject = {
         word: card.word,
         translate: card.translate,
@@ -87,12 +92,14 @@ const QuizGame = ({ blog }) => {
       cardService.update(questionId, newObject)
       wrongMessage()
     }
-    changeAnswers()
+    //changeAnswers()
+    setStart('next')
   }
 
   const SecondAnswerSelected = () => {
     if(randQ1 === 1) {
-      console.log('RIGHT!')
+      console.log('RIGHT!' + answer1Variant + answer2Variant + answer3Variant + answer4Variant)
+      setAnswer2Variant('success')
       record++
       setRecord(record)
 
@@ -106,6 +113,7 @@ const QuizGame = ({ blog }) => {
       correctMessage()
     } else if (randQ1 !== 1 && card.progress > 0) {
       console.log('WRONG!' + randQ1)
+      setAnswer2Variant('danger')
       const newObject = {
         word: card.word,
         translate: card.translate,
@@ -115,12 +123,14 @@ const QuizGame = ({ blog }) => {
       cardService.update(questionId, newObject)
       wrongMessage()
     }
-    changeAnswers()
+    //changeAnswers()
+    setStart('next')
   }
 
   const ThirdAnswerSelected = () => {
     if(randQ1 === 2) {
       console.log('RIGHT!')
+      setAnswer3Variant('success')
       record++
       setRecord(record)
 
@@ -134,6 +144,7 @@ const QuizGame = ({ blog }) => {
       correctMessage()
     } else if (randQ1 !== 2 && card.progress > 0) {
       console.log('WRONG!' + randQ1)
+      setAnswer3Variant('danger')
       const newObject = {
         word: card.word,
         translate: card.translate,
@@ -143,12 +154,14 @@ const QuizGame = ({ blog }) => {
       cardService.update(questionId, newObject)
       wrongMessage()
     }
-    changeAnswers()
+    //changeAnswers()
+    setStart('next')
   }
 
   const FourthAnswerSelected = () => {
     if(randQ1 === 3) {
       console.log('RIGHT!')
+      setAnswer4Variant('success')
       record++
       setRecord(record)
 
@@ -162,6 +175,7 @@ const QuizGame = ({ blog }) => {
       correctMessage()
     } else if (randQ1 !== 3 && card.progress > 0) {
       console.log('WRONG!' + randQ1)
+      setAnswer4Variant('danger')
       const newObject = {
         word: card.word,
         translate: card.translate,
@@ -171,10 +185,16 @@ const QuizGame = ({ blog }) => {
       cardService.update(questionId, newObject)
       wrongMessage()
     }
-    changeAnswers()
+    //changeAnswers()
+    setStart('next')
   }
 
   const changeAnswers = () => {
+    setAnswer1Variant('outline-dark')
+    setAnswer2Variant('outline-dark')
+    setAnswer3Variant('outline-dark')
+    setAnswer4Variant('outline-dark')
+
     // Valita 4 satunnaisia korttia:
     let randA = null
     arrayOfAnswers = []
@@ -185,12 +205,8 @@ const QuizGame = ({ blog }) => {
         //console.log('cards[randA] ' + cards[randA].id)
       }
     }
-    //console.log('arrayOfAnswers 0: ' + arrayOfAnswers[0].id + ' 1: ' + arrayOfAnswers[1].id + ' 2: ' + arrayOfAnswers[2].id + ' 3: ' + arrayOfAnswers[3].id )
-
     randQ = Math.floor(Math.random() * arrayOfAnswers.length)
     const randQuestion = arrayOfAnswers[randQ]
-
-    //console.log('randQ ' + randQ)
 
     setCard(arrayOfAnswers[randQ])
     setRandQ1(randQ)
@@ -222,18 +238,19 @@ const QuizGame = ({ blog }) => {
   }
 
   const handleStartBtn = () => {
-    setStart(true)
+    setStart('start')
     changeAnswers()
   }
 
   const ButtonComponent = () => {
-    if(start === false) {
-      return (
-        <Button onClick={handleStartBtn}>Start</Button>
-      )
-    } else return (
-      <Button onClick={changeAnswers}>Answer</Button>
-    )
+    if(start === 'null') {
+      return <Button onClick={handleStartBtn}>Start</Button>
+    } else if (start === 'start') {
+      return <Button onClick={changeAnswers}>Answer</Button>
+    }
+    else if (start === 'next') {
+      return <Button onClick={changeAnswers}>Next</Button>
+    }
   }
 
   if(blog.cards.length > 3) {
@@ -242,19 +259,18 @@ const QuizGame = ({ blog }) => {
         <br/>
         <h3>Translate-Word</h3>
         <br/>
+        <Notification message={message}/>
         <div>right answers: {record}</div>
         <br/>
         <h4 id='question'>{guestionText}</h4>
         <br/>
-        <Button variant="outline-dark" id='answer1' onClick={FirstAnswerSelected}>{answer1Text}</Button>{' '}
-        <Button variant="outline-dark" id='answer2' onClick={SecondAnswerSelected}>{answer2Text}</Button>{' '}
-        <Button variant="outline-dark" id='answer3' onClick={ThirdAnswerSelected}>{answer3Text}</Button>{' '}
-        <Button variant="outline-dark" id='answer4' onClick={FourthAnswerSelected}>{answer4Text}</Button>
+        <Button variant={answer1Variant} id='answer1' onClick={FirstAnswerSelected}>{answer1Text}</Button>{' '}
+        <Button variant={answer2Variant} id='answer2' onClick={SecondAnswerSelected}>{answer2Text}</Button>{' '}
+        <Button variant={answer3Variant} id='answer3' onClick={ThirdAnswerSelected}>{answer3Text}</Button>{' '}
+        <Button variant={answer4Variant} id='answer4' onClick={FourthAnswerSelected}>{answer4Text}</Button>
         <br/>
         <br/>
         <ButtonComponent/>
-        <br/>
-        <Notification message={message}/>
         <br/>
       </div>
     )
