@@ -123,7 +123,7 @@ const App = () => {
             <Games blog={blogId(match.params.id)}/>}
           />
           <Route path='/blogs/:id' render={({ match }) =>
-            <Blog blog={blogId(match.params.id)} user={user} setRefreshedBlogs={setRefreshedBlogs} setBlogs={setBlogs} blogs={blogs}/>}
+            <Blog blog={blogId(match.params.id)} user={user} setRefreshedBlogs={setRefreshedBlogs} setBlogs={setBlogs} blogs={blogs} users={users}/>}
           />
           <Route path='/users/:id' render={({ match }) =>
             <User user={userId(match.params.id)} blogs={blogs} users={users} setUsers={setUsers} thisUserUsername={thisUserUsername}/>}

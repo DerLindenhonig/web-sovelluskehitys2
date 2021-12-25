@@ -54,13 +54,19 @@ const UserPage = ({ blogs, setBlogs, setMessage, user, users }) => {
     setFilter(event.target.value)
   }
 
-  const CardsLenght = ({ blog }) => {
+  /*const CardsLenght = ({ blog }) => {
     if(blog.user.username === blog.author) {
       return <div>Cards: {blog.cards.length}</div>
     } else if (blog.user.username !== blog.author){
+      console.log('value')
+      blog.cards.forEach(value => {
+        if(value !== null) {
+          console.log(value)
+        }
+      })
       return <div>Cards: {blog.cards.length/2}</div>
     }
-  }
+  }*/
 
   const FilterBlogs = () => {
     if (category !== 'All') {
@@ -78,7 +84,7 @@ const UserPage = ({ blogs, setBlogs, setMessage, user, users }) => {
                     <Card.Title><Link to={`/blogs/${blog.id}`}>{blog.title}</Link></Card.Title>
                     <em>by {blog.author}</em>
                     <br/>
-                    <CardsLenght blog={blog}/>
+                    Cards: {blog.cards.length}
                   </Card.Body>
                 </Card>
               </Col>
@@ -99,7 +105,7 @@ const UserPage = ({ blogs, setBlogs, setMessage, user, users }) => {
                     <Card.Title><Link to={`/blogs/${blog.id}`}>{blog.title}</Link></Card.Title>
                     <em>by {blog.author}</em>
                     <br/>
-                    <CardsLenght blog={blog}/>
+                    Cards: {blog.cards.length}
                   </Card.Body>
                 </Card>
               </Col>

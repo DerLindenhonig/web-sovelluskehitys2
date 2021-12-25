@@ -12,11 +12,14 @@ const blogSchema = new mongoose.Schema({
     cards: [{
           type: mongoose.Schema.Types.ObjectId,
           ref: 'Card'
-      }
-    ],
+    }],
     status: String,
     category: String,
-    category2: String
+    category2: String,
+    addedUsers: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    }],
 })
 
 blogSchema.set('toJSON', {

@@ -17,7 +17,7 @@ const Button = styled.button`
   color: ${props => props.primary ? 'lightseagreen' : 'white'};
 `
 
-const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
+const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs, users }) => {
 
   if(!user) {
     return <Redirect to="/login" />
@@ -27,6 +27,7 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
     return null
   }
 
+  console.log(user)
   //const [like, setLike] = useState(false)
 
   const GameBtn = () => {
@@ -125,7 +126,7 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs }) => {
       <br/>
       <EditBlogBtn/>
       <br/>
-      <Cards blog={blog} user={user} setRefreshedBlogs={setRefreshedBlogs} blogs={blogs}/>
+      <Cards blog={blog} user={user} setRefreshedBlogs={setRefreshedBlogs} blogs={blogs} users={users}/>
       <GameBtn/>
       <br/>
     </div>

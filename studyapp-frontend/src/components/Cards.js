@@ -17,7 +17,7 @@ const Button = styled.button`
   display: inline;
 `
 
-const Cards = ({ blog, user, setRefreshedBlogs }) => {
+const Cards = ({ blog, user, setRefreshedBlogs, users }) => {
 
   const [allCards, setAllCards] = useState([])
 
@@ -116,7 +116,7 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
       title: blog.title,
       author: blog.author,
       url: blog.url,
-      cards: blog.cards,
+      //cards: blog.cards,
       user: user,
       status: 'private',
       category: blog.category,
@@ -138,6 +138,21 @@ const Cards = ({ blog, user, setRefreshedBlogs }) => {
       }
       await cardService.create(newCard)
     }
+
+    // Add added user id into original wordlist
+    let userId = ''
+    {users
+      .filter(user => user.username === user.username)
+      .map(user => {userId = user.id}
+      )}
+    console.log(userId)
+
+    const usersArray = blog.addedUsers
+    usersArray.push(userId)
+    const addedUser = {
+      addedUsers: usersArray
+    }
+    await blogService.updateAddedUsers(blog.id, addedUser)
   }
 
   const Progress = ({ card }) => {

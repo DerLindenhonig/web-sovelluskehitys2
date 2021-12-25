@@ -33,7 +33,7 @@ blogsRouter.post('/', async (request, response, next) => {
             status: body.status || 'public',
             category: body.category || 'other',
             category2: body.category2 || 'other',
-            user: user._id
+            user: user._id,
         })
 
         const savedBlog = await blog.save()
@@ -71,7 +71,21 @@ blogsRouter.put('/:id', async (request, response, next) => {
         likes: body.likes,
         status: body.status,
         category: body.category,
-        category2: body.category2
+        category2: body.category2,
+    }
+
+    try {
+        const blog = await Blog.findByIdAndUpdate(request.params.id, editedBlog, {new: true})
+        response.json(blog)
+
+    } catch (error) { next(error) }
+})
+
+blogsRouter.put('/add/:id', async (request, response, next) => {
+    const body = request.body
+
+    const editedBlog = {
+        addedUsers: body.addedUsers,
     }
 
     try {
