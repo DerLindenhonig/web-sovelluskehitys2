@@ -66,9 +66,10 @@ const User = ({ user, setUsers, users, thisUserUsername }) => {
       <br/>
       <h3>{user.name}</h3>
       <p>{user.username}</p>
-      < img src = {user.avatar} />
-      <EditUserBtn/>
+      <img src={user.avatar} width='150px'/>
       <br/>
+      <br/>
+      <EditUserBtn/>
       <br/>
       <h4>Top 10 word lists:</h4>
       <Wordlists/>

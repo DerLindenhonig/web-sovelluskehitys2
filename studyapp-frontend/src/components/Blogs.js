@@ -61,7 +61,8 @@ const Blogs = ({ blogs, setBlogs, setMessage, user }) => {
                 <Card.Header>{filteredBlogs.category}</Card.Header>
                 <Card.Body>
                   <Card.Title><Link to={`/blogs/${filteredBlogs.id}`}>{filteredBlogs.title}</Link></Card.Title>
-                  <em>by {filteredBlogs.author}</em><br/>
+                  <em>by <Link to={`/users/${filteredBlogs.user.id}`}>{filteredBlogs.author}</Link></em>
+                  <br/>
                   Cards: {filteredBlogs.cards.length}<br/>
                   Added: {filteredBlogs.addedUsers.length} times
                 </Card.Body>

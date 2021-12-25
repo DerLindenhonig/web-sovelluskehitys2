@@ -83,7 +83,11 @@ const UserPage = ({ blogs, setBlogs, setMessage, user, users }) => {
                   <Card.Header>{blog.category}</Card.Header>
                   <Card.Body>
                     <Card.Title><Link to={`/blogs/${blog.id}`}>{blog.title}</Link></Card.Title>
-                    <em>by {blog.author}</em>
+                    {users
+                      .filter(user => user.username === blog.author)
+                      .map(user =>
+                        <div key={user.id}><em>by <Link to={`/users/${user.id}`}>{blog.author}</Link></em></div>
+                      )}
                     <br/>
                     Cards: {blog.cards.length}
                   </Card.Body>
@@ -105,7 +109,11 @@ const UserPage = ({ blogs, setBlogs, setMessage, user, users }) => {
                   <Card.Header>{blog.category}</Card.Header>
                   <Card.Body>
                     <Card.Title><Link to={`/blogs/${blog.id}`}>{blog.title}</Link></Card.Title>
-                    <em>by {blog.author}</em>
+                    {users
+                      .filter(user => user.username === blog.author)
+                      .map(user =>
+                        <div key={user.id}><em>by <Link to={`/users/${user.id}`}>{blog.author}</Link></em></div>
+                      )}
                     <br/>
                     Cards: {blog.cards.length}
                   </Card.Body>
