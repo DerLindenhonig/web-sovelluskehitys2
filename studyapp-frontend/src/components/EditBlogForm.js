@@ -1,5 +1,16 @@
 import React, {useState} from 'react'
 import {Form} from 'react-bootstrap'
+import styled from 'styled-components'
+
+const EditButton = styled.button`
+  background: slateblue;
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+  padding: 0.15em 0.5em;
+  border: 0px solid Black;
+  border-radius: 5px;
+`
 
 const EditBlogForm = ({ editBlog, likes, blog }) => {
   const [newTitle, setNewTitle] = useState(blog.title)
@@ -110,7 +121,7 @@ const EditBlogForm = ({ editBlog, likes, blog }) => {
           />
         </div>
         <br/>
-        <button type="submit">save</button>
+        <EditButton type="submit">save</EditButton>
         <br/>
         <br/>
       </form>

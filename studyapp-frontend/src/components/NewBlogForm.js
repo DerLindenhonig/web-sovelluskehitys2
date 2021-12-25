@@ -1,5 +1,16 @@
 import React, {useEffect, useState} from 'react'
-import {Button, Form} from 'react-bootstrap'
+import {Form} from 'react-bootstrap'
+import styled from 'styled-components'
+
+const AddButton = styled.button`
+  background: slateblue;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: white;
+  padding: 0.25em 0.6em;
+  border: 0px solid Black;
+  border-radius: 5px;
+`
 
 const NewBlogForm = ({ createBlog }) => {
   const [newTitle, setNewTitle] = useState('')
@@ -113,7 +124,7 @@ const NewBlogForm = ({ createBlog }) => {
           />
         </div>
         <br/>
-        <Button variant="dark" type="submit">Add</Button>
+        <AddButton variant="dark" type="submit">Create</AddButton>
         <br/>
         <br/>
       </Form>

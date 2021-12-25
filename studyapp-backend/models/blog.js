@@ -20,6 +20,10 @@ const blogSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     }],
+    originalBlog: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Blog'
+    },
 })
 
 blogSchema.set('toJSON', {

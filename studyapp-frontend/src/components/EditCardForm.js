@@ -1,5 +1,16 @@
 import React, {useState} from 'react'
 import {Form} from 'react-bootstrap'
+import styled from 'styled-components'
+
+const EditButton = styled.button`
+  background: slateblue;
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+  padding: 0.15em 0.5em;
+  border: 0px solid Black;
+  border-radius: 5px;
+`
 
 const EditCardForm = ({ editCard, card }) => {
   const [newWord, setNewWord] = useState(card.word)
@@ -49,7 +60,8 @@ const EditCardForm = ({ editCard, card }) => {
           <Form.Label>Example</Form.Label>
           <Form.Control type="text" placeholder="Edit example" id='examplesEdit' defaultValue={newExamples} onChange={handleExampleChange}/>
         </Form.Group>
-        <button type="submit">save</button>
+        <EditButton type="submit">save</EditButton>
+        <br/><br/>
       </form>
     </div>
   )

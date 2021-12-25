@@ -51,7 +51,7 @@ const Blogs = ({ blogs, setBlogs, setMessage, user }) => {
     return (
       <Row xs={3} md={4} className="g-4" >
         {blogs
-          .sort((a, b) => b.likes - a.likes)
+          .sort((a, b) => b.addedUsers.length - a.addedUsers.length)
           .filter(blog => blog.title?.toLowerCase().includes(filter.toLowerCase()))
           .filter(blog => blog.status === 'public')
           .filter(blog => blog.category === category)
@@ -62,7 +62,8 @@ const Blogs = ({ blogs, setBlogs, setMessage, user }) => {
                 <Card.Body>
                   <Card.Title><Link to={`/blogs/${filteredBlogs.id}`}>{filteredBlogs.title}</Link></Card.Title>
                   <em>by {filteredBlogs.author}</em><br/>
-                  Cards: {filteredBlogs.cards.length}
+                  Cards: {filteredBlogs.cards.length}<br/>
+                  Added: {filteredBlogs.addedUsers.length} times
                 </Card.Body>
               </Card>
             </Col>
@@ -75,7 +76,7 @@ const Blogs = ({ blogs, setBlogs, setMessage, user }) => {
     <div>
       <br/>
       <h3>Add new</h3>
-      <Togglable buttonLabel='create new wordlist' image={true}>
+      <Togglable buttonLabel='Create new wordlist' image={true}>
         <NewBlogForm createBlog={handleAddBlog} user={user}/>
       </Togglable>
       <br/>

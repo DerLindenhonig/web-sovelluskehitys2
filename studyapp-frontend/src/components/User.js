@@ -66,6 +66,7 @@ const User = ({ user, setUsers, users, thisUserUsername }) => {
       <br/>
       <h3>{user.name}</h3>
       <p>{user.username}</p>
+      < img src = {user.avatar} />
       <EditUserBtn/>
       <br/>
       <br/>

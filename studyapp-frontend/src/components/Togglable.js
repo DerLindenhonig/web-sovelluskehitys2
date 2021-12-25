@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import {Image} from 'react-bootstrap'
 
 const Button = styled.button`
-  background: Bisque;
+  background: bisque;
   font-size: 1em;
   padding: 0.15em 0.5em;
   border: 1px solid black;

@@ -27,6 +27,9 @@ app.use(express.static('build'))
 app.use(bodyParser.json())
 app.use(middleware.requestLogger)
 
+app.use(bodyParser.json({limit: '16mb', extended: true}));     // Make sure you add these two lines
+app.use(bodyParser.urlencoded({limit: '16mb', extended: true}))    //Make sure you add these two lines
+
 app.use('/api/blogs', blogsRouter)
 app.use('/api/users', usersRouter)
 app.use('/api/login', loginRouter)

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {Table} from 'react-bootstrap'
+import {Image, Table} from 'react-bootstrap'
 import cardService from '../services/cards'
 import NewCardForm from './NewCardForm'
 import Card from './Card'
@@ -7,14 +7,25 @@ import EditCard from './EditCard'
 import blogService from '../services/blogs'
 import Togglable from './Togglable'
 import styled from 'styled-components'
+import imageToRenderAdd from '../assets/add.png'
 
 const Button = styled.button`
   background: lightcoral;
   font-size: 1em;
   padding: 0.15em 0.5em;
   border: 1px solid Black;
-  border-radius: 3px;
+  border-radius: 5px;
   display: inline;
+`
+
+const AddButton = styled.button`
+  background: orange;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: white;
+  padding: 0.25em 0.6em;
+  border: 0px solid Black;
+  border-radius: 5px;
 `
 
 const Cards = ({ blog, user, setRefreshedBlogs, users }) => {
@@ -101,7 +112,7 @@ const Cards = ({ blog, user, setRefreshedBlogs, users }) => {
   const AddToMyListBtn = () => {
     if (blog.user.username !== user.username) {
       return (
-        <button onClick={AddToMyList}>add to my collection</button>
+        <AddButton onClick={AddToMyList}><Image src={imageToRenderAdd}/> Add to my collection</AddButton>
       )
     } else {
       return null
@@ -120,7 +131,8 @@ const Cards = ({ blog, user, setRefreshedBlogs, users }) => {
       user: user,
       status: 'private',
       category: blog.category,
-      category2: blog.category2
+      category2: blog.category2,
+      originalBlog: blog.id
     }
     await blogService.create(newBlog)
     const allBlogs = await blogService.getAll()

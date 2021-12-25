@@ -34,6 +34,7 @@ blogsRouter.post('/', async (request, response, next) => {
             category: body.category || 'other',
             category2: body.category2 || 'other',
             user: user._id,
+            originalBlog: body.originalBlog || null
         })
 
         const savedBlog = await blog.save()

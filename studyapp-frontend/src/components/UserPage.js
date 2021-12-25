@@ -73,6 +73,7 @@ const UserPage = ({ blogs, setBlogs, setMessage, user, users }) => {
       return (
         <Row xs={3} md={4} className="g-4" >
           {blogs
+            .sort((a, b) => a.title.localeCompare(b.title))
             .filter(blog => blog.title?.toLowerCase().includes(filter.toLowerCase()))
             .filter(blog => blog.category === category)
             .filter(blog => blog.user.name === user.name)
@@ -95,6 +96,7 @@ const UserPage = ({ blogs, setBlogs, setMessage, user, users }) => {
       return (
         <Row xs={3} md={4} className="g-4" >
           {blogs
+            .sort((a, b) => a.title.localeCompare(b.title))
             .filter(blog => blog.title?.toLowerCase().includes(filter.toLowerCase()))
             .filter(blog => blog.user.name === user.name)
             .map(blog =>
@@ -131,7 +133,7 @@ const UserPage = ({ blogs, setBlogs, setMessage, user, users }) => {
       </div>
       <br/>
       <h3>Add new</h3>
-      <Togglable buttonLabel='create new wordlist'>
+      <Togglable buttonLabel='Create new wordlist'>
         <NewBlogForm createBlog={handleAddBlog}/>
       </Togglable>
       <br/>

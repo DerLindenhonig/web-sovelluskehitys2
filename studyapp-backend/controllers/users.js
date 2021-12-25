@@ -53,6 +53,7 @@ usersRouter.put('/:id', async (request, response, next) => {
     const editedUser = {
         username: body.username,
         name: body.name,
+        avatar: body.avatar
     }
 
     try {
