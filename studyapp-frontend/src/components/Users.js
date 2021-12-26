@@ -18,6 +18,18 @@ const Users = () => {
     return null
   }
 
+  const UserLevel = ({ user }) => {
+    const levels = [0, 10, 30, 60, 100, 150, 210, 270, 350]
+    let userLevel = 0
+
+    if(user.level === undefined) user.level = 0
+
+    for(let i = 0; i < levels.length; i++) {
+      if(user.level > levels[i]) userLevel = i
+    }
+    return (userLevel)
+  }
+
   const handleInputChange = (event) => {
     setFilter(event.target.value)
   }
@@ -40,7 +52,7 @@ const Users = () => {
             </td>
           </tr>
           {users
-            .sort((a, b) => a.username.localeCompare(b.username))
+            .sort((a, b) => b.level- a.level)
             .filter(user => user.username?.toLowerCase().includes(filter.toLowerCase()))
             .map(user =>
               <tr key={user.id}>
@@ -48,7 +60,7 @@ const Users = () => {
                   <Link to={`/users/${user.id}`}>{user.name}</Link>
                 </td>
                 <td>
-                  {user.level}
+                  <UserLevel user={user}/>
                 </td>
               </tr>
             )}

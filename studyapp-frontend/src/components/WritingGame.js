@@ -2,8 +2,8 @@ import React, {useEffect, useState} from 'react'
 import {Button} from 'react-bootstrap'
 import cardService from '../services/cards'
 import styled from 'styled-components'
-import userService from "../services/users";
-import {Link} from "react-router-dom";
+import userService from '../services/users'
+import {Link} from 'react-router-dom'
 
 const Input = styled.input.attrs(props => ({
   type: 'text',
@@ -202,7 +202,8 @@ const WritingGame = ({ blog, users, setUsers }) => {
         <h3>Writing</h3>
         <br/>
         <br/>
-        <div>right answers: {record}</div>
+        <div>Right answers: {record}</div>
+        <div>Questions: {round} / 3</div>
         <br/>
         <h4>{newQuestion.translate}</h4>
         <br/>

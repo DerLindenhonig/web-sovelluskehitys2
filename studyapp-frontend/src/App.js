@@ -12,7 +12,7 @@ import Blog from './components/Blog'
 import RegistrationForm from './components/RegistrationForm'
 import User from './components/User'
 import Games from './components/Games'
-import {Button, Container, Navbar} from 'react-bootstrap'
+import {Button, Container, Navbar, ProgressBar} from 'react-bootstrap'
 import WritingGame from './components/WritingGame'
 import QuizGame from './components/QuizGame'
 import styled from 'styled-components'
@@ -31,13 +31,14 @@ const Footer = styled.div`
   background: lightseagreen;
   //font-size: 1em;
   //margin: 1em;
-  padding: 0.15em 0.5em;
+  padding: 0.5em 0.5em;
   //border: 0px solid Black;
   //border-radius: 3px;
   position: fixed;
   left:0;
   bottom:0;
   right:0;
+  height: 3.5em;
 `
 
 const StyledLink = styled(Link)`
@@ -49,6 +50,14 @@ const StyledLink = styled(Link)`
   &:hover {
     color: slateblue;
   }
+`
+
+const LevelBarContainer = styled.div`
+  width: 20em;
+  padding: 0.7em 1.5em;
+  position: absolute;
+  bottom:0;
+  right:0;
 `
 
 const App = () => {
@@ -78,16 +87,48 @@ const App = () => {
       setUser(user)
       blogService.setToken(user.token)
       cardService.setToken(user.token)
-      //console.log(user)
+      console.log('user' + user)
       setThisUsername(user.username)
     }
   }, [])
 
   console.log(user)
 
-  /*const getUser = () => {
+  const LevelBar = () => {
+    console.log(users.length)
 
-  }*/
+    if(user !== null && users.length !== 0) {
+      let thisUser = null
+
+      console.log(thisUserUsername)
+
+      {users
+        .filter(user => user.username === thisUserUsername)
+        .map(user =>
+          thisUser = user
+        )}
+
+      const levels = [0, 10, 30, 60, 100, 150, 210, 270, 350]
+      let userLevel = 0
+
+      if(thisUser.level === undefined) {
+        thisUser.level = 0
+      }
+
+      for(let i = 0; i < levels.length; i++) {
+        if(thisUser.level > levels[i]) {
+          userLevel = i
+        }
+      }
+
+      return (
+        <LevelBarContainer>
+          <div style={{ color: 'white' }}>Level: {userLevel}</div>
+          <ProgressBar animated striped variant="warning" now={thisUser.level} min={0} label={`${thisUser.level} / ${levels[userLevel+1]}`} max={levels[userLevel+1]}/>
+        </LevelBarContainer>
+      )
+    } else return <div></div>
+  }
 
   const handleLogout = async event => {
     event.preventDefault()
@@ -196,7 +237,7 @@ const App = () => {
 
       <Footer>
         <br />
-        <em></em>
+        <LevelBar/>
       </Footer>
     </div>
   )

@@ -357,8 +357,8 @@ const QuizGame = ({ blog, users, setUsers }) => {
         <h3>Translate-Word</h3>
         <br/>
         <Notification message={message}/>
-        <div>right answers: {record}</div>
-        <div>round: {round}</div>
+        <div>Right answers: {record}</div>
+        <div>Questions: {round} / 3</div>
         <br/>
         <h4 id='question'>{guestionText}</h4>
         <br/>

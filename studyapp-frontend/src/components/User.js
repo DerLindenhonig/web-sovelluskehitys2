@@ -64,7 +64,6 @@ const User = ({ user, setUsers, users, thisUserUsername }) => {
   }
 
   const LevelBar = () => {
-
     const levels = [0, 10, 30, 60, 100, 150, 210, 270, 350]
     let userLevel = 0
 
@@ -75,10 +74,6 @@ const User = ({ user, setUsers, users, thisUserUsername }) => {
     for(let i = 0; i < levels.length; i++) {
       if(user.level > levels[i]) {
         userLevel = i
-        console.log('userLevel ' + userLevel)
-        console.log('levels[i] ' + levels[i])
-        console.log('i ' + i)
-        console.log('levels[i+1] ' + levels[i+1])
       }
     }
 
