@@ -5,9 +5,9 @@ import Togglable from './Togglable'
 import EditBlogForm from './EditBlogForm'
 import {Link, Redirect} from 'react-router-dom'
 import styled from 'styled-components'
+//import {Card} from "react-bootstrap";
 
 const Button = styled.button`
-  background: lightseagreen;
   font-size: 1.3em;
   padding: 0.15em 0.5em;
   border: 0px solid Black;
@@ -26,9 +26,6 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs, users }) => {
   if(!blog) {
     return null
   }
-
-  console.log(user)
-  //const [like, setLike] = useState(false)
 
   const GameBtn = () => {
     if (blog.user.username === user.username) {
@@ -60,53 +57,6 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs, users }) => {
       })
   }
 
-  /*const addLike = async event => {
-    event.preventDefault()
-    setLike(true)
-
-    const newBlog = {
-      likes: blog.likes + 1,
-      title: blog.title,
-      author: blog.author,
-      url: blog.url,
-      user: blog.user
-    }
-    await blogService.update(blog.id, newBlog)
-    const allBlogs = await blogService.getAll()
-    setRefreshedBlogs(allBlogs)
-  }*/
-
-  /*const removeLike = async event => {
-    event.preventDefault()
-    setLike(false)
-
-    const newBlog = {
-      likes: blog.likes - 1,
-      title: blog.title,
-      author: blog.author,
-      url: blog.url,
-      user: blog.user,
-    }
-    await blogService.update(blog.id, newBlog)
-    const allBlogs = await blogService.getAll()
-    setRefreshedBlogs(allBlogs)
-  }*/
-
-  /*const Liking = () => {
-    for(let i = 0; i < user.likedBlogs; i++) {
-      if(user.likedBlogs[i] === blog.id) {
-        setLike(true)
-      } else {
-        setLike(false)
-      }
-    }
-    if(like === false) {
-      return <Button size="sm" id='like' onClick={addLike}>like</Button>
-    } else {
-      return <Button size="sm" id='like' onClick={removeLike}>remove like</Button>
-    }
-  }*/
-
   const Game = () => {
     return (
       <div>
@@ -120,7 +70,11 @@ const Blog = ({ blog, user, setRefreshedBlogs, setBlogs, blogs, users }) => {
       <br/>
       <h2>{blog.title}</h2>
       <div><strong>Status:</strong> {blog.status}</div>
-      <div><strong>Created by</strong> {blog.author}</div>
+      {users
+        .filter(user => user.username === blog.author)
+        .map(user =>
+          <div key={user.id}><strong>Created by</strong> <Link to={`/users/${user.id}`}>{blog.author}</Link></div>
+        )}
       <div><strong>Description:</strong> {blog.url}</div>
       <div><strong>Category:</strong> {blog.category} for {blog.category2} speakers</div>
       <br/>

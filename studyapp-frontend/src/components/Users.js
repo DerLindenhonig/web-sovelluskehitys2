@@ -36,7 +36,7 @@ const Users = () => {
               <h5>Name</h5>
             </td>
             <td>
-              <h5>Word lists</h5>
+              <h5>Level</h5>
             </td>
           </tr>
           {users
@@ -48,7 +48,7 @@ const Users = () => {
                   <Link to={`/users/${user.id}`}>{user.name}</Link>
                 </td>
                 <td>
-                  {user.blogs.length}
+                  {user.level}
                 </td>
               </tr>
             )}

@@ -21,7 +21,8 @@ const userSchema = mongoose.Schema({
             ref: 'Blog'
         }
     ],
-    avatar: String
+    avatar: String,
+    level: Number
 })
 
 userSchema.plugin(uniqueValidator)

@@ -5,7 +5,7 @@ import {Convert} from 'mongo-image-converter'
 const EditAccount = ({ user, editUser }) => {
   const [newUsername, setNewUsername] = useState(user.username)
   const [newName, setNewName] = useState(user.name)
-  const [imageFile, setImageFile] = useState('')
+  const [imageFile, setImageFile] = useState(user.avatar)
 
   /*const handleUsernameChange = (event) => {
     setNewUsername(event.target.value)
@@ -27,7 +27,8 @@ const EditAccount = ({ user, editUser }) => {
     editUser({
       username: newUsername,
       name: newName,
-      avatar: imageFile
+      avatar: imageFile,
+      level: user.level || 0
     })
 
     setNewUsername('')
@@ -57,13 +58,13 @@ const EditAccount = ({ user, editUser }) => {
       <form onSubmit={handleEditBlog}>
         <div>
           <Form.Group controlId="formFile" className="mb-3">
-            <Form.Label>Default file input example</Form.Label>
+            <Form.Label>Change avatar</Form.Label>
             <Form.Control type="file" onChange = {(e) => setImageFile( e.target.files[0] ) } />
           </Form.Group>
         </div>
-        <button onClick={convertImage} type="submit">save</button>
+        <button onClick={convertImage} type="submit">save avatar</button>
         <Form.Group className="mb-3">
-          <Form.Label>New name</Form.Label>
+          <Form.Label>Edit name</Form.Label>
           <Form.Control type="text" placeholder="Edit name" id='name' defaultValue={newName} onChange={handleNameChange}/>
         </Form.Group>
         <br/>

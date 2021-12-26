@@ -32,8 +32,10 @@ const StyledLink = styled(Link)`
     text-align: center;
     font-weight: bold;
     padding: 0.15em 0.5em;
-    background: ${props => props.primary ? 'white' : 'lightseagreen'};
     color: ${props => props.primary ? 'lightseagreen' : 'white'};
+  &:hover {
+    color: slateblue;
+  }
 `
 
 const App = () => {
@@ -45,6 +47,7 @@ const App = () => {
   const [message, setMessage] = useState(null)
   const [refreshBlogs, setRefreshedBlogs] = useState(null)
   const [thisUserUsername, setThisUsername] = useState('')
+  const [userLevel, setUserLevel] = useState(0)
 
   useEffect(() => {
     blogService.getAll().then(blogs =>
@@ -66,6 +69,8 @@ const App = () => {
       setThisUsername(user.username)
     }
   }, [])
+
+  console.log(user)
 
   const handleLogout = async event => {
     event.preventDefault()
@@ -117,7 +122,7 @@ const App = () => {
             <WritingGame blog={blogId(match.params.id)}/>}
           />
           <Route path='/quiz/:id' render={({ match }) =>
-            <QuizGame blog={blogId(match.params.id)} setMessage={setMessage}/>}
+            <QuizGame blog={blogId(match.params.id)} setUserLevel={setUserLevel} userLevel={userLevel} users={users} setUsers={setUsers}/>}
           />
           <Route path='/games/:id' render={({ match }) =>
             <Games blog={blogId(match.params.id)}/>}

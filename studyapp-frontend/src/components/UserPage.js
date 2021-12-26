@@ -132,6 +132,7 @@ const UserPage = ({ blogs, setBlogs, setMessage, user, users }) => {
       <br/>
       <div>
         {users
+          .slice(0, 1)
           .filter(user => user.username === thisUser.username)
           .map(user =>
             <h3 key={user.id}>

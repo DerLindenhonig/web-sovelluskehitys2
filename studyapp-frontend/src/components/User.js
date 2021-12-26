@@ -3,11 +3,14 @@ import {Link} from 'react-router-dom'
 import Togglable from './Togglable'
 import EditAccount from './EditAccount'
 import userService from '../services/users'
+import {Image} from 'react-bootstrap'
 
 const User = ({ user, setUsers, users, thisUserUsername }) => {
   if (user === undefined) {
     return null
   }
+
+  console.log(user)
 
   const Wordlists = () => {
     if(user.blogs.length === 0) {
@@ -66,7 +69,7 @@ const User = ({ user, setUsers, users, thisUserUsername }) => {
       <br/>
       <h3>{user.name}</h3>
       <p>{user.username}</p>
-      <img src={user.avatar} width='150px'/>
+      <Image src={user.avatar} width='150px' height='150px' rounded/>
       <br/>
       <br/>
       <EditUserBtn/>

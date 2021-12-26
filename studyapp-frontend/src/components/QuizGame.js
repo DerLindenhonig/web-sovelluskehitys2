@@ -2,8 +2,11 @@ import React, {useEffect, useState} from 'react'
 import {Button} from 'react-bootstrap'
 import cardService from '../services/cards'
 import Notification from './Notification'
+import {Link} from 'react-router-dom'
+import userService from '../services/users'
+//import userService from '../services/users'
 
-const QuizGame = ({ blog }) => {
+const QuizGame = ({ blog, users, setUsers }) => {
 
   if(!blog) {
     console.log(blog)
@@ -11,21 +14,27 @@ const QuizGame = ({ blog }) => {
   }
 
   const [allCards, setAllCards] = useState([])
-  let [record, setRecord] = useState(null)
+  let [record, setRecord] = useState(0)
   let [guestionText, setQuestionText] = useState('')
+
   let [answer1Text, setAnswer1Text] = useState('answer 1')
   let [answer2Text, setAnswer2Text] = useState('answer 2')
   let [answer3Text, setAnswer3Text] = useState('answer 3')
   let [answer4Text, setAnswer4Text] = useState('answer 4')
+
   let [randQ1, setRandQ1] = useState(null)
   let [questionId, setQuestionId] = useState('')
   let [card, setCard] = useState(null)
   const [message, setMessage] = useState(null)
   const [start, setStart] = useState('null')
+  let [round, setRound] = useState(0)
+
   let [answer1Variant, setAnswer1Variant] = useState('outline-dark')
   let [answer2Variant, setAnswer2Variant] = useState('outline-dark')
   let [answer3Variant, setAnswer3Variant] = useState('outline-dark')
   let [answer4Variant, setAnswer4Variant] = useState('outline-dark')
+
+  //const [userLevel, setUserLevel] = useState(0)
 
   useEffect(() => {
     cardService.getAll()
@@ -235,6 +244,7 @@ const QuizGame = ({ blog }) => {
     setAnswer4Text(answer4)
 
     setQuestionId(randQuestion.id)
+    setRound(round + 1)
   }
 
   const handleStartBtn = () => {
@@ -253,7 +263,73 @@ const QuizGame = ({ blog }) => {
     }
   }
 
-  if(blog.cards.length > 3) {
+  let userLevel = 0
+  const RestartButton = () => {
+    userLevel = record
+    console.log('userLevel' + userLevel)
+
+    let thisUser = null
+    {users
+      .filter(user => user.username === blog.author)
+      .map(user =>
+        thisUser = user
+      )}
+
+    console.log('thisUser' + thisUser.id)
+
+    const userObject = ({
+      username: thisUser.username,
+      name: thisUser.name,
+      avatar: thisUser.avatar,
+      level: thisUser.level + userLevel
+    })
+
+    userService
+      .update(thisUser.id, userObject)
+      .then(returnedUser => {
+        setUsers(users.concat(returnedUser))
+      })
+
+    setRound(0)
+    setStart('null')
+    setRecord(0)
+  }
+
+  const CloseButton = () => {
+    return <Link to={`/blogs/${blog.id}`}>Back to {blog.title}</Link>
+  }
+
+  if(round > 3 && record === 3) {
+    return (
+      <div>
+        <br/>
+        <h3>Excellent!</h3>
+        <h5>Your score: {record} / 10</h5>
+        <button onClick={RestartButton}>Restart</button>
+        <CloseButton/>
+      </div>
+    )
+  } else if (round > 3 && record >= 2) {
+    return (
+      <div>
+        <br/>
+        <h3>Well done!</h3>
+        <h5>Your score: {record} / 10</h5>
+        <button onClick={RestartButton}>Restart</button>
+        <CloseButton/>
+      </div>
+    )
+  } else if (round > 3 && record < 2) {
+    return (
+      <div>
+        <br/>
+        <h3>Don`t worry, you can do it!</h3>
+        <h5>Your score: {record} / 10</h5>
+        <button onClick={RestartButton}>Restart</button>
+        <CloseButton/>
+      </div>
+    )
+  }else if(blog.cards.length > 3 && round < 4) {
     return (
       <div>
         <br/>
@@ -261,6 +337,7 @@ const QuizGame = ({ blog }) => {
         <br/>
         <Notification message={message}/>
         <div>right answers: {record}</div>
+        <div>round: {round}</div>
         <br/>
         <h4 id='question'>{guestionText}</h4>
         <br/>
@@ -274,12 +351,9 @@ const QuizGame = ({ blog }) => {
         <br/>
       </div>
     )
-  } else {
-    return (
-      <div>Need at least 4 cards to play!</div>
-    )
+  } else if (blog.cards.length < 3 && round < 4){
+    return <div>Need at least 4 cards to play!</div>
   }
-
 }
 
 export default QuizGame
