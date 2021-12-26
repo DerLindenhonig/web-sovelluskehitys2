@@ -141,7 +141,6 @@ const UserPage = ({ blogs, setBlogs, setMessage, user, users }) => {
           )}
       </div>
       <br/>
-      <h3>Add new</h3>
       <Togglable buttonLabel='Create new wordlist'>
         <NewBlogForm createBlog={handleAddBlog}/>
       </Togglable>

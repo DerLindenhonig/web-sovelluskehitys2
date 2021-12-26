@@ -264,10 +264,27 @@ const QuizGame = ({ blog, users, setUsers }) => {
   }
 
   let userLevel = 0
-  const RestartButton = () => {
+  const OkButton = () => {
+    setOk(true)
     userLevel = record
-    console.log('userLevel' + userLevel)
+    console.log('userLevel 1 ' + userLevel)
+    SaveUserLevel(userLevel)
 
+    return(
+      <div>
+        <button onClick={RestartButton}>Restart</button>
+        <Link to={`/blogs/${blog.id}`}>Back to {blog.title}</Link>
+      </div>
+    )
+  }
+
+  const RestartButton = () => {
+    setRound(0)
+    setStart('null')
+    setRecord(0)
+  }
+
+  const SaveUserLevel = () => {
     let thisUser = null
     {users
       .filter(user => user.username === blog.author)
@@ -275,7 +292,7 @@ const QuizGame = ({ blog, users, setUsers }) => {
         thisUser = user
       )}
 
-    console.log('thisUser' + thisUser.id)
+    console.log('thisUser 2 ' + thisUser.id)
 
     const userObject = ({
       username: thisUser.username,
@@ -289,14 +306,23 @@ const QuizGame = ({ blog, users, setUsers }) => {
       .then(returnedUser => {
         setUsers(users.concat(returnedUser))
       })
-
-    setRound(0)
-    setStart('null')
-    setRecord(0)
   }
 
-  const CloseButton = () => {
-    return <Link to={`/blogs/${blog.id}`}>Back to {blog.title}</Link>
+  const [ok, setOk] = useState(false)
+  const Buttons = () => {
+    if(ok === false) {
+      return <button onClick={OkButton}>Ok</button>
+    } else if (ok === true) {
+      return(
+        <div>
+          <br/>
+          <button onClick={RestartButton}>Restart</button>
+          <br/>
+          <br/>
+          <Link to={`/blogs/${blog.id}`}>Back to {blog.title}</Link>
+        </div>
+      )
+    }
   }
 
   if(round > 3 && record === 3) {
@@ -305,8 +331,7 @@ const QuizGame = ({ blog, users, setUsers }) => {
         <br/>
         <h3>Excellent!</h3>
         <h5>Your score: {record} / 10</h5>
-        <button onClick={RestartButton}>Restart</button>
-        <CloseButton/>
+        <Buttons/>
       </div>
     )
   } else if (round > 3 && record >= 2) {
@@ -315,8 +340,6 @@ const QuizGame = ({ blog, users, setUsers }) => {
         <br/>
         <h3>Well done!</h3>
         <h5>Your score: {record} / 10</h5>
-        <button onClick={RestartButton}>Restart</button>
-        <CloseButton/>
       </div>
     )
   } else if (round > 3 && record < 2) {
@@ -325,8 +348,6 @@ const QuizGame = ({ blog, users, setUsers }) => {
         <br/>
         <h3>Don`t worry, you can do it!</h3>
         <h5>Your score: {record} / 10</h5>
-        <button onClick={RestartButton}>Restart</button>
-        <CloseButton/>
       </div>
     )
   }else if(blog.cards.length > 3 && round < 4) {

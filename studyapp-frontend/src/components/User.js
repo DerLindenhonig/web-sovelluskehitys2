@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import Togglable from './Togglable'
 import EditAccount from './EditAccount'
 import userService from '../services/users'
-import {Image} from 'react-bootstrap'
+import {Image, ProgressBar} from 'react-bootstrap'
 
 const User = ({ user, setUsers, users, thisUserUsername }) => {
   if (user === undefined) {
@@ -63,6 +63,29 @@ const User = ({ user, setUsers, users, thisUserUsername }) => {
     } else return null
   }
 
+  const LevelBar = () => {
+
+    const levels = [0, 10, 30, 60, 100, 150, 210, 270, 350]
+    let userLevel = 0
+
+    for(let i = 0; i < levels.length; i++) {
+      if(user.level > levels[i]) {
+        userLevel = i
+        console.log('userLevel ' + userLevel)
+        console.log('levels[i] ' + levels[i])
+        console.log('i ' + i)
+        console.log('levels[i+1] ' + levels[i+1])
+      }
+    }
+
+    return (
+      <div style={{ width: 300 }}>
+        Level: {userLevel} ( {user.level} / {levels[userLevel+1]} )
+        <ProgressBar animated striped variant="info" now={user.level} min={0} max={levels[userLevel+1]}/>
+      </div>
+    )
+  }
+
   return (
     <div>
       <br/>
@@ -73,6 +96,8 @@ const User = ({ user, setUsers, users, thisUserUsername }) => {
       <br/>
       <br/>
       <EditUserBtn/>
+      <br/>
+      <LevelBar/>
       <br/>
       <h4>Top 10 word lists:</h4>
       <Wordlists/>

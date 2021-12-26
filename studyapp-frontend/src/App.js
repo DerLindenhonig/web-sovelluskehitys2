@@ -27,6 +27,19 @@ const Navigation = styled.div`
   //border-radius: 3px;
 `
 
+const Footer = styled.div`
+  background: lightseagreen;
+  //font-size: 1em;
+  //margin: 1em;
+  padding: 0.15em 0.5em;
+  //border: 0px solid Black;
+  //border-radius: 3px;
+  position: fixed;
+  left:0;
+  bottom:0;
+  right:0;
+`
+
 const StyledLink = styled(Link)`
     font-size: 1.2em;
     text-align: center;
@@ -72,6 +85,10 @@ const App = () => {
 
   console.log(user)
 
+  /*const getUser = () => {
+
+  }*/
+
   const handleLogout = async event => {
     event.preventDefault()
     try {
@@ -93,88 +110,95 @@ const App = () => {
   const userId = (id) => users.find(user => user.id === id)
 
   return (
-    <Router>
-      <Navigation>
-        <Navbar variant="light">
-          <Container>
-            <Navbar>
-              <StyledLink to="/">Home</StyledLink>
-              <StyledLink to="/blogs">Discover</StyledLink>
-              <StyledLink to="/users">Users</StyledLink>
-              <StyledLink to="/help">Help</StyledLink>
-            </Navbar>
-            <Navbar className="justify-content-end">
-              {user === null
-                ? <Link style={padding} to="/login">login</Link>
-                : <em>{user.name} logged in <Button size="sm" variant="outline-dark" onClick={handleLogout}>logout</Button></em>
-              }
-            </Navbar>
-          </Container>
-        </Navbar>
-      </Navigation>
+    <div>
+      <Router>
+        <Navigation>
+          <Navbar variant="light">
+            <Container>
+              <Navbar>
+                <StyledLink to="/">Home</StyledLink>
+                <StyledLink to="/blogs">Discover</StyledLink>
+                <StyledLink to="/users">Users</StyledLink>
+                <StyledLink to="/help">Help</StyledLink>
+              </Navbar>
+              <Navbar className="justify-content-end">
+                {user === null
+                  ? <Link style={padding} to="/login">login</Link>
+                  : <em>{user.name} logged in <Button size="sm" variant="outline-dark" onClick={handleLogout}>logout</Button></em>
+                }
+              </Navbar>
+            </Container>
+          </Navbar>
+        </Navigation>
 
-      <div><Notification message={message}/></div>
+        <div><Notification message={message}/></div>
 
-      <div className="container">
-        <Switch>
-          <Route path='/help'><Help/></Route>
-          <Route path='/writing/:id' render={({ match }) =>
-            <WritingGame blog={blogId(match.params.id)}/>}
-          />
-          <Route path='/quiz/:id' render={({ match }) =>
-            <QuizGame blog={blogId(match.params.id)} setUserLevel={setUserLevel} userLevel={userLevel} users={users} setUsers={setUsers}/>}
-          />
-          <Route path='/games/:id' render={({ match }) =>
-            <Games blog={blogId(match.params.id)}/>}
-          />
-          <Route path='/blogs/:id' render={({ match }) =>
-            <Blog blog={blogId(match.params.id)} user={user} setRefreshedBlogs={setRefreshedBlogs} setBlogs={setBlogs} blogs={blogs} users={users}/>}
-          />
-          <Route path='/users/:id' render={({ match }) =>
-            <User user={userId(match.params.id)} blogs={blogs} users={users} setUsers={setUsers} thisUserUsername={thisUserUsername}/>}
-          />
-          <Route path='/users'>
-            {user ? <Users /> : <Redirect to="/login" />}
-          </Route>
-          <Route path='/registration'>
-            <RegistrationForm
-              username={username}
-              password={password}
-              setPassword={setPassword}
-              setUser={setUser}
-              setUsername={setUsername}
-              setMessage={setMessage}/>
-          </Route>
-          <Route path='/login'>
-            {!user ? <LoginForm
-              username={username}
-              password={password}
-              setPassword={setPassword}
-              setUser={setUser}
-              setUsername={setUsername}
-              setMessage={setMessage}/> : <Redirect to="/" />}
-          </Route>
-          <Route path='/blogs'>
-            {user ? <Blogs
-              user={user}
-              blogs={blogs}
-              setRefreshedBlogs={setRefreshedBlogs}
-              setBlogs={setBlogs}
-              setMessage={setMessage}/> : <Redirect to="/login" />}
-          </Route>
-          <Route path='/'>
-            {user ? <UserPage
-              setUsers={setUsers}
-              users={users}
-              user={user}
-              blogs={blogs}
-              setRefreshedBlogs={setRefreshedBlogs}
-              setBlogs={setBlogs}
-              setMessage={setMessage}/> : <Redirect to="/login" />}
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+        <div className="container">
+          <Switch>
+            <Route path='/help'><Help/></Route>
+            <Route path='/writing/:id' render={({ match }) =>
+              <WritingGame blog={blogId(match.params.id)}/>}
+            />
+            <Route path='/quiz/:id' render={({ match }) =>
+              <QuizGame blog={blogId(match.params.id)} setUserLevel={setUserLevel} userLevel={userLevel} users={users} setUsers={setUsers}/>}
+            />
+            <Route path='/games/:id' render={({ match }) =>
+              <Games blog={blogId(match.params.id)}/>}
+            />
+            <Route path='/blogs/:id' render={({ match }) =>
+              <Blog blog={blogId(match.params.id)} user={user} setRefreshedBlogs={setRefreshedBlogs} setBlogs={setBlogs} blogs={blogs} users={users}/>}
+            />
+            <Route path='/users/:id' render={({ match }) =>
+              <User user={userId(match.params.id)} blogs={blogs} users={users} setUsers={setUsers} thisUserUsername={thisUserUsername}/>}
+            />
+            <Route path='/users'>
+              {user ? <Users /> : <Redirect to="/login" />}
+            </Route>
+            <Route path='/registration'>
+              <RegistrationForm
+                username={username}
+                password={password}
+                setPassword={setPassword}
+                setUser={setUser}
+                setUsername={setUsername}
+                setMessage={setMessage}/>
+            </Route>
+            <Route path='/login'>
+              {!user ? <LoginForm
+                username={username}
+                password={password}
+                setPassword={setPassword}
+                setUser={setUser}
+                setUsername={setUsername}
+                setMessage={setMessage}/> : <Redirect to="/" />}
+            </Route>
+            <Route path='/blogs'>
+              {user ? <Blogs
+                user={user}
+                blogs={blogs}
+                setRefreshedBlogs={setRefreshedBlogs}
+                setBlogs={setBlogs}
+                setMessage={setMessage}/> : <Redirect to="/login" />}
+            </Route>
+            <Route path='/'>
+              {user ? <UserPage
+                setUsers={setUsers}
+                users={users}
+                user={user}
+                blogs={blogs}
+                setRefreshedBlogs={setRefreshedBlogs}
+                setBlogs={setBlogs}
+                setMessage={setMessage}/> : <Redirect to="/login" />}
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+
+      <Footer>
+        <br />
+        <em></em>
+      </Footer>
+    </div>
   )
 }
 
