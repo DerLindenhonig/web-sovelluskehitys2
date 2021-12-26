@@ -4,7 +4,6 @@ import cardService from '../services/cards'
 import Notification from './Notification'
 import {Link} from 'react-router-dom'
 import userService from '../services/users'
-//import userService from '../services/users'
 
 const QuizGame = ({ blog, users, setUsers }) => {
 
@@ -309,6 +308,7 @@ const QuizGame = ({ blog, users, setUsers }) => {
   }
 
   const [ok, setOk] = useState(false)
+
   const Buttons = () => {
     if(ok === false) {
       return <button onClick={OkButton}>Ok</button>

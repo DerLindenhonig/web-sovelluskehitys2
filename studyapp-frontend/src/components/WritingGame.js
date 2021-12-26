@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react'
 import {Button} from 'react-bootstrap'
 import cardService from '../services/cards'
 import styled from 'styled-components'
+import userService from "../services/users";
+import {Link} from "react-router-dom";
 
 const Input = styled.input.attrs(props => ({
   type: 'text',
@@ -17,7 +19,7 @@ const Input = styled.input.attrs(props => ({
   height: 40px;
 `
 
-const WritingGame = ({ blog }) => {
+const WritingGame = ({ blog, users, setUsers }) => {
 
   if(!blog) {
     return null
@@ -29,6 +31,7 @@ const WritingGame = ({ blog }) => {
   const [start, setStart] = useState('null')
   let [record, setRecord] = useState(null)
   const [inputColor, setInputColor] = useState('black')
+  let [round, setRound] = useState(0)
 
   useEffect(() => {
     cardService.getAll()
@@ -50,6 +53,7 @@ const WritingGame = ({ blog }) => {
     setNewAnswer('')
     const randQ = Math.floor(Math.random() * cards.length)
     setNewQuestion(cards[randQ])
+    setRound(round + 1)
   }
 
   const handleAnswerChange = (event) => {
@@ -88,6 +92,69 @@ const WritingGame = ({ blog }) => {
     //changeQuestion()
   }
 
+  let userLevel = 0
+  const OkButton = () => {
+    setOk(true)
+    userLevel = record
+    console.log('userLevel 1 ' + userLevel)
+    SaveUserLevel(userLevel)
+
+    return(
+      <div>
+        <button onClick={RestartButton}>Restart</button>
+        <Link to={`/blogs/${blog.id}`}>Back to {blog.title}</Link>
+      </div>
+    )
+  }
+
+  const SaveUserLevel = () => {
+    let thisUser = null
+    {users
+      .filter(user => user.username === blog.author)
+      .map(user =>
+        thisUser = user
+      )}
+
+    console.log('thisUser 2 ' + thisUser.id)
+
+    const userObject = ({
+      username: thisUser.username,
+      name: thisUser.name,
+      avatar: thisUser.avatar,
+      level: thisUser.level + userLevel
+    })
+
+    userService
+      .update(thisUser.id, userObject)
+      .then(returnedUser => {
+        setUsers(users.concat(returnedUser))
+      })
+  }
+
+  const [ok, setOk] = useState(false)
+
+  const Buttons = () => {
+    if(ok === false) {
+      return <button onClick={OkButton}>Ok</button>
+    } else if (ok === true) {
+      return(
+        <div>
+          <br/>
+          <button onClick={RestartButton}>Restart</button>
+          <br/>
+          <br/>
+          <Link to={`/blogs/${blog.id}`}>Back to {blog.title}</Link>
+        </div>
+      )
+    }
+  }
+
+  const RestartButton = () => {
+    setRound(0)
+    setStart('null')
+    setRecord(0)
+  }
+
   const handleStartBtn = () => {
     changeQuestion()
   }
@@ -103,7 +170,32 @@ const WritingGame = ({ blog }) => {
     }
   }
 
-  if(blog.cards.length > 3) {
+  if(round > 3 && record === 3) {
+    return (
+      <div>
+        <br/>
+        <h3>Excellent!</h3>
+        <h5>Your score: {record} / 10</h5>
+        <Buttons/>
+      </div>
+    )
+  } else if (round > 3 && record >= 2) {
+    return (
+      <div>
+        <br/>
+        <h3>Well done!</h3>
+        <h5>Your score: {record} / 10</h5>
+      </div>
+    )
+  } else if (round > 3 && record < 2) {
+    return (
+      <div>
+        <br/>
+        <h3>Don`t worry, you can do it!</h3>
+        <h5>Your score: {record} / 10</h5>
+      </div>
+    )
+  } else if(blog.cards.length > 3 && round < 4) {
     return (
       <div>
         <br/>

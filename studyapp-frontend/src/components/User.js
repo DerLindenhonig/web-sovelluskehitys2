@@ -68,6 +68,10 @@ const User = ({ user, setUsers, users, thisUserUsername }) => {
     const levels = [0, 10, 30, 60, 100, 150, 210, 270, 350]
     let userLevel = 0
 
+    if(user.level === undefined) {
+      user.level = 0
+    }
+
     for(let i = 0; i < levels.length; i++) {
       if(user.level > levels[i]) {
         userLevel = i
@@ -79,9 +83,9 @@ const User = ({ user, setUsers, users, thisUserUsername }) => {
     }
 
     return (
-      <div style={{ width: 300 }}>
-        Level: {userLevel} ( {user.level} / {levels[userLevel+1]} )
-        <ProgressBar animated striped variant="info" now={user.level} min={0} max={levels[userLevel+1]}/>
+      <div style={{ width: 250 }}>
+        Level: {userLevel}
+        <ProgressBar animated striped variant="info" now={user.level} min={0} label={`${user.level} / ${levels[userLevel+1]}`} max={levels[userLevel+1]}/>
       </div>
     )
   }

@@ -137,7 +137,7 @@ const App = () => {
           <Switch>
             <Route path='/help'><Help/></Route>
             <Route path='/writing/:id' render={({ match }) =>
-              <WritingGame blog={blogId(match.params.id)}/>}
+              <WritingGame blog={blogId(match.params.id)} users={users} setUsers={setUsers}/>}
             />
             <Route path='/quiz/:id' render={({ match }) =>
               <QuizGame blog={blogId(match.params.id)} setUserLevel={setUserLevel} userLevel={userLevel} users={users} setUsers={setUsers}/>}
