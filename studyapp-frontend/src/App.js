@@ -20,20 +20,12 @@ import Help from './components/Help'
 
 const Navigation = styled.div`
   background: lightseagreen;
-  //font-size: 1em;
-  //margin: 1em;
   padding: 0.15em 0.5em;
-  //border: 0px solid Black;
-  //border-radius: 3px;
 `
 
 const Footer = styled.div`
   background: lightseagreen;
-  //font-size: 1em;
-  //margin: 1em;
   padding: 0.5em 0.5em;
-  //border: 0px solid Black;
-  //border-radius: 3px;
   position: fixed;
   left:0;
   bottom:0;
