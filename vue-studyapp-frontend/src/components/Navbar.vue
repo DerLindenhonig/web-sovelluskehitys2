@@ -32,16 +32,6 @@ export default {
     logout() {
       this.$emit('logout:auth', this.authenticated)
     }
-    /*addNewEvent(event) {
-      const lastId =
-          this.events.length > 0
-              ? this.events[this.events.length - 1].id
-              : 0;
-      const id = lastId + 1;
-      const newEvent = { ...event, id };
-
-      this.events = [...this.events, newEvent]
-    }*/
   }
 }
 
