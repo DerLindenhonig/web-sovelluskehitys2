@@ -8,7 +8,9 @@
 setToken - Asettaa käyttäjän token.\
 getAll - Hakee kokoelman kaikki sanastot. Tekee HTTP GET -pyyntö osoitteeseen http://localhost:3001/api/blogs.
 ```
-GET http://localhost:3001/api/cards
+HTTP Request:
+
+GET http://localhost:3001/api/blogs
 Content-Type: application/json
 ```
 create - Luo uuden sanaston pyynnön mukana "newObject" olevasta datasta.\
@@ -49,6 +51,8 @@ update - Päivittää olemassa oleva käyttäjä tekemällä HTTP PUT -pyynnön 
 setToken - Asettaa käyttäjän token.\
 getAll - Hakee kokoelman kaikki muistikortit. Tekee HTTP GET -pyyntö osoitteeseen http://localhost:3001/api/cards.
 ```
+HTTP Request:
+
 GET http://localhost:3001/api/cards
 Content-Type: application/json
 ```
@@ -60,6 +64,8 @@ examples: string, esimerkkejä
 *progress: oletuksena on 0
 blogId: sanaston id, mihin kortti lisätään
 *-oletusarvot
+
+HTTP Request:
 
 POST http://localhost:3001/api/cards
 Content-Type: application/json
