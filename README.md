@@ -40,15 +40,23 @@ update - Päivittää olemassa oleva käyttäjä tekemällä HTTP PUT -pyynnön 
 ### Cards:
 setToken - Asettaa käyttäjän token.\
 getAll - Hakee kokoelman kaikki muistikortit. Tekee HTTP GET -pyyntö osoitteeseen http://localhost:3001/api/cards. \
-create - Luo uuden muistikortin pyynnön mukana "newObject" olevasta datasta.
+create - Luo uuden muistikortin pyynnön mukana "newObject" olevasta datasta. "newObject" sisältää nämä tiedot:
 ```
-"newObject" sisältää nämä tiedot:
 word: string, sana
 translate: string, käännös
 examples: string, esimerkkejä
 *progress: oletuksena on 0
 blogId: sanaston id
 *-oletusarvot
+
+
+POST http://localhost:3001/api/cards
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc
+
+{
+  "title": "new", "author": "new", "url": "new", "blogId": "61922316b432f095fc45bfb3"
+}
 ```
 update - Päivittää olemassa oleva kortti tekemällä HTTP PUT -pyynnön.\
 remove - Tekee HTTP DELETE -pyyntö kortin urliin ja poista sen.
