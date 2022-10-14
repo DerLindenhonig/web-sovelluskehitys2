@@ -88,7 +88,7 @@ Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1va
 update - Päivittää olemassa oleva kortti tekemällä HTTP PUT -pyynnön.\
 remove - Tekee HTTP DELETE -pyyntö kortin urliin ja poista sen.
 ### Login:
-login - Tekee HTTP POST -pyyntö login (http://localhost:3001/api/login) urliin. Palvelin tarkistaa salasanan ja palauttaa "401 status", jos salasanat eivät täsmää. Palvelin palauttaa "200 status", luottu token, käyttäjätunnus ja nimi , jos salasana on oikea.
+login - Tekee HTTP POST -pyyntö login (http://localhost:3001/api/login) urliin. Palvelin tarkistaa salasanan ja palauttaa "401 status", jos salasanat eivät täsmää. Palvelin palauttaa "200 status", luodun tokenin, käyttäjätunnuksen ja nimen, jos salasana on oikea.
 ```
 HTTP Request:
 
