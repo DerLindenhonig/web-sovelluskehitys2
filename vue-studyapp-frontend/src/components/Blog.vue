@@ -417,22 +417,6 @@ export default {
             .create(this.newBlog)
         console.log('blog added ' + this.newBlog)
 
-        //this.$parent.appSetBlogs()
-
-        //this.updatedBlogs = blogService.getAll()
-
-        //console.log('blog added id: ' + this.newBlog.id)
-        //let lastBlogId = this.blogs[this.blogs.length].id
-        /*let lastBlogId = this.updatedBlogs[this.updatedBlogs.length].id
-
-        //console.log('added blog id 2: ' + lastBlogId)
-        console.log('this.blogs.length: ' + lastBlogId)*/
-
-        /*this.$parent.appSetBlogs();
-
-        let lastBlogId = this.blogs[this.blogs.length-1].id
-        console.log('this.blogs.length: ' + lastBlogId)*/
-
         this.makeToast('success', 'Wordlist was added successfully into your collection.', 'Success!')
       } catch (error) {
         console.log('error ' + error)
