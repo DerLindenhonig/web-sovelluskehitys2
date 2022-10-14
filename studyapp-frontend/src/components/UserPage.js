@@ -1,9 +1,9 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Togglable from './Togglable'
 import NewBlogForm from './NewBlogForm'
 import blogService from '../services/blogs'
-import {Card, Col, Form, Row} from 'react-bootstrap'
-import {Link} from 'react-router-dom'
+import { Card, Col, Form, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import Filter from './Filter'
 
 const UserPage = ({ blogs, setBlogs, setMessage, user, users }) => {
@@ -13,7 +13,7 @@ const UserPage = ({ blogs, setBlogs, setMessage, user, users }) => {
   }
 
   const [filter, setFilter] = useState('')
-  const [categories] = useState(['All', 'English', 'German', 'French', 'Finnish', 'Swedish', 'Russian', 'Korean', 'Japanese', 'Chinese', 'other'])
+  const [categories] = useState(['All', 'Arabic', 'Chinese', 'Danish', 'Dutch', 'English', 'German', 'Greek', 'Hindi', 'Hungarian', 'Italian', 'Danish', 'French', 'Finnish', 'Japanese', 'Kazakh', 'Korean', 'Norwegian', 'Polish', 'Portuguese', 'Russian', 'Spanish', 'Swedish', 'Turkish', 'other'])
   let [category, setCategory] = useState('All')
 
   const handleChange = (e) => {
@@ -132,7 +132,7 @@ const UserPage = ({ blogs, setBlogs, setMessage, user, users }) => {
       <br/>
       <div>
         {users
-          .slice(0, 1)
+          //.slice(0, 1)
           .filter(user => user.username === thisUser.username)
           .map(user =>
             <h3 key={user.id}>

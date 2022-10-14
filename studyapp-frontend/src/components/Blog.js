@@ -3,7 +3,7 @@ import blogService from '../services/blogs'
 import Cards from './Cards'
 import Togglable from './Togglable'
 import EditBlogForm from './EditBlogForm'
-import {Link, Redirect} from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import styled from 'styled-components'
 //import {Card} from "react-bootstrap";
 

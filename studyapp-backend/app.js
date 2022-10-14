@@ -23,6 +23,9 @@ mongoose
 
 app.use(middleware.tokenExtractor)
 
+const cors = require('cors')
+app.use(cors())
+
 app.use(express.static('build'))
 app.use(bodyParser.json())
 app.use(middleware.requestLogger)

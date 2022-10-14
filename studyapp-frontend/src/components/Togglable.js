@@ -1,9 +1,9 @@
-import React, {useImperativeHandle, useState} from 'react'
+import React, { useImperativeHandle, useState } from 'react'
 import PropTypes from 'prop-types'
 import imageToRender from '../assets/edit.png'
 import imageToRenderAdd from '../assets/add.png'
 import styled from 'styled-components'
-import {Image} from 'react-bootstrap'
+import { Image } from 'react-bootstrap'
 
 const Button = styled.button`
   background: bisque;

@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-import {Form} from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Form } from 'react-bootstrap'
 import styled from 'styled-components'
 
 const EditButton = styled.button`

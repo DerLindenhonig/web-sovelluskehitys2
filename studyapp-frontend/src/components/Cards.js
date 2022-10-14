@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react'
-import {Image, Table} from 'react-bootstrap'
+import React, { useEffect, useState } from 'react'
+import { Image, Table } from 'react-bootstrap'
 import cardService from '../services/cards'
 import NewCardForm from './NewCardForm'
 import Card from './Card'

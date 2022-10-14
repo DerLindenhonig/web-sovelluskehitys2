@@ -1,18 +1,18 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import blogService from './services/blogs'
 import userService from './services/users'
 import cardService from './services/cards'
 import Notification from './components/Notification'
 import LoginForm from './components/LoginForm'
 import Blogs from './components/Blogs'
-import {BrowserRouter as Router, Link, Redirect, Route, Switch} from 'react-router-dom'
+import { BrowserRouter as Router, Link, Redirect, Route, Switch } from 'react-router-dom'
 import Users from './components/Users'
 import UserPage from './components/UserPage'
 import Blog from './components/Blog'
 import RegistrationForm from './components/RegistrationForm'
 import User from './components/User'
 import Games from './components/Games'
-import {Button, Container, Navbar, ProgressBar} from 'react-bootstrap'
+import { Button, Container, Navbar, ProgressBar } from 'react-bootstrap'
 import WritingGame from './components/WritingGame'
 import QuizGame from './components/QuizGame'
 import styled from 'styled-components'
@@ -208,6 +208,7 @@ const App = () => {
             <Route path='/blogs'>
               {user ? <Blogs
                 user={user}
+                users={users}
                 blogs={blogs}
                 setRefreshedBlogs={setRefreshedBlogs}
                 setBlogs={setBlogs}

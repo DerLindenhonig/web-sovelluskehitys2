@@ -1,7 +1,7 @@
 import React from 'react'
 import imageToRender from '../assets/tutorial.png'
 import imageToRender2 from '../assets/tutorial2.png'
-import {Image} from 'react-bootstrap'
+import { Image } from 'react-bootstrap'
 
 const Help = () => {
   return (

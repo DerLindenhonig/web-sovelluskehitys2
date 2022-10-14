@@ -1,16 +1,16 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Togglable from './Togglable'
 import NewBlogForm from './NewBlogForm'
 import blogService from '../services/blogs'
-import {Card, Col, Form, Row} from 'react-bootstrap'
-import {Link} from 'react-router-dom'
+import { Card, Col, Form, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import Filter from './Filter'
 
-const Blogs = ({ blogs, setBlogs, setMessage, user }) => {
+const Blogs = ({ blogs, setBlogs, setMessage, user, users }) => {
 
   const [filter, setFilter] = useState('')
-  const [categories] = useState(['English', 'German', 'French', 'Finnish', 'Swedish', 'Russian', 'Korean', 'Japanese', 'Chinese', 'other'])
-  let [category, setCategory] = useState('English')
+  const [categories] = useState(['All', 'Arabic', 'Chinese', 'Danish', 'Dutch', 'English', 'German', 'Greek', 'Hindi', 'Hungarian', 'Italian', 'Danish', 'French', 'Finnish', 'Japanese', 'Kazakh', 'Korean', 'Norwegian', 'Polish', 'Portuguese', 'Russian', 'Spanish', 'Swedish', 'Turkish', 'other'])
+  let [category, setCategory] = useState('All')
 
   const handleAddBlog = (blogObject) => {
     try {
@@ -48,6 +48,64 @@ const Blogs = ({ blogs, setBlogs, setMessage, user }) => {
   }
 
   const FilterBlogs = () => {
+    if (category !== 'All') {
+      return (
+        <Row xs={3} md={4} className="g-4" >
+          {blogs
+            .sort((a, b) => a.title.localeCompare(b.title))
+            .filter(blog => blog.title?.toLowerCase().includes(filter.toLowerCase()))
+            .filter(blog => blog.category === category)
+            .filter(blog => blog.status === 'public')
+            .map(filteredBlogs => (
+              <Col key={filteredBlogs.id}>
+                <Card className="mb-4" border="secondary">
+                  <Card.Header>{filteredBlogs.category}</Card.Header>
+                  <Card.Body>
+                    <Card.Title><Link to={`/blogs/${filteredBlogs.id}`}>{filteredBlogs.title}</Link></Card.Title>
+                    {users
+                      .filter(user => user.username === filteredBlogs.author)
+                      .map(user =>
+                        <div key={user.id}><em>by <Link to={`/users/${user.id}`}>{filteredBlogs.author}</Link></em></div>
+                      )}
+                    <br/>
+                    Cards: {filteredBlogs.cards.length}<br/>
+                    Added: {filteredBlogs.addedUsers.length} times
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+        </Row>
+      )
+    } else {
+      return (
+        <Row xs={3} md={4} className="g-4" >
+          {blogs
+            .sort((a, b) => a.title.localeCompare(b.title))
+            .filter(blog => blog.title?.toLowerCase().includes(filter.toLowerCase()))
+            .filter(blog => blog.status === 'public')
+            .map(filteredBlogs => (
+              <Col key={filteredBlogs.id}>
+                <Card className="mb-4" border="secondary">
+                  <Card.Header>{filteredBlogs.category}</Card.Header>
+                  <Card.Body>
+                    <Card.Title><Link to={`/blogs/${filteredBlogs.id}`}>{filteredBlogs.title}</Link></Card.Title>
+                    {users
+                      .filter(user => user.username === filteredBlogs.author)
+                      .map(user =>
+                        <div key={user.id}><em>by <Link to={`/users/${user.id}`}>{filteredBlogs.author}</Link></em></div>
+                      )}
+                    <br/>
+                    Cards: {filteredBlogs.cards.length}<br/>
+                    Added: {filteredBlogs.addedUsers.length} times
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+        </Row>
+      )
+    }
+  }
+  /*const FilterBlogs = () => {
     return (
       <Row xs={3} md={4} className="g-4" >
         {blogs
@@ -71,7 +129,7 @@ const Blogs = ({ blogs, setBlogs, setMessage, user }) => {
           ))}
       </Row>
     )
-  }
+  }*/
 
   return (
     <div>

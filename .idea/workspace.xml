@@ -1,0 +1,1320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="40965f5f-3f17-48c1-b5c2-eae02696f0f9" name="Default Changelist" comment="Help sivu.">
+      <change beforePath="$PROJECT_DIR$/studyapp-backend/build/asset-manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/studyapp-backend/build/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/studyapp-backend/build/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/studyapp-backend/build/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/studyapp-backend/build/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/studyapp-backend/build/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/studyapp-backend/build/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/studyapp-backend/build/static/js/2.5a5ae60b.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/studyapp-backend/build/static/js/2.5a5ae60b.chunk.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/studyapp-backend/build/static/js/2.5a5ae60b.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/studyapp-backend/build/static/js/main.c584ce89.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/studyapp-backend/build/static/js/main.c584ce89.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/studyapp-backend/build/static/js/runtime-main.abeb056b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/studyapp-backend/build/static/js/runtime-main.abeb056b.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/studyapp-backend/build/static/media/tutorial.8262024f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/studyapp-backend/build/static/media/tutorial2.51b32a36.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/studyapp-frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/studyapp-frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studyapp-frontend/src/components/Blogs.js" beforeDir="false" afterPath="$PROJECT_DIR$/studyapp-frontend/src/components/Blogs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studyapp-frontend/src/components/EditBlogForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/studyapp-frontend/src/components/EditBlogForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studyapp-frontend/src/components/NewBlogForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/studyapp-frontend/src/components/NewBlogForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studyapp-frontend/src/components/UserPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/studyapp-frontend/src/components/UserPage.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="21aeVvn2n3r01vxoL6S2ReZXawr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="HTTP Request" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../fullstackopen-2021" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\super\WebstormProjects\harjoitustyo\studyapp-backend" />
+      <recent name="C:\Users\super\WebstormProjects\harjoitustyo\studyapp-frontend\src\assets" />
+      <recent name="C:\Users\super\WebstormProjects\harjoitustyo\studyapp-frontend\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\super\WebstormProjects\harjoitustyo\studyapp-frontend\src\assets" />
+      <recent name="C:\Users\super\WebstormProjects\harjoitustyo\studyapp-frontend\src\services" />
+      <recent name="C:\Users\super\WebstormProjects\harjoitustyo\studyapp-frontend\src" />
+      <recent name="C:\Users\super\WebstormProjects\harjoitustyo\studyapp-frontend\src\components" />
+      <recent name="C:\Users\super\WebstormProjects\harjoitustyo\studyapp-frontend\src\img" />
+    </key>
+  </component>
+  <component name="RestClientSettings">
+    <option name="REQUEST_HISTORY">
+      <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:3001/api/blogs/add/61c5e0d4a2e13e35705ed3c3" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlckxpbmRlbmhvbmlnIiwiaWQiOiI2MWM0NmUwNjIxYTU3ZTRmNGNhOGQzYWEiLCJpYXQiOjE2NDAzNTgxMTZ9.8bg6oD48LZUWlO_b4O7nnp2SNSYy1Qlc5ANRJb1-8W0" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;addedUsers&quot; : [&quot;61c4df9e010c163c14120c9e&quot;]&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:3001/api/blogs/add/61c5e0d4a2e13e35705ed3c3" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlckxpbmRlbmhvbmlnIiwiaWQiOiI2MWM0NmUwNjIxYTU3ZTRmNGNhOGQzYWEiLCJpYXQiOjE2NDAzNTgxMTZ9.8bg6oD48LZUWlO_b4O7nnp2SNSYy1Qlc5ANRJb1-8W0" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;title&quot;: &quot;Englannin sanasto&quot;, &quot;author&quot;: &quot;DerLindenhonig&quot;, &quot;addedUsers&quot; : [&quot;61c4df9e010c163c14120c9e&quot;, &quot;61c46e0621a57e4f4ca8d3aa&quot;]&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:3001/api/blogs/add/61c5e0d4a2e13e35705ed3c3" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlckxpbmRlbmhvbmlnIiwiaWQiOiI2MWM0NmUwNjIxYTU3ZTRmNGNhOGQzYWEiLCJpYXQiOjE2NDAzNTgxMTZ9.8bg6oD48LZUWlO_b4O7nnp2SNSYy1Qlc5ANRJb1-8W0" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;title&quot;: &quot;Englannin sanasto&quot;, &quot;author&quot;: &quot;DerLindenhonig&quot;, &quot;addedUsers&quot; : [&quot;61c4df9e010c163c14120c9e&quot;]&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:3001/api/blogs/add/61c5e0d4a2e13e35705ed3c3" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlckxpbmRlbmhvbmlnIiwiaWQiOiI2MWM0NmUwNjIxYTU3ZTRmNGNhOGQzYWEiLCJpYXQiOjE2NDAzNTgxMTZ9.8bg6oD48LZUWlO_b4O7nnp2SNSYy1Qlc5ANRJb1-8W0" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;title&quot;: &quot;Englannin sanasto&quot;, &quot;author&quot;: &quot;DerLindenhonig&quot;, &quot;addedUsers&quot; : &quot;61c4df9e010c163c14120c9e&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:3001/api/blogs/add/61c5e0d4a2e13e35705ed3c3" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlckxpbmRlbmhvbmlnIiwiaWQiOiI2MWM0NmUwNjIxYTU3ZTRmNGNhOGQzYWEiLCJpYXQiOjE2NDAzNTgxMTZ9.8bg6oD48LZUWlO_b4O7nnp2SNSYy1Qlc5ANRJb1-8W0" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;title&quot;: &quot;Englannin sanasto&quot;, &quot;author&quot;: &quot;DerLindenhonig&quot;, &quot;addedUsers&quot; : &quot;{61c4df9e010c163c14120c9e}&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:3001/api/blogs/add/61c5e0d4a2e13e35705ed3c3" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlckxpbmRlbmhvbmlnIiwiaWQiOiI2MWM0NmUwNjIxYTU3ZTRmNGNhOGQzYWEiLCJpYXQiOjE2NDAzNTgxMTZ9.8bg6oD48LZUWlO_b4O7nnp2SNSYy1Qlc5ANRJb1-8W0" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;Title&quot;: &quot;Englannin sanasto&quot;, &quot;author&quot;: &quot;DerLindenhonig&quot;, &quot;addedUsers&quot; : &quot;61c4df9e010c163c14120c9e&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:3001/api/blogs/add/61c5e0d4a2e13e35705ed3c3" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlckxpbmRlbmhvbmlnIiwiaWQiOiI2MWM0NmUwNjIxYTU3ZTRmNGNhOGQzYWEiLCJpYXQiOjE2NDAzNTgxMTZ9.8bg6oD48LZUWlO_b4O7nnp2SNSYy1Qlc5ANRJb1-8W0" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;Title&quot;: &quot;Englannin sanasto&quot;, &quot;author&quot;: &quot;DerLindenhonig&quot;, &quot;addedUsers&quot; : &quot;[61c4df9e010c163c14120c9e]&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:3001/api/blogs/add/61c5e0d4a2e13e35705ed3c3" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlckxpbmRlbmhvbmlnIiwiaWQiOiI2MWM0NmUwNjIxYTU3ZTRmNGNhOGQzYWEiLCJpYXQiOjE2NDAzNTgxMTZ9.8bg6oD48LZUWlO_b4O7nnp2SNSYy1Qlc5ANRJb1-8W0" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;Title&quot;: &quot;Englannin sanasto&quot;, &quot;author&quot;: &quot;DerLindenhonig&quot;, &quot;addedUsers&quot; : [&quot;61c4df9e010c163c14120c9e&quot;]&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:3001/api/blogs/add/61c5e0d4a2e13e35705ed3c3" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlckxpbmRlbmhvbmlnIiwiaWQiOiI2MWM0NmUwNjIxYTU3ZTRmNGNhOGQzYWEiLCJpYXQiOjE2NDAzNTgxMTZ9.8bg6oD48LZUWlO_b4O7nnp2SNSYy1Qlc5ANRJb1-8W0" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;Title&quot;: &quot;Englannin sanasto&quot;, &quot;author&quot;: &quot;DerLindenhonig&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:3001/api/blogs/add/61c5e0d4a2e13e35705ed3c3" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlckxpbmRlbmhvbmlnIiwiaWQiOiI2MWM0NmUwNjIxYTU3ZTRmNGNhOGQzYWEiLCJpYXQiOjE2NDAzNTgxMTZ9.8bg6oD48LZUWlO_b4O7nnp2SNSYy1Qlc5ANRJb1-8W0" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:3001/api/users/61918507e324699ea054df9c" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;blogId&quot;: &quot;6194b98a3c1bdd60e0ac892f&quot;, &quot;name&quot;: &quot;moi&quot;, &quot;username&quot;: &quot;moi&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:3001/api/users/61918507e324699ea054df9c" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;blogId&quot;: &quot;6192a9e810c2f47b78690f5c&quot;, &quot;name&quot;: &quot;moi&quot;, &quot;username&quot;: &quot;moi&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:3001/api/users/61918507e324699ea054df9c" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;likedBlogs&quot;: &quot;6192a9e810c2f47b78690f5c&quot;, &quot;name&quot;: &quot;moi&quot;, &quot;username&quot;: &quot;moi&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:3001/api/users/61918507e324699ea054df9c" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;likedBlogs&quot;: [&quot;619d398e6436b25a7c3f7383&quot;, &quot;61922ab4190b47a01e9979b8&quot;], &quot;name&quot;: &quot;moi&quot;, &quot;username&quot;: &quot;moi&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:3001/api/users/61918507e324699ea054df9c" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;likedBlogs&quot;: &quot;[619d398e6436b25a7c3f7383, 61922ab4190b47a01e9979b8]&quot;, &quot;name&quot;: &quot;moi&quot;, &quot;username&quot;: &quot;moi&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:3001/api/users/61918507e324699ea054df9c" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;likedBlogs&quot;: &quot;619d398e6436b25a7c3f7383, 61922ab4190b47a01e9979b8&quot;, &quot;name&quot;: &quot;moi&quot;, &quot;username&quot;: &quot;moi&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:3001/api/users/61918507e324699ea054df9c" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;likedBlogs&quot;: &quot;619d398e6436b25a7c3f7383&quot;, &quot;name&quot;: &quot;moi&quot;, &quot;username&quot;: &quot;moi&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:3001/api/users/61918507e324699ea054df9c" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;likedBlogs&quot;: &quot;619d398e6436b25a7c3f7383&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:3001/api/users/61918507e324699ea054df9c" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;name&quot;: &quot;moi&quot;, &quot;username&quot;: &quot;moi&quot;, &quot;likedBlogs&quot;: &quot;619d398e6436b25a7c3f7383&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:3001/api/users/61918507e324699ea054df9c" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;name&quot;: &quot;moi&quot;, &quot;username&quot;: &quot;moi&quot;, &quot;likedBlogs&quot;: [&quot;619d398e6436b25a7c3f7383&quot;]&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:3001/api/users/61918507e324699ea054df9c" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;name&quot;: &quot;moi&quot;, &quot;username&quot;: &quot;moi&quot;, &quot;likedBlogs&quot;: [&quot;619d398e6436b25a7c3f7383&quot;, &quot;6192a9e810c2f47b78690f5c&quot;]&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:3001/api/users/61918507e324699ea054df9c" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;name&quot;: &quot;moi&quot;, &quot;username&quot;: &quot;moi&quot;, &quot;likedBlogs&quot;: &quot;6194b98a3c1bdd60e0ac892f&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:3001/api/users/61918507e324699ea054df9c" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;name&quot;: &quot;moi&quot;, &quot;username&quot;: &quot;moi&quot;, &quot;likedBlogs&quot;: &quot;61922316b432f095fc45bfb3&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:3001/api/users/61918507e324699ea054df9c" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;likedBlogs&quot;: &quot;61922316b432f095fc45bfb3&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:3001/api/users" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;likedBlogs&quot;: &quot;61922316b432f095fc45bfb3&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:3001/api/cards" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4Mzg0Njk5fQ.kqpXxpIqSXmloRk8dWmp4yfAB6Vmu67tH36zueJqpzU" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;word&quot;: &quot;new3&quot;, &quot;translate&quot;: &quot;new&quot;, &quot;example&quot;: &quot;new&quot;, &quot;blogId&quot;: &quot;61922316b432f095fc45bfb3&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:3001/api/cards" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:3001/api/cards" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;word&quot;: &quot;new2&quot;, &quot;translate&quot;: &quot;new&quot;, &quot;examples&quot;: &quot;new&quot;, &quot;blogId&quot;: &quot;61922316b432f095fc45bfb3&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:3001/api/cards" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;title&quot;: &quot;new&quot;, &quot;author&quot;: &quot;new&quot;, &quot;url&quot;: &quot;new&quot;, &quot;blogId&quot;: &quot;61922316b432f095fc45bfb3&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:3001/api/cards/61922316b432f095fc45bfb3" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;title&quot;: &quot;new&quot;, &quot;author&quot;: &quot;new&quot;, &quot;url&quot;: &quot;new&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:3001/api/cards/" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;title&quot;: &quot;new&quot;, &quot;author&quot;: &quot;new&quot;, &quot;url&quot;: &quot;new&quot;, &quot;blog&quot;: &quot;61922316b432f095fc45bfb3&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:3001/api/cards" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;title&quot;: &quot;titteli&quot;, &quot;author&quot;: &quot;authaa&quot;, &quot;url&quot;: &quot;urli&quot;, &quot;blog&quot;: &quot;61922316b432f095fc45bfb3&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:3001/api/blogs" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;title&quot;: &quot;titteli&quot;, &quot;author&quot;: &quot;authaa&quot;, &quot;url&quot;: &quot;urli&quot;, &quot;blog&quot;: &quot;61922316b432f095fc45bfb3&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:3001/api/blogs" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;title&quot;: &quot;titteli&quot;, &quot;author&quot;: &quot;authaa&quot;, &quot;url&quot;: &quot;urli&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:3001/api/blogs/61922316b432f095fc45bfb3" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;title&quot;: &quot;titteli&quot;, &quot;author&quot;: &quot;authaa&quot;, &quot;url&quot;: &quot;urli&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:3001/api/61922316b432f095fc45bfb3" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;title&quot;: &quot;titteli&quot;, &quot;author&quot;: &quot;authaa&quot;, &quot;url&quot;: &quot;urli&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:3001/61922316b432f095fc45bfb3" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Authorization" />
+                <option name="value" value="bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;title&quot;: &quot;titteli&quot;, &quot;author&quot;: &quot;authaa&quot;, &quot;url&quot;: &quot;urli&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:3001/api/login" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;&quot;username&quot;: &quot;moi&quot;, &quot;password&quot;: &quot;moi&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:3001/login" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;&quot;username&quot;: &quot;moi&quot;, &quot;password&quot;: &quot;moi&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="HTTP Request.scratch_6#1">
+    <configuration name="scratch_3#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/scratch_3.http" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="scratch_4#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/scratch_4.http" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="scratch_5#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/scratch_5.http" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="scratch_6#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/scratch_6.http" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.scratch_6#1" />
+        <item itemvalue="HTTP Request.scratch_5#1" />
+        <item itemvalue="HTTP Request.scratch_4#1" />
+        <item itemvalue="HTTP Request.scratch_3#1" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="40965f5f-3f17-48c1-b5c2-eae02696f0f9" name="Default Changelist" comment="" />
+      <created>1638183654321</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1638183654321</updated>
+      <workItem from="1638183673689" duration="260000" />
+      <workItem from="1638184590235" duration="18246000" />
+      <workItem from="1638261404133" duration="25084000" />
+      <workItem from="1638347141035" duration="21529000" />
+      <workItem from="1638429528121" duration="24555000" />
+      <workItem from="1638519809148" duration="17580000" />
+      <workItem from="1638620538475" duration="9209000" />
+      <workItem from="1638704845072" duration="16093000" />
+      <workItem from="1638781163667" duration="20908000" />
+      <workItem from="1638878322214" duration="26298000" />
+      <workItem from="1638953178790" duration="11916000" />
+      <workItem from="1639053960924" duration="22063000" />
+      <workItem from="1639123422013" duration="11963000" />
+      <workItem from="1639216108507" duration="14172000" />
+      <workItem from="1639296677545" duration="8082000" />
+      <workItem from="1639309904665" duration="22764000" />
+      <workItem from="1639399949953" duration="23677000" />
+      <workItem from="1639660494524" duration="17059000" />
+      <workItem from="1639765042495" duration="10834000" />
+      <workItem from="1639814969212" duration="17314000" />
+      <workItem from="1639991194671" duration="2481000" />
+      <workItem from="1640002901946" duration="1783000" />
+      <workItem from="1640090296377" duration="9131000" />
+      <workItem from="1640180645382" duration="7317000" />
+      <workItem from="1640262229984" duration="20354000" />
+      <workItem from="1640336047019" duration="24732000" />
+      <workItem from="1640420862166" duration="26938000" />
+      <workItem from="1640508584611" duration="23789000" />
+      <workItem from="1640557455765" duration="3666000" />
+      <workItem from="1640618787034" duration="19519000" />
+      <workItem from="1640680655654" duration="13291000" />
+      <workItem from="1641127488431" duration="512000" />
+      <workItem from="1641238683599" duration="3606000" />
+      <workItem from="1641473007902" duration="1395000" />
+      <workItem from="1643117394244" duration="307000" />
+      <workItem from="1645096753570" duration="3000" />
+      <workItem from="1647342135527" duration="158000" />
+      <workItem from="1661234617537" duration="3991000" />
+      <workItem from="1661839229366" duration="1899000" />
+      <workItem from="1661853286329" duration="593000" />
+      <workItem from="1663069510104" duration="1426000" />
+      <workItem from="1663083799016" duration="2638000" />
+      <workItem from="1663093540865" duration="594000" />
+      <workItem from="1663314354263" duration="25000" />
+      <workItem from="1663316008159" duration="1581000" />
+      <workItem from="1663323996180" duration="802000" />
+      <workItem from="1663325358190" duration="3365000" />
+      <workItem from="1663341324040" duration="5176000" />
+      <workItem from="1663358200835" duration="3109000" />
+      <workItem from="1663415827932" duration="6547000" />
+      <workItem from="1663482312778" duration="4066000" />
+      <workItem from="1663499891109" duration="1971000" />
+      <workItem from="1663567129920" duration="6094000" />
+      <workItem from="1663580012677" duration="10711000" />
+      <workItem from="1663676053220" duration="6258000" />
+      <workItem from="1663834898348" duration="11718000" />
+      <workItem from="1663913992675" duration="9384000" />
+      <workItem from="1664048772995" duration="4555000" />
+      <workItem from="1664091562948" duration="1057000" />
+      <workItem from="1664137536110" duration="1310000" />
+      <workItem from="1664176655346" duration="4692000" />
+      <workItem from="1664194431530" duration="2459000" />
+      <workItem from="1664259909774" duration="8653000" />
+      <workItem from="1664312121822" duration="5392000" />
+      <workItem from="1664349188204" duration="5368000" />
+      <workItem from="1664375378334" duration="4877000" />
+      <workItem from="1664397862048" duration="1754000" />
+      <workItem from="1664481706142" duration="3690000" />
+      <workItem from="1664535617328" duration="4841000" />
+      <workItem from="1664554799959" duration="7209000" />
+      <workItem from="1664656933967" duration="4212000" />
+      <workItem from="1664697457057" duration="627000" />
+      <workItem from="1664704627012" duration="5938000" />
+      <workItem from="1664739660655" duration="3538000" />
+      <workItem from="1664782320254" duration="11706000" />
+      <workItem from="1664818147590" duration="10192000" />
+      <workItem from="1664862353845" duration="6553000" />
+      <workItem from="1664877016312" duration="5139000" />
+      <workItem from="1664907005861" duration="116000" />
+      <workItem from="1664909638131" duration="10825000" />
+      <workItem from="1664954228718" duration="12310000" />
+      <workItem from="1665173324794" duration="4427000" />
+      <workItem from="1665254308433" duration="5975000" />
+      <workItem from="1665326160439" duration="1491000" />
+      <workItem from="1665381730336" duration="11930000" />
+      <workItem from="1665467647779" duration="1343000" />
+      <workItem from="1665729816323" duration="949000" />
+    </task>
+    <task id="LOCAL−00027" summary="Progress bar korteille. Quiz game, sekä korttien muokkaamisen korjaukset.">
+      <created>1638901673662</created>
+      <option name="number" value="LOCAL−00027" />
+      <option name="presentableId" value="LOCAL−00027" />
+      <updated>1638901673662</updated>
+    </task>
+    <task id="LOCAL−00028" summary="Korjaus: progressia ei nollata, jos korttia on muokattu.">
+      <created>1638902267611</created>
+      <option name="number" value="LOCAL−00028" />
+      <option name="presentableId" value="LOCAL−00028" />
+      <updated>1638902267611</updated>
+    </task>
+    <task id="LOCAL−00029" summary="Progress barin pisteet vähennetään, jos vastaus on väärä">
+      <created>1638912741344</created>
+      <option name="number" value="LOCAL−00029" />
+      <option name="presentableId" value="LOCAL−00029" />
+      <updated>1638912741344</updated>
+    </task>
+    <task id="LOCAL−00030" summary="Korjaukset, testaaminen, CSS">
+      <created>1638970288067</created>
+      <option name="number" value="LOCAL−00030" />
+      <option name="presentableId" value="LOCAL−00030" />
+      <updated>1638970288067</updated>
+    </task>
+    <task id="LOCAL−00031" summary="CSS, sivuston ulkonäkö">
+      <created>1638983127465</created>
+      <option name="number" value="LOCAL−00031" />
+      <option name="presentableId" value="LOCAL−00031" />
+      <updated>1638983127465</updated>
+    </task>
+    <task id="LOCAL−00032" summary="Search käyttäjän sivulla">
+      <created>1638984242363</created>
+      <option name="number" value="LOCAL−00032" />
+      <option name="presentableId" value="LOCAL−00032" />
+      <updated>1638984242363</updated>
+    </task>
+    <task id="LOCAL−00033" summary="Muut blogit on mahdollista lisätä omaan blogilistaan.">
+      <created>1639060913798</created>
+      <option name="number" value="LOCAL−00033" />
+      <option name="presentableId" value="LOCAL−00033" />
+      <updated>1639060913798</updated>
+    </task>
+    <task id="LOCAL−00034" summary="Kun blogi lisätään omaan blogilistaan, kopioidaan kortit uuden oman blogin versioon.">
+      <created>1639088859356</created>
+      <option name="number" value="LOCAL−00034" />
+      <option name="presentableId" value="LOCAL−00034" />
+      <updated>1639088859356</updated>
+    </task>
+    <task id="LOCAL−00035" summary="Blogi, jossa on kortit voi poistaa virhettomatta.">
+      <created>1639126165709</created>
+      <option name="number" value="LOCAL−00035" />
+      <option name="presentableId" value="LOCAL−00035" />
+      <updated>1639126165709</updated>
+    </task>
+    <task id="LOCAL−00036" summary="Virheiden korjaus.">
+      <created>1639133945956</created>
+      <option name="number" value="LOCAL−00036" />
+      <option name="presentableId" value="LOCAL−00036" />
+      <updated>1639133945956</updated>
+    </task>
+    <task id="LOCAL−00037" summary="Sivuston ulkonäkö.">
+      <created>1639136652186</created>
+      <option name="number" value="LOCAL−00037" />
+      <option name="presentableId" value="LOCAL−00037" />
+      <updated>1639136652186</updated>
+    </task>
+    <task id="LOCAL−00038" summary="Sivuston ulkonäkö. Statuksen muokkaaminen.">
+      <created>1639300079638</created>
+      <option name="number" value="LOCAL−00038" />
+      <option name="presentableId" value="LOCAL−00038" />
+      <updated>1639300079638</updated>
+    </task>
+    <task id="LOCAL−00039" summary="Sanaston poistaaminen korjaus.">
+      <created>1639315329507</created>
+      <option name="number" value="LOCAL−00039" />
+      <option name="presentableId" value="LOCAL−00039" />
+      <updated>1639315329507</updated>
+    </task>
+    <task id="LOCAL−00040" summary="Peli, jossa käyttäjän on kirjoitettava sana itse kääntämällä.">
+      <created>1639318502773</created>
+      <option name="number" value="LOCAL−00040" />
+      <option name="presentableId" value="LOCAL−00040" />
+      <updated>1639318502773</updated>
+    </task>
+    <task id="LOCAL−00041" summary="Korjaukset: Peli, jossa käyttäjän on kirjoitettava sana itse kääntämällä.">
+      <created>1639322730968</created>
+      <option name="number" value="LOCAL−00041" />
+      <option name="presentableId" value="LOCAL−00041" />
+      <updated>1639322730968</updated>
+    </task>
+    <task id="LOCAL−00042" summary="Navbar">
+      <created>1639325916394</created>
+      <option name="number" value="LOCAL−00042" />
+      <option name="presentableId" value="LOCAL−00042" />
+      <updated>1639325916394</updated>
+    </task>
+    <task id="LOCAL−00043" summary="Sivuston ulkonäkö">
+      <created>1639329321610</created>
+      <option name="number" value="LOCAL−00043" />
+      <option name="presentableId" value="LOCAL−00043" />
+      <updated>1639329321610</updated>
+    </task>
+    <task id="LOCAL−00044" summary="Korjattu: sanaston lisääminen">
+      <created>1639339590256</created>
+      <option name="number" value="LOCAL−00044" />
+      <option name="presentableId" value="LOCAL−00044" />
+      <updated>1639339590256</updated>
+    </task>
+    <task id="LOCAL−00045" summary="Korjattu: logout">
+      <created>1639343125880</created>
+      <option name="number" value="LOCAL−00045" />
+      <option name="presentableId" value="LOCAL−00045" />
+      <updated>1639343125880</updated>
+    </task>
+    <task id="LOCAL−00046" summary="Korttien progressia on mahdollista saada, (sekä laskea) pelaamalla &quot;kirjoitus-peliä&quot;.">
+      <created>1639346144501</created>
+      <option name="number" value="LOCAL−00046" />
+      <option name="presentableId" value="LOCAL−00046" />
+      <updated>1639346144501</updated>
+    </task>
+    <task id="LOCAL−00047" summary="Sanaston muokkaamisen korjaus. &quot;Category&quot; on lisätty backendiin.">
+      <created>1639405025320</created>
+      <option name="number" value="LOCAL−00047" />
+      <option name="presentableId" value="LOCAL−00047" />
+      <updated>1639405025320</updated>
+    </task>
+    <task id="LOCAL−00048" summary="Kortin muokkaamisen korjaus + ulkonäkö.">
+      <created>1639406217747</created>
+      <option name="number" value="LOCAL−00048" />
+      <option name="presentableId" value="LOCAL−00048" />
+      <updated>1639406217747</updated>
+    </task>
+    <task id="LOCAL−00049" summary="Mahdollisuus valita &quot;categories&quot; sanaston luomisessa.">
+      <created>1639437897083</created>
+      <option name="number" value="LOCAL−00049" />
+      <option name="presentableId" value="LOCAL−00049" />
+      <updated>1639437897083</updated>
+    </task>
+    <task id="LOCAL−00050" summary="Mahdollisuus luoda sanasto &quot;categorien&quot; kanssa.">
+      <created>1639665012233</created>
+      <option name="number" value="LOCAL−00050" />
+      <option name="presentableId" value="LOCAL−00050" />
+      <updated>1639665012233</updated>
+    </task>
+    <task id="LOCAL−00051" summary="Haku &quot;catagory&quot;:n perusteella.">
+      <created>1639672024281</created>
+      <option name="number" value="LOCAL−00051" />
+      <option name="presentableId" value="LOCAL−00051" />
+      <updated>1639672024281</updated>
+    </task>
+    <task id="LOCAL−00052" summary="Haku &quot;catagory&quot;:n perusteella on korjattu.">
+      <created>1639691404408</created>
+      <option name="number" value="LOCAL−00052" />
+      <option name="presentableId" value="LOCAL−00052" />
+      <updated>1639691404408</updated>
+    </task>
+    <task id="LOCAL−00053" summary="Haku &quot;catagory&quot;:n perusteella on lisätty &quot;Home&quot; sivuun. Sanaston muokkamiseen on lisätty categorian vaihtaaminen.">
+      <created>1639692588499</created>
+      <option name="number" value="LOCAL−00053" />
+      <option name="presentableId" value="LOCAL−00053" />
+      <updated>1639692588499</updated>
+    </task>
+    <task id="LOCAL−00054" summary="Korjattu &quot;Warning: controlId is ignored on &lt;FormControl&gt; when id is specified.&quot;">
+      <created>1639693302270</created>
+      <option name="number" value="LOCAL−00054" />
+      <option name="presentableId" value="LOCAL−00054" />
+      <updated>1639693302270</updated>
+    </task>
+    <task id="LOCAL−00055" summary="Muokattu käyttäjät liityvät luokat. Users luokassa on lisätty haku, muokattu ulkonäkö, käyttäjät ovat aakkosjärjestyksessä. User luokassa on sen käyttäjän 10 sanastoa näkyvillä.">
+      <created>1639775490848</created>
+      <option name="number" value="LOCAL−00055" />
+      <option name="presentableId" value="LOCAL−00055" />
+      <updated>1639775490848</updated>
+    </task>
+    <task id="LOCAL−00056" summary="Category haku on muokattu.">
+      <created>1639779633750</created>
+      <option name="number" value="LOCAL−00056" />
+      <option name="presentableId" value="LOCAL−00056" />
+      <updated>1639779633750</updated>
+    </task>
+    <task id="LOCAL−00057" summary="Peli sivu on muokattu. Omat komponentit jokaiselle pelille, kuvat, oikein/väärin viesti, muut korjaukset.">
+      <created>1639850841451</created>
+      <option name="number" value="LOCAL−00057" />
+      <option name="presentableId" value="LOCAL−00057" />
+      <updated>1639850841451</updated>
+    </task>
+    <task id="LOCAL−00058" summary="Parempi ulkonäkö peli-sivulle.">
+      <created>1639851972926</created>
+      <option name="number" value="LOCAL−00058" />
+      <option name="presentableId" value="LOCAL−00058" />
+      <updated>1639851972926</updated>
+    </task>
+    <task id="LOCAL−00059" summary="Ikonit on lisätty.">
+      <created>1639854369794</created>
+      <option name="number" value="LOCAL−00059" />
+      <option name="presentableId" value="LOCAL−00059" />
+      <updated>1639854369794</updated>
+    </task>
+    <task id="LOCAL−00060" summary="Togglablen ikonit on mahdollista vaihtaa.">
+      <created>1640127919004</created>
+      <option name="number" value="LOCAL−00060" />
+      <option name="presentableId" value="LOCAL−00060" />
+      <updated>1640127919004</updated>
+    </task>
+    <task id="LOCAL−00061" summary="Navigaatiopalkki on uudistettu.">
+      <created>1640201640069</created>
+      <option name="number" value="LOCAL−00061" />
+      <option name="presentableId" value="LOCAL−00061" />
+      <updated>1640201640070</updated>
+    </task>
+    <task id="LOCAL−00062" summary="Korjaus: Muokkaamisen jälkeen category ei poistu.">
+      <created>1640205309654</created>
+      <option name="number" value="LOCAL−00062" />
+      <option name="presentableId" value="LOCAL−00062" />
+      <updated>1640205309654</updated>
+    </task>
+    <task id="LOCAL−00063" summary="Toinen category sanostoille on lisätty. Sivuston ulkoasu on muokattu. Categorien lisääminen/vaihtaaminen on vähän muokattu.">
+      <created>1640273400530</created>
+      <option name="number" value="LOCAL−00063" />
+      <option name="presentableId" value="LOCAL−00063" />
+      <updated>1640273400530</updated>
+    </task>
+    <task id="LOCAL−00064" summary="Käyttäjän nimen vaihtaaminen. Home-sivulla linkki käyttäjän sivulle, missä saa vaihtaa nimi.">
+      <created>1640297915423</created>
+      <option name="number" value="LOCAL−00064" />
+      <option name="presentableId" value="LOCAL−00064" />
+      <updated>1640297915423</updated>
+    </task>
+    <task id="LOCAL−00065" summary="Translate-Word pelin napit vaihtavat värinsä, jos vastaus on oikein/väärin. Peli voi jatkaa “Next”-nappien painamisella.">
+      <created>1640341920258</created>
+      <option name="number" value="LOCAL−00065" />
+      <option name="presentableId" value="LOCAL−00065" />
+      <updated>1640341920258</updated>
+    </task>
+    <task id="LOCAL−00066" summary="Home-sivulla kaikki omat sanastot. Writing pelin input-text vaihtaa väri, jos vastaus on oikein/väärin. Peli voi jatkaa “Next”-nappien painamisella.">
+      <created>1640371828627</created>
+      <option name="number" value="LOCAL−00066" />
+      <option name="presentableId" value="LOCAL−00066" />
+      <updated>1640371828627</updated>
+    </task>
+    <task id="LOCAL−00067" summary="Käyttäjän sivu on muokattu: Saa muokata vain oma tili. Muiden käyttäjän sivuilla näkyy ainoastaan itsetehdyt, sekä &quot;public&quot; word listat.">
+      <created>1640387133190</created>
+      <option name="number" value="LOCAL−00067" />
+      <option name="presentableId" value="LOCAL−00067" />
+      <updated>1640387133190</updated>
+    </task>
+    <task id="LOCAL−00068" summary="Korjattu: add to my collections (tupla korttien määrä). Sanaston lisänneet käyttäjät lisätään backendiin.">
+      <created>1640431928265</created>
+      <option name="number" value="LOCAL−00068" />
+      <option name="presentableId" value="LOCAL−00068" />
+      <updated>1640431928265</updated>
+    </task>
+    <task id="LOCAL−00069" summary="Profiilikuvan lisääminen ja vaihtaaminen (backend + frontend).">
+      <created>1640442165014</created>
+      <option name="number" value="LOCAL−00069" />
+      <option name="presentableId" value="LOCAL−00069" />
+      <updated>1640442165014</updated>
+    </task>
+    <task id="LOCAL−00070" summary="Profiilikuvan korjaukset. Linkki sanaston tekijään.">
+      <created>1640454136274</created>
+      <option name="number" value="LOCAL−00070" />
+      <option name="presentableId" value="LOCAL−00070" />
+      <updated>1640454136274</updated>
+    </task>
+    <task id="LOCAL−00071" summary="Käyttäjän taso.">
+      <created>1640544013858</created>
+      <option name="number" value="LOCAL−00071" />
+      <option name="presentableId" value="LOCAL−00071" />
+      <updated>1640544013862</updated>
+    </task>
+    <task id="LOCAL−00072" summary="Käyttäjän taso (Korjaukset + näkyy käyttäjän sivulla).">
+      <created>1640550864127</created>
+      <option name="number" value="LOCAL−00072" />
+      <option name="presentableId" value="LOCAL−00072" />
+      <updated>1640550864127</updated>
+    </task>
+    <task id="LOCAL−00073" summary="Käyttäjän taso (Writing peli antaa kokemusta).">
+      <created>1640553875308</created>
+      <option name="number" value="LOCAL−00073" />
+      <option name="presentableId" value="LOCAL−00073" />
+      <updated>1640553875308</updated>
+    </task>
+    <task id="LOCAL−00074" summary="Footer + level bar.">
+      <created>1640558304669</created>
+      <option name="number" value="LOCAL−00074" />
+      <option name="presentableId" value="LOCAL−00074" />
+      <updated>1640558304669</updated>
+    </task>
+    <task id="LOCAL−00075" summary="Help sivu.">
+      <created>1640618924291</created>
+      <option name="number" value="LOCAL−00075" />
+      <option name="presentableId" value="LOCAL−00075" />
+      <updated>1640618924291</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <MESSAGE value="Haku &quot;catagory&quot;:n perusteella." />
+    <MESSAGE value="Haku &quot;catagory&quot;:n perusteella on korjattu." />
+    <MESSAGE value="Haku &quot;catagory&quot;:n perusteella on lisätty &quot;Home&quot; sivuun. Sanaston muokkamiseen on lisätty categorian vaihtaaminen." />
+    <MESSAGE value="Korjattu &quot;Warning: controlId is ignored on &lt;FormControl&gt; when id is specified.&quot;" />
+    <MESSAGE value="Muokattu käyttäjät liityvät luokat. Users luokassa on lisätty haku, muokattu ulkonäkö, käyttäjät ovat aakkosjärjestyksessä. User luokassa on sen käyttäjän 10 sanastoa näkyvillä." />
+    <MESSAGE value="Category haku on muokattu." />
+    <MESSAGE value="Peli sivu on muokattu. Omat komponentit jokaiselle pelille, kuvat, oikein/väärin viesti, muut korjaukset." />
+    <MESSAGE value="Parempi ulkonäkö peli-sivulle." />
+    <MESSAGE value="Ikonit on lisätty." />
+    <MESSAGE value="Togglablen ikonit on mahdollista vaihtaa." />
+    <MESSAGE value="Navigaatiopalkki on uudistettu." />
+    <MESSAGE value="Korjaus: Muokkaamisen jälkeen category ei poistu." />
+    <MESSAGE value="Toinen category sanostoille on lisätty. Sivuston ulkoasu on muokattu. Categorien lisääminen/vaihtaaminen on vähän muokattu." />
+    <MESSAGE value="Käyttäjän nimen vaihtaaminen. Home-sivulla linkki käyttäjän sivulle, missä saa vaihtaa nimi." />
+    <MESSAGE value="Translate-Word pelin napit vaihtavat värinsä, jos vastaus on oikein/väärin. Peli voi jatkaa “Next”-nappien painamisella." />
+    <MESSAGE value="Home-sivulla kaikki omat sanastot. Writing pelin input-text vaihtaa väri, jos vastaus on oikein/väärin. Peli voi jatkaa “Next”-nappien painamisella." />
+    <MESSAGE value="Käyttäjän sivu on muokattu: Saa muokata vain oma tili. Muiden käyttäjän sivuilla näkyy ainoastaan itsetehdyt, sekä &quot;public&quot; word listat." />
+    <MESSAGE value="Korjattu: add to my collections (tupla korttien määrä). Sanaston lisänneet käyttäjät lisätään backendiin." />
+    <MESSAGE value="Profiilikuvan lisääminen ja vaihtaaminen (backend + frontend)." />
+    <MESSAGE value="Profiilikuvan korjaukset. Linkki sanaston tekijään." />
+    <MESSAGE value="Käyttäjän taso." />
+    <MESSAGE value="Käyttäjän taso (Korjaukset + näkyy käyttäjän sivulla)." />
+    <MESSAGE value="Käyttäjän taso (Writing peli antaa kokemusta)." />
+    <MESSAGE value="Footer + level bar." />
+    <MESSAGE value="Help sivu." />
+    <option name="LAST_COMMIT_MESSAGE" value="Help sivu." />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

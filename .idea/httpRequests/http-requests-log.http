@@ -1,0 +1,571 @@
+GET http://localhost:3001/api/users
+Content-Type: application/json
+
+###
+
+PUT http://localhost:3001/api/blogs/add/61c5e0d4a2e13e35705ed3c3
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlckxpbmRlbmhvbmlnIiwiaWQiOiI2MWM0NmUwNjIxYTU3ZTRmNGNhOGQzYWEiLCJpYXQiOjE2NDAzNTgxMTZ9.8bg6oD48LZUWlO_b4O7nnp2SNSYy1Qlc5ANRJb1-8W0
+
+{
+  "addedUsers" : ["61c4df9e010c163c14120c9e"]
+}
+
+<> 2021-12-25T111931.200.json
+
+###
+
+PUT http://localhost:3001/api/blogs/add/61c5e0d4a2e13e35705ed3c3
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlckxpbmRlbmhvbmlnIiwiaWQiOiI2MWM0NmUwNjIxYTU3ZTRmNGNhOGQzYWEiLCJpYXQiOjE2NDAzNTgxMTZ9.8bg6oD48LZUWlO_b4O7nnp2SNSYy1Qlc5ANRJb1-8W0
+
+{
+  "title": "Englannin sanasto", "author": "DerLindenhonig", "addedUsers" : ["61c4df9e010c163c14120c9e", "61c46e0621a57e4f4ca8d3aa"]
+}
+
+<> 2021-12-25T111746.200.json
+
+###
+
+PUT http://localhost:3001/api/blogs/add/61c5e0d4a2e13e35705ed3c3
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlckxpbmRlbmhvbmlnIiwiaWQiOiI2MWM0NmUwNjIxYTU3ZTRmNGNhOGQzYWEiLCJpYXQiOjE2NDAzNTgxMTZ9.8bg6oD48LZUWlO_b4O7nnp2SNSYy1Qlc5ANRJb1-8W0
+
+{
+  "title": "Englannin sanasto", "author": "DerLindenhonig", "addedUsers" : ["61c4df9e010c163c14120c9e"]
+}
+
+<> 2021-12-25T111721.200.json
+
+###
+
+PUT http://localhost:3001/api/blogs/add/61c5e0d4a2e13e35705ed3c3
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlckxpbmRlbmhvbmlnIiwiaWQiOiI2MWM0NmUwNjIxYTU3ZTRmNGNhOGQzYWEiLCJpYXQiOjE2NDAzNTgxMTZ9.8bg6oD48LZUWlO_b4O7nnp2SNSYy1Qlc5ANRJb1-8W0
+
+{
+  "title": "Englannin sanasto", "author": "DerLindenhonig", "addedUsers" : ["61c4df9e010c163c14120c9e"]
+}
+
+<> 2021-12-25T111714.200.json
+
+###
+
+PUT http://localhost:3001/api/blogs/add/61c5e0d4a2e13e35705ed3c3
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlckxpbmRlbmhvbmlnIiwiaWQiOiI2MWM0NmUwNjIxYTU3ZTRmNGNhOGQzYWEiLCJpYXQiOjE2NDAzNTgxMTZ9.8bg6oD48LZUWlO_b4O7nnp2SNSYy1Qlc5ANRJb1-8W0
+
+{
+  "title": "Englannin sanasto", "author": "DerLindenhonig", "addedUsers" : "61c4df9e010c163c14120c9e"
+}
+
+<> 2021-12-25T111646.200.json
+
+###
+
+PUT http://localhost:3001/api/blogs/add/61c5e0d4a2e13e35705ed3c3
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlckxpbmRlbmhvbmlnIiwiaWQiOiI2MWM0NmUwNjIxYTU3ZTRmNGNhOGQzYWEiLCJpYXQiOjE2NDAzNTgxMTZ9.8bg6oD48LZUWlO_b4O7nnp2SNSYy1Qlc5ANRJb1-8W0
+
+{
+  "title": "Englannin sanasto", "author": "DerLindenhonig", "addedUsers" : ["61c4df9e010c163c14120c9e"]
+}
+
+<> 2021-12-25T111632.200.json
+
+###
+
+PUT http://localhost:3001/api/blogs/add/61c5e0d4a2e13e35705ed3c3
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlckxpbmRlbmhvbmlnIiwiaWQiOiI2MWM0NmUwNjIxYTU3ZTRmNGNhOGQzYWEiLCJpYXQiOjE2NDAzNTgxMTZ9.8bg6oD48LZUWlO_b4O7nnp2SNSYy1Qlc5ANRJb1-8W0
+
+{
+  "title": "Englannin sanasto", "author": "DerLindenhonig", "addedUsers" : ["61c4df9e010c163c14120c9e"]
+}
+
+<> 2021-12-25T111629.200.json
+
+###
+
+PUT http://localhost:3001/api/blogs/add/61c5e0d4a2e13e35705ed3c3
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlckxpbmRlbmhvbmlnIiwiaWQiOiI2MWM0NmUwNjIxYTU3ZTRmNGNhOGQzYWEiLCJpYXQiOjE2NDAzNTgxMTZ9.8bg6oD48LZUWlO_b4O7nnp2SNSYy1Qlc5ANRJb1-8W0
+
+{
+  "title": "Englannin sanasto", "author": "DerLindenhonig", "addedUsers" : "{61c4df9e010c163c14120c9e}"
+}
+
+<> 2021-12-25T111606.200.json
+
+###
+
+PUT http://localhost:3001/api/blogs/add/61c5e0d4a2e13e35705ed3c3
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlckxpbmRlbmhvbmlnIiwiaWQiOiI2MWM0NmUwNjIxYTU3ZTRmNGNhOGQzYWEiLCJpYXQiOjE2NDAzNTgxMTZ9.8bg6oD48LZUWlO_b4O7nnp2SNSYy1Qlc5ANRJb1-8W0
+
+{
+  "title": "Englannin sanasto", "author": "DerLindenhonig", "addedUsers" : "61c4df9e010c163c14120c9e"
+}
+
+<> 2021-12-25T111544.200.json
+
+###
+
+PUT http://localhost:3001/api/blogs/add/61c5e0d4a2e13e35705ed3c3
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlckxpbmRlbmhvbmlnIiwiaWQiOiI2MWM0NmUwNjIxYTU3ZTRmNGNhOGQzYWEiLCJpYXQiOjE2NDAzNTgxMTZ9.8bg6oD48LZUWlO_b4O7nnp2SNSYy1Qlc5ANRJb1-8W0
+
+{
+  "Title": "Englannin sanasto", "author": "DerLindenhonig", "addedUsers" : "61c4df9e010c163c14120c9e"
+}
+
+<> 2021-12-25T111517.200.json
+
+###
+
+PUT http://localhost:3001/api/blogs/add/61c5e0d4a2e13e35705ed3c3
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlckxpbmRlbmhvbmlnIiwiaWQiOiI2MWM0NmUwNjIxYTU3ZTRmNGNhOGQzYWEiLCJpYXQiOjE2NDAzNTgxMTZ9.8bg6oD48LZUWlO_b4O7nnp2SNSYy1Qlc5ANRJb1-8W0
+
+{
+  "Title": "Englannin sanasto", "author": "DerLindenhonig", "addedUsers" : "[61c4df9e010c163c14120c9e]"
+}
+
+<> 2021-12-25T111510.200.json
+
+###
+
+PUT http://localhost:3001/api/blogs/add/61c5e0d4a2e13e35705ed3c3
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlckxpbmRlbmhvbmlnIiwiaWQiOiI2MWM0NmUwNjIxYTU3ZTRmNGNhOGQzYWEiLCJpYXQiOjE2NDAzNTgxMTZ9.8bg6oD48LZUWlO_b4O7nnp2SNSYy1Qlc5ANRJb1-8W0
+
+{
+  "Title": "Englannin sanasto", "author": "DerLindenhonig", "addedUsers" : "[61c4df9e010c163c14120c9e]"
+}
+
+<> 2021-12-25T111435.200.json
+
+###
+
+PUT http://localhost:3001/api/blogs/add/61c5e0d4a2e13e35705ed3c3
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlckxpbmRlbmhvbmlnIiwiaWQiOiI2MWM0NmUwNjIxYTU3ZTRmNGNhOGQzYWEiLCJpYXQiOjE2NDAzNTgxMTZ9.8bg6oD48LZUWlO_b4O7nnp2SNSYy1Qlc5ANRJb1-8W0
+
+{
+  "Title": "Englannin sanasto", "author": "DerLindenhonig", "addedUsers" : ["61c4df9e010c163c14120c9e"]
+}
+
+<> 2021-12-25T111352.200.json
+
+###
+
+PUT http://localhost:3001/api/blogs/add/61c5e0d4a2e13e35705ed3c3
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlckxpbmRlbmhvbmlnIiwiaWQiOiI2MWM0NmUwNjIxYTU3ZTRmNGNhOGQzYWEiLCJpYXQiOjE2NDAzNTgxMTZ9.8bg6oD48LZUWlO_b4O7nnp2SNSYy1Qlc5ANRJb1-8W0
+
+{
+  "Title": "Englannin sanasto", "author": "DerLindenhonig"
+}
+
+<> 2021-12-25T111026.500.html
+
+###
+
+PUT http://localhost:3001/api/blogs/add/61c5e0d4a2e13e35705ed3c3
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlckxpbmRlbmhvbmlnIiwiaWQiOiI2MWM0NmUwNjIxYTU3ZTRmNGNhOGQzYWEiLCJpYXQiOjE2NDAzNTgxMTZ9.8bg6oD48LZUWlO_b4O7nnp2SNSYy1Qlc5ANRJb1-8W0
+
+{
+  "Title": "Englannin sanasto", "author": "DerLindenhonig"
+}
+
+<> 2021-12-25T110924.500.html
+
+###
+
+PUT http://localhost:3001/api/blogs/add/61c5e0d4a2e13e35705ed3c3
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlckxpbmRlbmhvbmlnIiwiaWQiOiI2MWM0NmUwNjIxYTU3ZTRmNGNhOGQzYWEiLCJpYXQiOjE2NDAzNTgxMTZ9.8bg6oD48LZUWlO_b4O7nnp2SNSYy1Qlc5ANRJb1-8W0
+
+{
+  "Title": "Englannin sanasto", "author": "DerLindenhonig"
+}
+
+<> 2021-12-25T110848.500.html
+
+###
+
+PUT http://localhost:3001/api/blogs/add/61c5e0d4a2e13e35705ed3c3
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlckxpbmRlbmhvbmlnIiwiaWQiOiI2MWM0NmUwNjIxYTU3ZTRmNGNhOGQzYWEiLCJpYXQiOjE2NDAzNTgxMTZ9.8bg6oD48LZUWlO_b4O7nnp2SNSYy1Qlc5ANRJb1-8W0
+
+{
+
+}
+
+<> 2021-12-25T110625.500.html
+
+###
+
+PUT http://localhost:3001/api/blogs/add/61c5e0d4a2e13e35705ed3c3
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlckxpbmRlbmhvbmlnIiwiaWQiOiI2MWM0NmUwNjIxYTU3ZTRmNGNhOGQzYWEiLCJpYXQiOjE2NDAzNTgxMTZ9.8bg6oD48LZUWlO_b4O7nnp2SNSYy1Qlc5ANRJb1-8W0
+
+{
+
+}
+
+###
+
+PUT http://localhost:3001/api/blogs/add/61c5e0d4a2e13e35705ed3c3
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlckxpbmRlbmhvbmlnIiwiaWQiOiI2MWM0NmUwNjIxYTU3ZTRmNGNhOGQzYWEiLCJpYXQiOjE2NDAzNTgxMTZ9.8bg6oD48LZUWlO_b4O7nnp2SNSYy1Qlc5ANRJb1-8W0
+
+{
+
+}
+
+<> 2021-12-25T110408.404.json
+
+###
+
+PUT http://localhost:3001/api/users/61918507e324699ea054df9c
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc
+
+{
+  "blogId": "6194b98a3c1bdd60e0ac892f", "name": "moi", "username": "moi"
+}
+
+<> 2021-12-03T231148.200.json
+
+###
+
+PUT http://localhost:3001/api/users/61918507e324699ea054df9c
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc
+
+{
+  "blogId": "619514f5e5ac5a6ee40643e0", "name": "moi", "username": "moi"
+}
+
+###
+
+PUT http://localhost:3001/api/users/61918507e324699ea054df9c
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc
+
+{
+  "blogId": "6192a9e810c2f47b78690f5c", "name": "moi", "username": "moi"
+}
+
+<> 2021-12-03T230859.200.json
+
+###
+
+PUT http://localhost:3001/api/users/61918507e324699ea054df9c
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc
+
+{
+  "likedBlogs": "6192a9e810c2f47b78690f5c", "name": "moi", "username": "moi"
+}
+
+###
+
+PUT http://localhost:3001/api/users/61918507e324699ea054df9c
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc
+
+{
+  "likedBlogs": "6192a9e810c2f47b78690f5c", "name": "moi", "username": "moi"
+}
+
+###
+
+PUT http://localhost:3001/api/users/61918507e324699ea054df9c
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc
+
+{
+  "likedBlogs": "6192a9e810c2f47b78690f5c", "name": "moi", "username": "moi"
+}
+
+<> 2021-12-03T230530.200.json
+
+###
+
+PUT http://localhost:3001/api/users/61918507e324699ea054df9c
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc
+
+{
+  "likedBlogs": ["619d398e6436b25a7c3f7383", "61922ab4190b47a01e9979b8"], "name": "moi", "username": "moi"
+}
+
+<> 2021-12-03T155927.200.json
+
+###
+
+PUT http://localhost:3001/api/users/61918507e324699ea054df9c
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc
+
+{
+  "likedBlogs": "[619d398e6436b25a7c3f7383, 61922ab4190b47a01e9979b8]", "name": "moi", "username": "moi"
+}
+
+<> 2021-12-03T155903.500.html
+
+###
+
+PUT http://localhost:3001/api/users/61918507e324699ea054df9c
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc
+
+{
+  "likedBlogs": "619d398e6436b25a7c3f7383, 61922ab4190b47a01e9979b8", "name": "moi", "username": "moi"
+}
+
+<> 2021-12-03T155847.500.html
+
+###
+
+PUT http://localhost:3001/api/users/61918507e324699ea054df9c
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc
+
+{
+  "likedBlogs": "619d398e6436b25a7c3f7383", "name": "moi", "username": "moi"
+}
+
+<> 2021-12-03T155752.200.json
+
+###
+
+PUT http://localhost:3001/api/users/61918507e324699ea054df9c
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc
+
+{
+  "likedBlogs": "619d398e6436b25a7c3f7383"
+}
+
+<> 2021-12-03T155655.200.json
+
+###
+
+PUT http://localhost:3001/api/users/61918507e324699ea054df9c
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc
+
+{
+  "name": "moi", "username": "moi", "likedBlogs": "619d398e6436b25a7c3f7383"
+}
+
+###
+
+PUT http://localhost:3001/api/users/61918507e324699ea054df9c
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc
+
+{
+  "name": "moi", "username": "moi", "likedBlogs": "619d398e6436b25a7c3f7383"
+}
+
+###
+
+PUT http://localhost:3001/api/users/61918507e324699ea054df9c
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc
+
+{
+  "name": "moi", "username": "moi", "likedBlogs": "619d398e6436b25a7c3f7383"
+}
+
+<> 2021-12-03T153818.200.json
+
+###
+
+PUT http://localhost:3001/api/users/61918507e324699ea054df9c
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc
+
+{
+  "name": "moi", "username": "moi", "likedBlogs": "619d398e6436b25a7c3f7383"
+}
+
+<> 2021-12-03T153815.200.json
+
+###
+
+PUT http://localhost:3001/api/users/61918507e324699ea054df9c
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc
+
+{
+  "name": "moi", "username": "moi", "likedBlogs": ["619d398e6436b25a7c3f7383"]
+}
+
+<> 2021-12-03T153811.200.json
+
+###
+
+PUT http://localhost:3001/api/users/61918507e324699ea054df9c
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc
+
+{
+  "name": "moi", "username": "moi", "likedBlogs": ["619d398e6436b25a7c3f7383", "6192a9e810c2f47b78690f5c"]
+}
+
+<> 2021-12-03T153805.200.json
+
+###
+
+PUT http://localhost:3001/api/users/61918507e324699ea054df9c
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc
+
+{
+  "name": "moi", "username": "moi", "likedBlogs": ["619d398e6436b25a7c3f7383", "6192a9e810c2f47b78690f5c"]
+}
+
+<> 2021-12-03T153742.200.json
+
+###
+
+PUT http://localhost:3001/api/users/61918507e324699ea054df9c
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc
+
+{
+  "name": "moi", "username": "moi", "likedBlogs": ["619d398e6436b25a7c3f7383", "6192a9e810c2f47b78690f5c"]
+}
+
+<> 2021-12-03T153732.200.json
+
+###
+
+PUT http://localhost:3001/api/users/61918507e324699ea054df9c
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc
+
+{
+  "name": "moi", "username": "moi", "likedBlogs": ["619d398e6436b25a7c3f7383", "6192a9e810c2f47b78690f5c"]
+}
+
+###
+
+PUT http://localhost:3001/api/users/61918507e324699ea054df9c
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc
+
+{
+  "name": "moi", "username": "moi", "blogId": "619d398e6436b25a7c3f7383"
+}
+
+###
+
+PUT http://localhost:3001/api/users/61918507e324699ea054df9c
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc
+
+{
+  "name": "moi", "username": "moi", "blogId": "619d398e6436b25a7c3f7383"
+}
+
+###
+
+PUT http://localhost:3001/api/users/61918507e324699ea054df9c
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc
+
+{
+  "name": "moi", "username": "moi", "likedBlogs": "619d398e6436b25a7c3f7383"
+}
+
+###
+
+PUT http://localhost:3001/api/users/61918507e324699ea054df9c
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc
+
+{
+  "name": "moi", "username": "moi", "likedBlogs": "619d398e6436b25a7c3f7383"
+}
+
+###
+
+PUT http://localhost:3001/api/users/61918507e324699ea054df9c
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc
+
+{
+  "name": "moi", "username": "moi", "likedBlogs": "619d398e6436b25a7c3f7383"
+}
+
+<> 2021-12-03T132805.200.json
+
+###
+
+PUT http://localhost:3001/api/users/61918507e324699ea054df9c
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc
+
+{
+  "name": "moi", "username": "moi", "likedBlogs": "6194b98a3c1bdd60e0ac892f"
+}
+
+<> 2021-12-03T132507.200.json
+
+###
+
+PUT http://localhost:3001/api/users/61918507e324699ea054df9c
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc
+
+{
+  "name": "moi", "username": "moi", "likedBlogs": "61922316b432f095fc45bfb3"
+}
+
+<> 2021-12-03T104855.200.json
+
+###
+
+PUT http://localhost:3001/api/users/61918507e324699ea054df9c
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc
+
+{
+  "likedBlogs": "61922316b432f095fc45bfb3"
+}
+
+<> 2021-12-03T104031.200.json
+
+###
+
+PUT http://localhost:3001/api/users/61918507e324699ea054df9c
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc
+
+{
+  "likedBlogs": "61922316b432f095fc45bfb3"
+}
+
+<> 2021-12-03T103947.200.json
+
+###
+
+PUT http://localhost:3001/api/users/61918507e324699ea054df9c
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc
+
+{
+  "likedBlogs": "61922316b432f095fc45bfb3"
+}
+
+<> 2021-12-03T103747.200.json
+
+###
+

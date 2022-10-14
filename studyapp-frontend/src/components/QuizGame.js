@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react'
-import {Button} from 'react-bootstrap'
+import React, { useEffect, useState } from 'react'
+import { Button } from 'react-bootstrap'
 import cardService from '../services/cards'
 import Notification from './Notification'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import userService from '../services/users'
 
 const QuizGame = ({ blog, users, setUsers }) => {
@@ -286,7 +286,7 @@ const QuizGame = ({ blog, users, setUsers }) => {
   const SaveUserLevel = () => {
     let thisUser = null
     {users
-      .filter(user => user.username === blog.author)
+      .filter(user => user.username === blog.user.username)
       .map(user =>
         thisUser = user
       )}
@@ -325,32 +325,32 @@ const QuizGame = ({ blog, users, setUsers }) => {
     }
   }
 
-  if(round > 3 && record === 3) {
+  if(round > 5 && record === 5) {
     return (
       <div>
         <br/>
         <h3>Excellent!</h3>
-        <h5>Your score: {record} / 10</h5>
+        <h5>Your score: {record} / 5</h5>
         <Buttons/>
       </div>
     )
-  } else if (round > 3 && record >= 2) {
+  } else if (round > 5 && record >= 3) {
     return (
       <div>
         <br/>
         <h3>Well done!</h3>
-        <h5>Your score: {record} / 10</h5>
+        <h5>Your score: {record} / 5</h5>
       </div>
     )
-  } else if (round > 3 && record < 2) {
+  } else if (round > 5 && record < 3) {
     return (
       <div>
         <br/>
-        <h3>Don`t worry, you can do it!</h3>
-        <h5>Your score: {record} / 10</h5>
+        <h3>Don`t worry, you can do it next time!</h3>
+        <h5>Your score: {record} / 5</h5>
       </div>
     )
-  }else if(blog.cards.length > 3 && round < 4) {
+  }else if(blog.cards.length > 3 && round < 6) {
     return (
       <div>
         <br/>
@@ -358,7 +358,7 @@ const QuizGame = ({ blog, users, setUsers }) => {
         <br/>
         <Notification message={message}/>
         <div>Right answers: {record}</div>
-        <div>Questions: {round} / 3</div>
+        <div>Questions: {round} / 5</div>
         <br/>
         <h4 id='question'>{guestionText}</h4>
         <br/>
@@ -372,7 +372,7 @@ const QuizGame = ({ blog, users, setUsers }) => {
         <br/>
       </div>
     )
-  } else if (blog.cards.length < 3 && round < 4){
+  } else if (blog.cards.length < 3 && round < 6){
     return <div>Need at least 4 cards to play!</div>
   }
 }

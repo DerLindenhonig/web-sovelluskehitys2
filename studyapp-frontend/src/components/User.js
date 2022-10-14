@@ -1,9 +1,9 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Togglable from './Togglable'
 import EditAccount from './EditAccount'
 import userService from '../services/users'
-import {Image, ProgressBar} from 'react-bootstrap'
+import { Image, ProgressBar } from 'react-bootstrap'
 
 const User = ({ user, setUsers, users, thisUserUsername }) => {
   if (user === undefined) {

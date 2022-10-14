@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react'
-import {Form} from 'react-bootstrap'
+import React, { useEffect, useState } from 'react'
+import { Form } from 'react-bootstrap'
 import styled from 'styled-components'
 
 const AddButton = styled.button`
@@ -17,9 +17,9 @@ const NewBlogForm = ({ createBlog }) => {
   const [newUrl, setNewUrl] = useState('')
   const [newStatus, setNewStatus] = useState('')
   const [user, setUser] = useState(null)
-  const [categories] = useState(['English', 'German', 'French', 'Finnish', 'Swedish', 'Russian', 'Korean', 'Japanese', 'Chinese'])
+  const [categories] = useState(['All', 'Arabic', 'Chinese', 'Danish', 'Dutch', 'English', 'German', 'Greek', 'Hindi', 'Hungarian', 'Italian', 'Danish', 'French', 'Finnish', 'Japanese', 'Kazakh', 'Korean', 'Norwegian', 'Polish', 'Portuguese', 'Russian', 'Spanish', 'Swedish', 'Turkish', 'other'])
   const [category, setCategory] = useState('')
-  const [categories2] = useState(['English', 'German', 'French', 'Finnish', 'Swedish', 'Russian', 'Korean', 'Japanese', 'Chinese', 'other'])
+  const [categories2] = useState(['All', 'Arabic', 'Chinese', 'Danish', 'Dutch', 'English', 'German', 'Greek', 'Hindi', 'Hungarian', 'Italian', 'Danish', 'French', 'Finnish', 'Japanese', 'Kazakh', 'Korean', 'Norwegian', 'Polish', 'Portuguese', 'Russian', 'Spanish', 'Swedish', 'Turkish', 'other'])
   const [category2, setCategory2] = useState('')
 
   const handleTitleChange = (event) => {

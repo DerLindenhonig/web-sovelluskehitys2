@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
-import {Form} from 'react-bootstrap'
-import {Convert} from 'mongo-image-converter'
+import React, { useState } from 'react'
+import { Form } from 'react-bootstrap'
+import { Convert } from 'mongo-image-converter'
 
 const EditAccount = ({ user, editUser }) => {
   const [newUsername, setNewUsername] = useState(user.username)

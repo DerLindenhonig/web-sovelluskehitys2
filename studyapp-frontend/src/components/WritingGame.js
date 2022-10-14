@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from 'react'
-import {Button} from 'react-bootstrap'
+import React, { useEffect, useState } from 'react'
+import { Button } from 'react-bootstrap'
 import cardService from '../services/cards'
 import styled from 'styled-components'
 import userService from '../services/users'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Input = styled.input.attrs(props => ({
   type: 'text',
@@ -110,7 +110,7 @@ const WritingGame = ({ blog, users, setUsers }) => {
   const SaveUserLevel = () => {
     let thisUser = null
     {users
-      .filter(user => user.username === blog.author)
+      .filter(user => user.username === blog.user.username)
       .map(user =>
         thisUser = user
       )}
@@ -170,32 +170,32 @@ const WritingGame = ({ blog, users, setUsers }) => {
     }
   }
 
-  if(round > 3 && record === 3) {
+  if(round > 5 && record === 5) {
     return (
       <div>
         <br/>
         <h3>Excellent!</h3>
-        <h5>Your score: {record} / 10</h5>
+        <h5>Your score: {record} / 5</h5>
         <Buttons/>
       </div>
     )
-  } else if (round > 3 && record >= 2) {
+  } else if (round > 5 && record >= 3) {
     return (
       <div>
         <br/>
         <h3>Well done!</h3>
-        <h5>Your score: {record} / 10</h5>
+        <h5>Your score: {record} / 5</h5>
       </div>
     )
-  } else if (round > 3 && record < 2) {
+  } else if (round > 5 && record < 3) {
     return (
       <div>
         <br/>
         <h3>Don`t worry, you can do it!</h3>
-        <h5>Your score: {record} / 10</h5>
+        <h5>Your score: {record} / 5</h5>
       </div>
     )
-  } else if(blog.cards.length > 3 && round < 4) {
+  } else if(blog.cards.length > 3 && round < 6) {
     return (
       <div>
         <br/>
@@ -203,7 +203,7 @@ const WritingGame = ({ blog, users, setUsers }) => {
         <br/>
         <br/>
         <div>Right answers: {record}</div>
-        <div>Questions: {round} / 3</div>
+        <div>Questions: {round} / 5</div>
         <br/>
         <h4>{newQuestion.translate}</h4>
         <br/>

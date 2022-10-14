@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-import {Form} from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Form } from 'react-bootstrap'
 import styled from 'styled-components'
 
 const EditButton = styled.button`
@@ -16,9 +16,9 @@ const EditBlogForm = ({ editBlog, likes, blog }) => {
   const [newTitle, setNewTitle] = useState(blog.title)
   const [newUrl, setNewUrl] = useState(blog.url)
   const [newStatus, setNewStatus] = useState(blog.status)
-  const [categories] = useState(['English', 'German', 'French', 'Finnish', 'Swedish', 'Russian', 'Korean', 'Japanese', 'Chinese', 'other'])
+  const [categories] = useState(['Arabic', 'Chinese', 'Danish', 'Dutch', 'English', 'German', 'Greek', 'Hindi', 'Hungarian', 'Italian', 'Danish', 'French', 'Finnish', 'Japanese', 'Kazakh', 'Korean', 'Norwegian', 'Polish', 'Portuguese', 'Russian', 'Spanish', 'Swedish', 'Turkish', 'other'])
   const [category, setCategory] = useState(blog.category)
-  const [categories2] = useState(['English', 'German', 'French', 'Finnish', 'Swedish', 'Russian', 'Korean', 'Japanese', 'Chinese', 'other'])
+  const [categories2] = useState(['Arabic', 'Chinese', 'Danish', 'Dutch', 'English', 'German', 'Greek', 'Hindi', 'Hungarian', 'Italian', 'Danish', 'French', 'Finnish', 'Japanese', 'Kazakh', 'Korean', 'Norwegian', 'Polish', 'Portuguese', 'Russian', 'Spanish', 'Swedish', 'Turkish', 'other'])
   const [category2, setCategory2] = useState(blog.category2)
 
   let index = 0
