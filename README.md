@@ -26,11 +26,21 @@ remove - Tekee HTTP DELETE -pyyntö sanaston urliin ja poista sen.\
 updateAddedUsers - Päivittää olemassa oleva sanasto tekemällä HTTP PUT -pyynnön. Tätä käytetään, kun käyttäjä lisää sanasto omaan sanasto-kokoelmaan.
 
 ### Users:
-
+getAll - Hakee kokoelman kaikki käyttäjät. Tekee HTTP GET -pyyntö osoitteeseen http://localhost:3001/api/users. \
+create - Luo uuden sanaston pyynnön mukana "newObject" olevasta datasta.\
+```
+"newObject" sisältää nämä tiedot:
+username - käyttäjätunnus,
+name - käyttäjän nimi,
+passwordHash - salasana,
+*level - 0
+*-oletusarvot
+```
+update - Päivittää olemassa oleva käyttäjä tekemällä HTTP PUT -pyynnön käyttäjän urliin.
 ### Cards:
 setToken - Asettaa käyttäjän token.\
 getAll - Hakee kokoelman kaikki muistikortit. Tekee HTTP GET -pyyntö osoitteeseen http://localhost:3001/api/cards. \
-create - Luo uuden muistikortin pyynnön mukana "newObject" olevasta datasta.\
+create - Luo uuden muistikortin pyynnön mukana "newObject" olevasta datasta.
 ```
 "newObject" sisältää nämä tiedot:
 word: string, sana
@@ -41,5 +51,5 @@ blogId: sanaston id
 *-oletusarvot
 ```
 update - Päivittää olemassa oleva kortti tekemällä HTTP PUT -pyynnön.\
-remove - Tekee HTTP DELETE -pyyntö kortin urliin ja poista sen.\
+remove - Tekee HTTP DELETE -pyyntö kortin urliin ja poista sen.
 ### Login:
