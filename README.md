@@ -26,6 +26,16 @@ category2: sanaston kategoria, eli toinen kieli, oletuksena "other",
 *user: käyttäjän id,
 *originalBlog: oletuksena null; kun lisätään olemassa oleva sanasto, kopioi alkuperäisen sanaston id
 *-oletusarvot
+
+HTTP Request:
+
+POST http://localhost:3001/api/blogs
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imthc3N1IiwiaWQiOiI2MWNiMTI4NDRiYmE0NjAwMDQ1YWJhNGYiLCJpYXQiOjE2NjU3NzQxMDF9.YVxmI_Nzhmd0hZ0CvEDgzf2DnFkwOnssV0XLAwpnG0o
+
+{
+  "title": "new", "author": "new", "url": "new", "likes": 0, "status": "private", "category": "other", "category2": "other", "user": "61cb12844bba4600045aba4f"
+}
 ```
 update - Päivittää olemassa oleva sanasto tekemällä HTTP PUT -pyynnön.\
 remove - Tekee HTTP DELETE -pyyntö sanaston urliin ja poista sen.\
