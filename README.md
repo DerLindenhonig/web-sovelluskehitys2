@@ -46,16 +46,15 @@ word: string, sana
 translate: string, käännös
 examples: string, esimerkkejä
 *progress: oletuksena on 0
-blogId: sanaston id
+blogId: sanaston id, mihin kortti lisätään
 *-oletusarvot
-
 
 POST http://localhost:3001/api/cards
 Content-Type: application/json
 Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vaSIsImlkIjoiNjE5MTg1MDdlMzI0Njk5ZWEwNTRkZjljIiwiaWF0IjoxNjM4MzA4MzkzfQ.pIs9O9ucZZkdOxqo6f3It8DgYVQ72s4sV0imp-m2oYc
 
 {
-  "title": "new", "author": "new", "url": "new", "blogId": "61922316b432f095fc45bfb3"
+  "word": "new", "translate": "new", "examples": "new", "blogId": "61922316b432f095fc45bfb3", "progress": 0
 }
 ```
 update - Päivittää olemassa oleva kortti tekemällä HTTP PUT -pyynnön.\
