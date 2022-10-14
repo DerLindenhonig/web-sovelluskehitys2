@@ -47,7 +47,7 @@ getAll - Hakee kokoelman kaikki käyttäjät. Tekee HTTP GET -pyyntö osoitteese
 GET http://localhost:3001/api/users
 Content-Type: application/json
 ```
-create - Luo uuden sanaston pyynnön mukana "newObject" olevasta datasta.\
+create - Luo uuden käyttäjän pyynnön mukana "newObject" olevasta datasta.\
 ```
 "newObject" sisältää nämä tiedot:
 username - käyttäjätunnus,
