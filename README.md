@@ -6,7 +6,11 @@
 # Rest-apin kutsut:
 ### Blogs:
 setToken - Asettaa käyttäjän token.\
-getAll - Hakee kokoelman kaikki sanastot. Tekee HTTP GET -pyyntö osoitteeseen http://localhost:3001/api/blogs. \
+getAll - Hakee kokoelman kaikki sanastot. Tekee HTTP GET -pyyntö osoitteeseen http://localhost:3001/api/blogs.
+```
+GET http://localhost:3001/api/cards
+Content-Type: application/json
+```
 create - Luo uuden sanaston pyynnön mukana "newObject" olevasta datasta.\
 ```
 "newObject" sisältää nämä tiedot:
@@ -39,11 +43,10 @@ passwordHash - salasana,
 update - Päivittää olemassa oleva käyttäjä tekemällä HTTP PUT -pyynnön käyttäjän urliin.
 ### Cards:
 setToken - Asettaa käyttäjän token.\
-getAll - Hakee kokoelman kaikki muistikortit. Tekee HTTP GET -pyyntö osoitteeseen http://localhost:3001/api/cards. \
+getAll - Hakee kokoelman kaikki muistikortit. Tekee HTTP GET -pyyntö osoitteeseen http://localhost:3001/api/cards.
 ```
 GET http://localhost:3001/api/cards
 Content-Type: application/json
-
 ```
 create - Luo uuden muistikortin pyynnön mukana "newObject" olevasta datasta. "newObject" sisältää nämä tiedot:
 ```
