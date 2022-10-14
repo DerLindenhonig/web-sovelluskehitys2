@@ -40,6 +40,11 @@ update - Päivittää olemassa oleva käyttäjä tekemällä HTTP PUT -pyynnön 
 ### Cards:
 setToken - Asettaa käyttäjän token.\
 getAll - Hakee kokoelman kaikki muistikortit. Tekee HTTP GET -pyyntö osoitteeseen http://localhost:3001/api/cards. \
+```
+GET http://localhost:3001/api/cards
+Content-Type: application/json
+
+```
 create - Luo uuden muistikortin pyynnön mukana "newObject" olevasta datasta. "newObject" sisältää nämä tiedot:
 ```
 word: string, sana
