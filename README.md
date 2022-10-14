@@ -30,7 +30,11 @@ remove - Tekee HTTP DELETE -pyyntö sanaston urliin ja poista sen.\
 updateAddedUsers - Päivittää olemassa oleva sanasto tekemällä HTTP PUT -pyynnön. Tätä käytetään, kun käyttäjä lisää sanasto omaan sanasto-kokoelmaan.
 
 ### Users:
-getAll - Hakee kokoelman kaikki käyttäjät. Tekee HTTP GET -pyyntö osoitteeseen http://localhost:3001/api/users. \
+getAll - Hakee kokoelman kaikki käyttäjät. Tekee HTTP GET -pyyntö osoitteeseen http://localhost:3001/api/users. 
+```
+GET http://localhost:3001/api/users
+Content-Type: application/json
+```
 create - Luo uuden sanaston pyynnön mukana "newObject" olevasta datasta.\
 ```
 "newObject" sisältää nämä tiedot:
