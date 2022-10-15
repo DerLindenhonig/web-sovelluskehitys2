@@ -37,7 +37,18 @@ Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imthc
   "title": "new", "author": "new", "url": "new", "likes": 0, "status": "private", "category": "other", "category2": "other", "user": "61cb12844bba4600045aba4f"
 }
 ```
-update - Päivittää olemassa oleva sanasto tekemällä HTTP PUT -pyynnön.\
+update - Päivittää olemassa oleva sanasto tekemällä HTTP PUT -pyynnön.
+```
+HTTP Request:
+
+PUT http://localhost:3001/api/blogs/6349b2cf81f3c646e86d8363
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imthc3N1IiwiaWQiOiI2MWNiMTI4NDRiYmE0NjAwMDQ1YWJhNGYiLCJpYXQiOjE2NjU4NzA1OTR9.n6CXQVdij4i6Fd-2uXQlmMO2WNsTlpG4qPF5YxMqty4
+```
+{
+  "title": "edited", "author": "edited", "url": "edited", "likes": 0, "status": "private", "category": "other", "category2": "other"
+}
+
 remove - Tekee HTTP DELETE -pyyntö sanaston urliin ja poista sen.\
 updateAddedUsers - Päivittää olemassa oleva sanasto tekemällä HTTP PUT -pyynnön. Tätä käytetään, kun käyttäjä lisää sanasto omaan sanasto-kokoelmaan.
 
