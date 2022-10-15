@@ -3,7 +3,7 @@
 "studyapp-backend" - Kansiossa on projektin backend.\
 "studyapp-frontend" - Kansiossa on vanhan projektin Reactilla tehty frontend.
 
-# Rest-apin kutsut:
+# Rest-api:
 ### Blogs:
 setToken - Asettaa käyttäjän token.\
 getAll - Hakee kokoelman kaikki sanastot. Tekee HTTP GET -pyyntö osoitteeseen http://localhost:3001/api/blogs.
